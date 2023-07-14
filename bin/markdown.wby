@@ -7,7 +7,7 @@ let ppath = web.path();
 if ppath == '/' {
   ppath = '/docs/start.md';
 }
-let content = shd.makeHtml(docPath);
+let content = shd.makeHtml(ppath);
 let html = mch.render('/docs/layout.mustache');
 
 web.body(html);
