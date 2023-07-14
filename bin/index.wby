@@ -5,7 +5,7 @@ import std.string as str;
 let ppath = web.path();
 
 if ppath == '/' {
-  ppath = '/docs/start.md';
+  ppath = 'docs/start.md';
 }
 
 if str.ends_with(ppath, '.md') {
