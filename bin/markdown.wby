@@ -9,6 +9,6 @@ if ppath == '/' {
 }
 let docPath = str.substring(ppath, 1);
 let content = shd.makeHtml(docPath);
-let html = mch.render('/docs/layout.mustache');
+let html = mch.render('docs/layout.mustache');
 
 web.body(html);
