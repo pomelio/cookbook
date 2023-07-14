@@ -1,0 +1,14 @@
+import ext.HttpContext as web;
+import ext.Showdown as shd;
+import std.string as str;
+import ext.mustache as mch;
+
+let ppath = web.path();
+if ppath == '/' {
+  ppath = '/docs/start.md';
+}
+let docPath = str.substring(ppath, 1);
+let content = shd.makeHtml(docPath);
+let html = mch.render('docs/ref/layout.mustache');
+
+web.body(html);
