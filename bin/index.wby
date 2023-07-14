@@ -2,7 +2,7 @@ import ext.HttpContext as web;
 import std.string as str;
 
 
-let ppath = ctx.path();
+let ppath = web.path();
 
 if ppath == '/' {
   ppath = '/docs/ref/start.md';
