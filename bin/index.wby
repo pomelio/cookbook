@@ -1,0 +1,15 @@
+import ext.HttpContext as web;
+import std.string as str;
+
+
+let ppath = ctx.path();
+
+if ppath == '/' {
+  ppath = '/docs/ref/start.md';
+}
+
+if str.ends_with(ppath, '.md') {
+  web.dispatch('/markdown', {});
+} else {
+  web.dispatch(ppath, {});
+}
