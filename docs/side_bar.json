@@ -1,0 +1,28 @@
+{
+  "title": "sections",
+  "sections":[
+    {
+      "title": "Cook book",
+      "md": "/docs/ref/start.md",
+      "topics":[
+        {
+          "title": "project files structure",
+          "md": "/docs/project_structure.md"
+        },
+        {
+          "title": "entry point",
+          "md": "/docs/entry_point.md"
+        },
+        {
+          "title": "import project",
+          "md": "/docs/import_project.md"
+        },
+        {
+          "title": "debug project",
+          "md": "/docs/debug.md"
+        }
+      ]
+    }
+    
+  ]
+}
