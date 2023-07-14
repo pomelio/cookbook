@@ -27,7 +27,7 @@ function composeSection(section){
 
 
 $(function() {
-  $.getJSON('side_bar.json', (data, status) => {
+  $.getJSON('https://raw.githubusercontent.com/pomelio/cookbook/main/docs/side_bar.json', (data, status) => {
     let title = data.title;
     let sections = data.sections;
     let sectionEles = sections.map(s => {
