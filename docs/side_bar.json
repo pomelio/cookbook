@@ -1,9 +1,9 @@
 {
-  "title": "sections",
+  "title": "chatsarah.com",
   "sections":[
     {
       "title": "Cook book",
-      "md": "/docs/ref/start.md",
+      "md": "/docs/start.md",
       "topics":[
         {
           "title": "project files structure",
