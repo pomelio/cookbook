@@ -27,7 +27,7 @@ function composeSection(section){
 
 
 $(function() {
-    let data = JSON.parse(`{{{side_bar}}}`);
+    let data = JSON.parse('/docs/side_bar.json');
     let title = data.title;
     let sections = data.sections;
     let sectionEles = sections.map(s => {
