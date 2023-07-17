@@ -27,7 +27,8 @@ function composeSection(section){
 
 
 $(function() {
-    let data = JSON.parse('/docs/side_bar.json');
+  $.getJSON('/docs/side_bar.json', (data, status) => {
+    
     let title = data.title;
     let sections = data.sections;
     let sectionEles = sections.map(s => {
@@ -36,6 +37,7 @@ $(function() {
     let html = '<div class="sections"><h2>' + title +'</h2>' + sectionEles.join('') + '</div>';
     $('#sidebar').html(html);
   });
+});
 
 </script>
 
