@@ -12,7 +12,8 @@ if ppath == '/' {
 if str.ends_with(ppath, '.md') {
   web.dispatch('/markdown', {});
 } elsif str.starts_with(ppath, '/docs') {
-  dd.download(ppath);
+  let data = dd.download(ppath);
+  web.body(data);
 } else {
   web.dispatch(ppath, {});
 }
