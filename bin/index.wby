@@ -1,5 +1,6 @@
 import ext.HttpContext as web;
 import std.string as str;
+import ext.DownloadDocs as dd;
 
 
 let ppath = web.path();
@@ -10,6 +11,8 @@ if ppath == '/' {
 
 if str.ends_with(ppath, '.md') {
   web.dispatch('/markdown', {});
+} elsif ppath.startsWith('/docs') {
+  dd.download(ppath);
 } else {
   web.dispatch(ppath, {});
 }
