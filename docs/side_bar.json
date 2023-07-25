@@ -6,6 +6,10 @@
       "md": "/docs/start.md",
       "topics":[
         {
+          "title": "What the platfrom is",
+          "md": "/docs/what_platform_is.md"
+        },
+        {
           "title": "project files structure",
           "md": "/docs/project_structure.md"
         },
