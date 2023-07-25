@@ -24,6 +24,10 @@
         {
           "title": "debug project",
           "md": "/docs/debug.md"
+        },
+        {
+          "title": "hello world",
+          "md": "/docs/hello_world.md"
         }
       ]
     }
