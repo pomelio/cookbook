@@ -2,12 +2,36 @@ import ext.HttpContext as web;
 import ext.Showdown as shd;
 import std.string as str;
 import ext.mustache as mch;
+import ext.Docs as docs;
+import std.array as arr;
 
 let ppath = web.path();
 if ppath == '/' {
   ppath = '/docs/start.md';
 }
-let content = shd.makeHtml(ppath);
+
+let side_bar_data = docs.get_data('/docs/side_bar.json');
+
+let side_bar_json = parse_json(side_bar_data);
+
+let sections = side_bar_json['sections'];
+
+let section_html_list = [];
+
+for (let i = 0; i < len(sections); i++) {
+  let section = sections[i];
+  let topics = section['topics'];
+  let title = section['title'];
+  let section_html = mch.render('/docs/sidebar_section.mustache');
+  arr.push(section_html_list, section_html);
+}
+
+let title = side_bar_json['title'];
+let sections_html = arr.join(section_html_list, '');
+
+let side_bar_html = mch.render('/docs/sidebar.mustache');
+
+let content = shd.make_html(ppath);
 let html = mch.render('/docs/layout.mustache');
 
 web.body(html);

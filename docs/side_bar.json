@@ -3,7 +3,6 @@
   "sections":[
     {
       "title": "Cook book",
-      "md": "/docs/start.md",
       "topics":[
         {
           "title": "What the platfrom is",
