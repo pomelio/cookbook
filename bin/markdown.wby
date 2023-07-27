@@ -31,6 +31,10 @@ let sections_html = arr.join(section_html_list, '');
 
 let side_bar_html = mch.render('/docs/sidebar.mustache');
 
+
+let PAGE_URL = web.hostname() + '/' + web.path();
+let PAGE_IDENTIFIER = '/' + web.path();
+
 let content = shd.make_html(ppath);
 let html = mch.render('/docs/layout.mustache');
 
