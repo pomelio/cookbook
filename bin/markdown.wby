@@ -31,8 +31,9 @@ let sections_html = arr.join(section_html_list, '');
 
 let side_bar_html = mch.render('/docs/sidebar.mustache');
 
+let protocol = web.protocol();
 let host_name = web.hostname();
-let PAGE_URL = host_name + ppath;
+let PAGE_URL = protocol + host_name + ppath;
 let PAGE_IDENTIFIER = ppath;
 
 let content = shd.make_html(ppath);
