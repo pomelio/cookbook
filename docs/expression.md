@@ -1,9 +1,12 @@
 ### expression
 
 #### unary expressions
+```
+ -1, -2
+ !abc
 
-- -1, -2
-- !abc
+```
+
 
 #### Binary expressions
 
