@@ -60,7 +60,7 @@
   > The boolean value true if the given value is a number with value NaN. Otherwise, false.
 
 
-### is_safe_integer(value)
+### is\_safe\_integer(value)
 > The Number.isSafeInteger() static method determines whether the provided value is a number that is a safe integer.
 - value: the number value
 
