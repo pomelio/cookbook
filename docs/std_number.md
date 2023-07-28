@@ -40,35 +40,40 @@
 > The Number.isFinite() static method determines whether the passed value is a finite number — that is, it checks that a given value is a number, and the number is neither positive Infinity, negative Infinity, nor NaN.
 - value: the number value
 
-- return value: The boolean value true if the given value is a finite number. Otherwise false.
+- return value: 
+  > The boolean value true if the given value is a finite number. Otherwise false.
 
 
 ### is_integer(value)
 > The Number.isInteger() static method determines whether the passed value is an integer.
 - value: the number value
 
-- return value: The boolean value true if the given value is an integer. Otherwise false.
+- return value: 
+  > The boolean value true if the given value is an integer. Otherwise false.
 
 
 ### is_nan(value)
 > The Number.isNaN() static method determines whether the passed value is the number value NaN, and returns false if the input is not of the Number type. It is a more robust version of the original, global isNaN() function.
 - value: the number value
 
-- return value: The boolean value true if the given value is a number with value NaN. Otherwise, false.
+- return value: 
+  > The boolean value true if the given value is a number with value NaN. Otherwise, false.
 
 
 ### is_safe_integer(value)
 > The Number.isSafeInteger() static method determines whether the provided value is a number that is a safe integer.
 - value: the number value
 
-- return value: The boolean value true if the given value is a number that is a safe integer. Otherwise false.
+- return value: 
+  > The boolean value true if the given value is a number that is a safe integer. Otherwise false.
 
 
 ### parse_float(value)
 > The Number.parseFloat() static method parses an argument and returns a floating point number. If a number cannot be parsed from the argument, it returns NaN.
 - value: the number value
 
-- return value: A floating point number parsed from the given string. Or NaN when the first non-whitespace character cannot be converted to a number.
+- return value: 
+  > A floating point number parsed from the given string. Or NaN when the first non-whitespace character cannot be converted to a number.
 
 ### parse_int(value)
 > The Number.parseInt() static method parses a string argument and returns an integer of the specified radix or base.
