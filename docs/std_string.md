@@ -10,21 +10,21 @@
 
 ### char_at(value, index)
 
-### char_code_at(value, index)
+### char\_code\_at(value, index)
 
-### code_point_at(value, pos)
+### code\_point\_at(value, pos)
 
 ### concat(value, values)
 
 ### from\_char\_code(value, codes)
 
-### from_code_point(value, codes)
+### from\_code\_point(value, codes)
 
 ### includes(value, search, pos)
 
 ### index_of(value, search, pos)
 
-### last_index_of(value, search, pos)
+### last\_index\_of(value, search, pos)
 
 ### match(value, regex)
 
@@ -32,15 +32,15 @@
 
 ### normalize(value)
 
-### is_well_formedfunction(value)
+### is\_well\_formedfunction(value)
 
 ### substring(value, start, end)
 
 ### split(value, separator, limit)
 
-### to_upper_case(value)
+### to\_upper\_case(value)
 
-### to_lower_case(value)
+### to\_lower\_case(value)
 
 ### trim(value)
 
