@@ -2,6 +2,8 @@
 
 > The extension of a module file is `wby`. Functions and variables can be defined in the module, and all these functions and variables can be referenced by other modules.
 
+- the module files must be saved under the folder `/bin/modules`
+
 ``` wby
 
 //abc.wby
@@ -28,7 +30,7 @@ import abc as a;
 assert(a.i == 1);
 assert(a.b == 'abc');
 
-let b = a. plus1(2);
+let b = a.plus1(2);
 assert(b == 3);
 
 ```
