@@ -1,6 +1,6 @@
-### variables
+## variables
 
-#### string
+### string
 ```
 'abc'
 'i love you!'
@@ -8,21 +8,21 @@
 ```
 
 
-#### number
+### number
 ```
 123
 1.23
 ```
 
 
-#### boolean variables
+### boolean variables
 ```
 true
 false
 ```
 
 
-#### array
+### array
 ```
 ['abc', 'cde']
 [1, 2, ...a]
@@ -32,7 +32,7 @@ false
 
 > `...a` is an array variable spread
 
-#### Map
+### Map
 ```
 { a: 1, b: 3, c: '123'}
 { a: [1, 2, 3], b: 'add'}
@@ -44,10 +44,10 @@ false
 
 > `...abc` is a map variable spread
 
-#### null
+### null
 
-#### undefined
+### undefined
 
-###UserData
+### UserData
 
 > Can only be created by built-in functions

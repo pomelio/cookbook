@@ -56,7 +56,7 @@
       "title": "std modules",
       "topics":[
         {
-          "title": "std libraries",
+          "title": "global",
           "md": "/docs/std_global.md"
         },
         {
