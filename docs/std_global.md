@@ -12,11 +12,13 @@
 
 ### type_of(value)
 > return the string of a value type. 
-  - value: the type value could be `stirng`, `numnber`,`map`, `array`, `boolean`, `userdata`, `closure`
+  - value: the value to check the type. 
+  - return: string value of could be `stirng`, `numnber`,`map`, `array`, `boolean`, `userdata`, `closure`
 
 ### keys(value)
 > return an array of key of the `array` or `map` value
   - value: the value of `array` or `map`
+  - return: array of keys.
 
 ### throw(cause)
 > throws an exception
@@ -43,13 +45,19 @@
 ### parse_json(value)
 > string to map value
 - value: string
+- return: map value
 
 ### stringify_json(value)
 > map value to String
-- value: hash
+- value: map value
+- return: string value
 
 ### is_equal(value1, value2, callback)
 > Determine if two values are the same
 - value1:
 - value2:
 - callback: closure of a comparator. Optional. |a, b| => boolean
+
+### get_defined_variables()
+> return a map value includes all variables available.
+- return: map value
