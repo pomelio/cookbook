@@ -1,26 +1,25 @@
+## modules
 
-## 模块
+> The extension of a module file is `wby`. Functions and variables can be defined in the module, and all these functions and variables can be referenced by other modules.
 
-模块文件的扩展名为`wby`. 文件里可以定义函数和变量, 所有这些函数和变量都可以被其它模块引用.
+``` wby
 
-```wby
-
-// abc.wby
+//abc.wby
 
 let i = 1;
 let b = 'abc';
 
 fn plus1(val) {
-  return value + 1;
+   return value + 1;
 }
 
 
 ```
 
 
-模块名就是模块文件名去掉`wby`文件后缀
+> The module name is the module file name without the `wby` file suffix
 
-```wby
+``` wby
 
 // hello.wby
 
@@ -29,7 +28,7 @@ import abc as a;
 assert(a.i == 1);
 assert(a.b == 'abc');
 
-let b = a.plus1(2);
+let b = a. plus1(2);
 assert(b == 3);
 
 ```
