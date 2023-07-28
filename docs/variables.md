@@ -10,7 +10,7 @@
 - 1.23
 
 #### boolean variables
--true
+- true
 - false
 
 #### array
@@ -28,11 +28,12 @@
 - { a: 1, b: { c: '122', d: 1}}
 - { a: '3', ...abc}
 
-`...abc` is a hash variable spread
+`...abc` is a map variable spread
 
 #### null
 
-#### defined
+#### undefined
 
 ###UserData
-Can only be created by built-in functions
+
+> Can only be created by built-in functions
