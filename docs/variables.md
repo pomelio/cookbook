@@ -1,38 +1,38 @@
-## 变量
+### variables
 
-### 字符串
+#### string
 
 - 'abc'
 - 'i love you!'
 
-### 数字
+#### number
 - 123
 - 1.23
 
-## 布尔变量
-- true
+#### boolean variables
+-true
 - false
 
-### 数组
+#### array
 - ['abc', 'cde']
 - [1, 2, ...a]
 - [1, 3, 5, 6]
 - [1, 2, 3, 'abc', [1, 2, 3]]
 
-`...a` 是一个 数组变量的spread
+`...a` is an array variable spread
 
-### Map
+#### Map
 
 - { a: 1, b: 3, c: '123'}
 - { a: [1, 2, 3], b: 'add'}
 - { a: 1, b: { c: '122', d: 1}}
 - { a: '3', ...abc}
 
-`...abc` 是一个 hash变量的spread
+`...abc` is a hash variable spread
 
-### null
+#### null
 
-### undefined
+#### defined
 
-### UserData
-只能通过内置函数创建
+###UserData
+Can only be created by built-in functions
