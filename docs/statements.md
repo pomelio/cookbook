@@ -159,13 +159,13 @@ import ex. mysql as mysql;
 
 
 
-fn get_user_orders(usr){
+fn get_user_orders(user, pwd, host, name){
 
-   let conn = mysql. open(user, pwd, host);
+   let conn = mysql.open(user, pwd, host);
 
-   defer mysql. close(conn);
+   defer mysql.close(conn);
 
-   let rows = mysql.query('select * from order where user=?', [usr]);
+   let rows = mysql.query(conn, 'select * from order where name=?', [name]);
 
    return rows;
   
@@ -184,11 +184,10 @@ let i = 1;
 
 i++;
 
-if (i > 10) {
+if i > 10 {
    stop {};
 }
 
-info(i);
 
 ```
 
@@ -199,7 +198,7 @@ import std.array as arr;
 
 let i = [1, 2, 3, 4];
 
-let b = arr.filter(i, |a| -> {
+let b = arr.filter(i, |a| => {
    return a < 3;
 });
 
@@ -253,12 +252,11 @@ assert(result == ["exuberant", "destruction", "present"]);
 
 try {
 
-   throw(2048, 'example error');
+   throw({code: 2048, message: 'example error'});
 
 } catch(err) {
-
-   if (err. code == 2048) {
-     assert(err. message == 'example error');
+   if (err.code == 2048) {
+     assert(err.message == 'example error');
    }
 
 } finally {
