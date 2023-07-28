@@ -16,7 +16,7 @@
 - return value: a new array.
 
 ### copy_within(values, target, start, end) 
-> The `copyWithin` method shallow copies part of an array to another location in the same array and returns it without modifying its length.
+> The `copy_within` method shallow copies part of an array to another location in the same array and returns it without modifying its length.
 - values: the array values
 - target: Zero-based index at which to copy the sequence to
 - start: Zero-based index at which to start copying elements from

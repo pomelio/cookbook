@@ -16,7 +16,7 @@
 
 ### concat(value, values)
 
-### from_char_code(value, codes)
+### from\_char\_code(value, codes)
 
 ### from_code_point(value, codes)
 
