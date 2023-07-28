@@ -1,12 +1,11 @@
+### expression
 
-## 表达式
+#### unary expressions
 
-### 一元表达式
-
-- -1, -2 
+- -1, -2
 - !abc
 
-### 二元表达式
+#### Binary expressions
 
 - 5 * 6
 - 4 / 2
@@ -25,12 +24,12 @@
 - (a + 2) * 3 > a
 
 
-## 标识符
-可以用来作为变量名, 函数名,模块名等名称
+### identifier
+Can be used as variable names, function names, module names, etc.
 - abc
 - a
 - _abc123
 - a1
 
-## 注释
-- ##this is a comment
+### comments
+- // this is a comment
