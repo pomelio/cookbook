@@ -52,4 +52,4 @@
 > Determine if two values are the same
 - value1:
 - value2:
-- callback: optional. |a, b| => boolean
+- callback: closure of a comparator. Optional. |a, b| => boolean
