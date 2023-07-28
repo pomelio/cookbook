@@ -1,22 +1,22 @@
-## 语句
+## statement
 
 ### import
+```
+import `abc.bcd` as `bc`;
+```
 
-- import `abc.bcd` as `bc`;
+> `abc.bcd` is the module path. `bc` is the alias. Statements end with `;`
 
+### function
 
-`abc.bcd` 是模块路径. `bc` 是别名. 语句以`;`结尾
-
-### 函数
-
-```wby
+``` wby
 
 fn plus1(value) {
-  return value + 1;
+   return value + 1;
 }
 
 fn binary_plus(val1, val2) {
-  return val1 + val2;
+   return val1 + val2;
 }
 
 
@@ -24,36 +24,36 @@ fn binary_plus(val1, val2) {
 
 ### if
 
-```wby
+``` wby
 if a > 2 && b == 'a' {
-  b = 1;
+   b = 1;
 } elsif a > 3 {
-  b = 2; 
+   b = 2;
 } elsif a > 4 {
-  b = 3; 
+   b = 3;
 } else {
-  b = 4;
+   b = 4;
 }
 
 ```
 
 ### switch
 
-```wby
+``` wby
 switch a {
 
-  case 1: {
-    abc = 1;
-  }
+   case 1: {
+     abc = 1;
+   }
 
-  case 2: {
-    ddd = 333;
-  }
+   case 2: {
+     ddd = 333;
+   }
 
-  _: {
-    cdd = 'ddd';
+   _: {
+     cdd = 'ddd';
 
-  }
+   }
 
 }
 
@@ -61,15 +61,15 @@ switch a {
 
 ### while
 
-```wby
+``` wby
 
 let value = 0;
 
 while value < 10 {
-  value++;
-  if value > 4 {
-    break;
-  }
+   value++;
+   if value > 4 {
+     break;
+   }
 
 }
 
@@ -80,23 +80,23 @@ assert( value == 5);
 
 ### for
 
-```wby
+``` wby
 
 for (let i = 0; i < 10; i++) {
   
-  if i < 4 {
-    continue;
-  }
-  info('i:' + i);
+   if i < 4 {
+     continue;
+   }
+   info('i:' + i);
 }
 
 ```
 
 ### assignment
 
-变量必须用关键字 `let` 先声明, 之后才能被使用
+> Variables must be declared with the `let` keyword before they can be used
 
-```wby
+``` wby
 let i = 1;
 i = i + 1;
 i += 1;
@@ -117,7 +117,7 @@ let gender = 'male';
 
 let s = {age, gender};
 
-let {name: n, age: a} = { name, ...s};
+let {name: n, age: a} = {name, ...s};
 
 assert(n == 'Jack' && a == 10);
 
@@ -126,26 +126,26 @@ assert(n == 'Jack' && a == 10);
 
 ### block
 
-```wby
+``` wby
 
 {
 
-  let a = 1;
-  a += 1;
+   let a = 1;
+   a += 1;
 
-  let b = 'add';
+   let b = 'add';
 
 
-  {
-    let a = 'ddd';
-    assert( a == 'ddd');
+   {
+     let a = 'ddd';
+     assert( a == 'ddd');
 
-    let c = 1;
+     let c = 1;
 
-  }
-  // c is removed
+   }
+   // c is removed
 
-  assert( a == 2);
+   assert( a == 2);
 
 }
 
@@ -153,21 +153,21 @@ assert(n == 'Jack' && a == 10);
 
 ### defer
 
-```wby
+``` wby
 
-import ex.mysql as mysql;
+import ex. mysql as mysql;
 
 
 
 fn get_user_orders(usr){
 
-  let conn = mysql.open(user, pwd, host);
+   let conn = mysql. open(user, pwd, host);
 
-  defer mysql.close(conn);
+   defer mysql. close(conn);
 
-  let rows = mysql.query('select * from order where user=?', [usr]);
+   let rows = mysql.query('select * from order where user=?', [usr]);
 
-  return rows;
+   return rows;
   
 }
 
@@ -176,31 +176,31 @@ fn get_user_orders(usr){
 
 ### stop
 
-stop the program and exit with a value
+> stop the program and exit with a value
 
-```wby
+``` wby
 
 let i = 1;
 
 i++;
 
 if (i > 10) {
-  stop {};
+   stop {};
 }
 
 info(i);
 
 ```
 
-### call function
+### function call
 
-```wby
+``` wby
 import std.array as arr;
 
 let i = [1, 2, 3, 4];
 
 let b = arr.filter(i, |a| -> {
-  return a < 3;
+   return a < 3;
 });
 
 assert(b == [1, 2]);
@@ -209,37 +209,37 @@ assert(b == [1, 2]);
 
 ### Closure
 
-```wby
-|arg1, arg2| -> {
-  statement1;
-  statement2;
+``` wby
+|arg1, arg2| => {
+   statement1;
+   statement2;
   
 }
 
 ```
 
-```wby
+``` wby
 
 import std.array as arr;
 
 fn listOrders(user, callback) {
-  let orders = callback(user);
-  return arr.filter(orders, |a| -> {
-    return a.amount < 10;
-  });
+   let orders = callback(user);
+   return arr.filter(orders, |a| => {
+     return a.amount < 10;
+   });
 
 }
 
 ```
 
 
-```wby
+``` wby
 import std.array as arr;
 
 
 let words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
-let result = arr.filter(words, |word| => len(word) > 6);
+let result = arr. filter(words, |word| => len(word) > 6);
 
 assert(result == ["exuberant", "destruction", "present"]);
 
@@ -249,17 +249,17 @@ assert(result == ["exuberant", "destruction", "present"]);
 
 ### try catch finally throw
 
-```wby
+``` wby
 
 try {
 
-  throw(2048, 'example error');
+   throw(2048, 'example error');
 
 } catch(err) {
 
-  if (err.code == 2048) {
-    assert(err.message == 'example error');
-  }
+   if (err. code == 2048) {
+     assert(err. message == 'example error');
+   }
 
 } finally {
 
@@ -267,4 +267,3 @@ try {
 
 
 ```
-
