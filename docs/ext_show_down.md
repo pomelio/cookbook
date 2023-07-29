@@ -1,4 +1,4 @@
-## Showdown
-> import ext.Showdown as showdown;
+## ShowDown
+> import ext.ShowDown as sd;
 
-### makeHtml(path)
+### make_html(path)

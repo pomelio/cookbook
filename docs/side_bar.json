@@ -86,7 +86,7 @@
       "title": "extensions",
       "topics":[
         {
-          "title": "pathregex",
+          "title": "PathRegexp",
           "md": "/docs/ext_path_regexp.md"
         },
         {
@@ -98,8 +98,20 @@
           "md": "/docs/ext_mustache.md"
         },
         {
-          "title": "showdown",
+          "title": "ShowDown",
           "md": "/docs/ext_show_down.md"
+        },
+        {
+          "title": "Docs",
+          "md": "/docs/ext_docs.md"
+        },
+        {
+          "title": "squel",
+          "md": "/docs/ext_squel.md"
+        },
+        {
+          "title": "HttpContext",
+          "md": "/docs/ext_http_context.md"
         }
       ]
     }

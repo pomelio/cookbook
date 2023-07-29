@@ -22,7 +22,10 @@
 
 ### throw(cause)
 > throws an exception
-   - cause: can be map or string or the other types
+  - cause: can be any type value.
+  - return values:
+    > it creates an error map value with key `cause` which is from throw function. The other key is `stackTrace` which is an array of call stack of functions.
+
 
 ### error(message)
 > log error messages
@@ -58,7 +61,7 @@
 - value2:
 - callback: closure of a comparator. Optional. |a, b| => boolean
 
-### get_defined_variables()
+### get\_defined\_variables()
 > return a map value includes all variables available.
 - return: map value
 
