@@ -61,3 +61,20 @@
 ### get_defined_variables()
 > return a map value includes all variables available.
 - return: map value
+
+
+### dispatch(path, variables)
+> dispatch the http requests to the specified page.
+- path: the page path
+- variables: the variables to be injected into the new page.
+- return value:
+  > no return
+
+
+### fetch(method, url, data, headers, responseType)
+> send a http request and get the response.
+- method: http method. string type, value can be `delete, get, head, post, put, patch, common`
+- url: the http url
+- data: the json object. When the method value is `get`, the value is the params. When the method is `post`, the value is the post data object.
+- headers: the http request headers.
+- responseType: the respone type expected. The value can be `json, text, stream`

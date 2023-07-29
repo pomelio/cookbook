@@ -2,7 +2,7 @@
 
 ### import
 ```
-import `abc.bcd` as `bc`;
+import abc.bcd as bc;
 ```
 
 > `abc.bcd` is the module path. `bc` is the alias. Statements end with `;`
