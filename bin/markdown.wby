@@ -22,7 +22,7 @@ for (let i = 0; i < len(sections); i++) {
   let section = sections[i];
   let topics = section['topics'];
   topics = arr.map(topics, |t|=>{
-    return {...t, active: t['md'] == ppath};
+    return {...t, active: t['md'] == ppath, index:i};
   });
   
   let title = section['title'];
