@@ -20,9 +20,10 @@ let section_html_list = [];
 
 for (let i = 0; i < len(sections); i++) {
   let section = sections[i];
+  section['index'] = i;
   let topics = section['topics'];
   topics = arr.map(topics, |t|=>{
-    return {...t, active: t['md'] == ppath, index:i};
+    return {...t, active: t['md'] == ppath};
   });
   
   let title = section['title'];
