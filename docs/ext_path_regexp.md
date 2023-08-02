@@ -17,7 +17,7 @@
 
 ```
 
-### get_param(match_result, key)
+### get\_param(match_result, key)
 > get the key value from the match result value
 
 - match_result: userdata return from the `match` when success
@@ -41,7 +41,7 @@ if match_result {
 
 ```
 
-### get_params(match_result)
+### get\_params(match_result)
 > get the key value from the match result value
 
 - match_result: userdata return from the `match` when success
