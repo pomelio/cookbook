@@ -3,13 +3,13 @@
 
 
 ### match(regex, path)
-> Match the url path with a simple regex like pattern.
+> Match the url path with a simple regex like pattern and return a `match result` userdata.
 
 - values: regex pattern
 - path: url path
 
 - return value:
-  > if success, it returns a match result userdata, otherwise it returns `false``
+  > if success, it returns a match result userdata, otherwise it returns `false`
 
 > The path regex examples:
 ```
