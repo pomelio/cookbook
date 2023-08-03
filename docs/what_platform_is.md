@@ -1,4 +1,4 @@
-## What the platform is
+# What the platform is
 
 - The platform is a program running environment. This environment can run programs developed by the `Wallaby language` to handle the http requests.
 - Each project has its own independent domain name, and the https certificate is automatically installed. The project owner can link their own domain name to the project.
