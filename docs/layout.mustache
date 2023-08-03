@@ -89,7 +89,7 @@
 		}
 	}
 	window.addEventListener("load", function () {
-		var pres = document.querySelector("pre > code ");
+		var pres = document.querySelectorAll("pre > code ");
 		for (var i = 0; i < pres.length; i++) {
 			addLineClass(pres[i]);
 		}
