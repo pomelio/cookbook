@@ -1,14 +1,13 @@
-
-## mysql
+# mysql
 > import ext.squel as sql;
 
-### select()
+## select()
 > create a `select` userdata
 
 - return value:
   > return the created `select` userdata
 
-### field(select, field, alias)
+## field(select, field, alias)
 > set a field in the `select` userdata
 
 - params:
@@ -19,7 +18,7 @@
 - return value:
   > return the created `select` userdata
 
-### from(select, from, alias)
+## from(select, from, alias)
 > set the `from` of the `select` userdata
 
 - params:
@@ -30,7 +29,7 @@
 - return value:
   > return the created `select` userdata
 
-### group(select, value)
+## group(select, value)
 > set the `group` of the `select` userdata
 
 - params:
@@ -40,7 +39,7 @@
 - return value:
   > return the created `select` userdata
 
-### join(select, value, alias, on)
+## join(select, value, alias, on)
 > set the `join` of the `select` userdata
 
 - params:
@@ -52,7 +51,7 @@
 - return value:
   > return the created `select` userdata
 
-### outer_join(select, value, alias, on)
+## outer_join(select, value, alias, on)
 > set the `outter join` of the `select` userdata
 
 - params:
@@ -64,7 +63,7 @@
 - return value:
   > return the created `select` userdata
 
-### left_join(select, value, alias, on)
+## left_join(select, value, alias, on)
 > set the `left join` of the `select` userdata
 
 - params:
@@ -76,7 +75,7 @@
 - return value:
   > return the created `select` userdata
 
-### right_join(select, value, alias, on)
+## right_join(select, value, alias, on)
 > set the `right join` of the `select` userdata
 
 - params:
@@ -88,7 +87,7 @@
 - return value:
   > return the created `select` userdata
 
-### where(select, value, ...params)
+## where(select, value, ...params)
 > set the `where` of the select
 
 - params:
@@ -99,7 +98,7 @@
 - return value:
   > return the created `select` userdata
 
-### order(select, value, desc)
+## order(select, value, desc)
 > set the `order by` of the select
 
 - params:
@@ -110,7 +109,7 @@
 - return value:
   > return the created `select` userdata
 
-### limit(select, value)
+## limit(select, value)
 > set to return limited number of rows
 
 - params:
@@ -120,7 +119,7 @@
 - return value:
   > return the created `select` userdata
 
-### offset(select, value)
+## offset(select, value)
 > set to return  of rows offset
 
 - params:
@@ -130,13 +129,13 @@
 - return value:
   > return the created `select` userdata
 
-### update();
+## update();
 > create an `update` userdata
 
 - return value:
   > return the created `update` userdata
 
-### table(update, value)
+## table(update, value)
 > set to update  table name
 
 - params:
@@ -146,7 +145,7 @@
 - return value:
   > return the created `update` userdata
 
-### set(update, name, value)
+## set(update, name, value)
 > set to update  table name column name and value
 
 - params:
@@ -157,19 +156,19 @@
 - return value:
   > return the created `update` userdata
 
-### delete()
+## delete()
 > create an `delete` userdata
 
 - return value:
   > return the created `delete` userdata
 
-### insert()
+## insert()
 > create an `insert` userdata
 
 - return value:
   > return the created `insert` userdata
 
-### into(insert, value)
+## into(insert, value)
 > set the insert into table name
 
 - params:
@@ -179,7 +178,7 @@
 - return value:
   > return the created `insert` userdata
 
-### get_sql_text(statement)
+## get_sql_text(statement)
 > return a sql text.
 
 - params:
@@ -188,7 +187,7 @@
 - return value:
   > return the sql string
 
-### get_sql_values(statement)
+## get_sql_values(statement)
 > return a sql prepared statment values.
 
 - params:
@@ -197,5 +196,5 @@
 - return value:
   > return the sql prepared statement values
 
-### to_string(statement)
+## to_string(statement)
 > return a string of the sql

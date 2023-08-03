@@ -1,8 +1,8 @@
 
-### HttpContext
+# HttpContext
 > import ext.HttpContext as web;
 
-### attachment(filename)
+## attachment(filename)
 > download response attachment
 
 - params:
@@ -12,7 +12,7 @@
   > no return value
 
 
-### redirect(url, alt)
+## redirect(url, alt)
 > redirect request to the specified url
 
 - params:
@@ -21,7 +21,7 @@
 
 
 
-### has(field)
+## has(field)
 > check response header existing.
 
 - params:
@@ -32,7 +32,7 @@
 
 
 
-### set(field, val)
+## set(field, val)
 > set the response header value
 
 - params:
@@ -40,65 +40,65 @@
   - value: the header value
 
 
-### append(field, val)
+## append(field, val)
 > append the response header value
 
 - params:
   - field: the header name
   - value: the header value
 
-### flush_headers()
+## flush_headers()
 > Flush any set headers and begin the body
 
 
 
-### get_status()
+## get_status()
 > return status code of http response
 
 - return value:
   > return the response http status code.
 
-### has_header_sent()
+## has_header_sent()
 > heck if a header has been written to the socket.
 
 - return value:
   > boolean value of whether the response headers sent
 
 
-### set_status(code)
+## set_status(code)
 > set the response status code
 
 - params:
   - code: the status code
 
-### set_content_type(val)
+## set_content_type(val)
 > set the response content type header
 
 - params:
   - value: the value of contentType
 
-### set_last_modified(val)
+## set_last_modified(val)
 > set the response last modified header type
 
 - params:
   - value: the value of last modified header.
 
-### set_etag(val)
+## set_etag(val)
 > set response etag
 
 - params:
   - value: the etag value
 
-### get_status_message()
+## get_status_message()
 > get response status message
 
-### body(val)
+## body(val)
 > set the response body
 
 - params:
   - value: string text, map value and stream
 
-### set_length(n)
+## set_length(n)
 > set the response body length
 
 ### get(field)
@@ -108,7 +108,7 @@
   - field: request header name
 
 
-### is(types...)
+## is(types...)
 > Check if the incoming request contains the "Content-Type"
 
 - params:
@@ -119,45 +119,45 @@
   - If there is no content type, `false` is returned.
   - Otherwise, it returns the first `type` that matches.
 
-### querystring()
+## querystring()
 > get the request query string
 
 
-### search()
+## search()
 > get the url search
 
-### method()
+## method()
 > get the request method
 
-### path()
+## path()
 > get the request url path
 
-### origin()
+## origin()
 > Get origin of URL.
 
-### href()
+## href()
 > Get full request URL.
 
-### protocol()
+## protocol()
 > get the request protocol
 
-### host()
+## host()
 > get the request host
 
-### hostname()
+## hostname()
 > get the request hostname
 
-### secure()
+## secure()
 > is the request https
 
-### stale()
+## stale()
 > Check if the request is stale,
 
-### fresh()
+## fresh()
 > Check if the request is fresh,
 
-### ip()
+## ip()
 > get the request ip
 
-### files()
+## files()
 > get the request uploaed files

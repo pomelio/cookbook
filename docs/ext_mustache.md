@@ -1,7 +1,7 @@
-## mustache
+# mustache
 > import ext.mustache as m;
 
-### render(path)
+## render(path)
   > render from a mustache template with available variables
 
   - params:

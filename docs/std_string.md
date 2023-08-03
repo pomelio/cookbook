@@ -1,23 +1,23 @@
 
-## string
+# string
 > import std.string as str;
 
 
-### at(value, index)
+## at(value, index)
 > The `at` method takes an integer value and returns a new String consisting of the single UTF-16 code unit located at the specified offset. This method allows for positive and negative integers. Negative integers count back from the last string character.
 - value: the string value
 - index: The index (position) of the string character to be returned. Supports relative indexing from the end of the string when passed a negative index; i.e. if a negative number is used, the character returned will be found by counting back from the end of the string.
 
 - return value: A String consisting of the single UTF-16 code unit located at the specified position. Returns undefined if the given index can not be found.
 
-### char_at(value, index)
+## char_at(value, index)
 > The `char_at` method of String values returns a new string consisting of the single UTF-16 code unit at the given index.
 - value: the string value
 - index: Zero-based index of the character to be returned. Converted to an integer — undefined is converted to 0.
 
 - return value: A string representing the character (exactly one UTF-16 code unit) at the specified index. If index is out of the range of 0 – str.length - 1, charAt() returns an empty string.
 
-### char\_code\_at(value, index)
+## char\_code\_at(value, index)
 > The `char_code_at` method of String values returns an integer between 0 and 65535 representing the UTF-16 code unit at the given index.
 - value: the string value
 - index: Zero-based index of the character to be returned. Converted to an integer — undefined is converted to 0.
@@ -25,7 +25,7 @@
 - return value: An integer between 0 and 65535 representing the UTF-16 code unit value of the character at the specified index. If index is out of range of 0 – str.length - 1, charCodeAt() returns NaN.
 
 
-### code\_point\_at(value, pos)
+## code\_point\_at(value, pos)
 > The `code_point_at` method of String values returns a non-negative integer that is the Unicode code point value of the character starting at the given index. Note that the index is still based on UTF-16 code units, not Unicode code points.
 - value: the string value
 - pos: Zero-based index of the character to be returned. Converted to an integer — undefined is converted to 0.
@@ -36,14 +36,14 @@
   - If the element at index is a UTF-16 low surrogate, returns only the low surrogate code point.
 
 
-### concat(value, ...values)
+## concat(value, ...values)
 > The `concat` method concatenates the string arguments to the calling string and returns a new string.
 - value: the string value
 - values: One or more strings to concatenate to str.
 
 - return value: A new string containing the combined text of the strings provided.
 
-### ends_with(value, search, pos)
+## ends_with(value, search, pos)
 > The `ends_with` method determines whether a string ends with the characters of a specified string, returning true or false as appropriate.
 - value: the string value
 - search: The characters to be searched for at the end of str. Cannot be a regex. All values that are not regexes are coerced to strings, so omitting it or passing undefined causes endsWith() to search for the string "undefined", which is rarely what you want.
@@ -51,7 +51,7 @@
 
 - return value: true if the given characters are found at the end of the string, including when searchString is an empty string; otherwise, false.
 
-### from\_char\_code(value, ...codes)
+## from\_char\_code(value, ...codes)
 > The `from_char_code` static method returns a string created from the specified sequence of UTF-16 code units.
 - value: the string value
 - codes: A number between 0 and 65535 (0xFFFF) representing a UTF-16 code unit. Numbers greater than 0xFFFF are truncated to the last 16 bits. No validity checks are performed.
@@ -59,7 +59,7 @@
 - return value: A string of length N consisting of the N specified UTF-16 code units.
 
 
-### from\_code\_point(value, ...codes)
+## from\_code\_point(value, ...codes)
 > The `from_code_point` static method returns a string created from the specified sequence of code points.
 - value: the string value
 - codes: An integer between 0 and 0x10FFFF (inclusive) representing a Unicode code point.
@@ -67,7 +67,7 @@
 - return value: A string created by using the specified sequence of code points.
 
 
-### includes(value, search, pos)
+## includes(value, search, pos)
 > The `includes` method performs a case-sensitive search to determine whether one string may be found within another string, returning true or false as appropriate.
 - value: the string value
 - serach: A string to be searched for within str. Cannot be a regex. All values that are not regexes are coerced to strings, so omitting it or passing undefined causes includes() to search for the string "undefined", which is rarely what you want.
@@ -77,7 +77,7 @@
 
 
 
-### index_of(value, search, pos)
+## index_of(value, search, pos)
 > The `index_of` method of String values searches this string and returns the index of the first occurrence of the specified substring. It takes an optional starting position and returns the first occurrence of the specified substring at an index greater than or equal to the specified number.
 - value: the string value
 - search: Substring to search for. All values are coerced to strings, so omitting it or passing undefined causes indexOf() to search for the string "undefined", which is rarely what you want.
@@ -90,13 +90,13 @@
 
 
 
-### is\_well\_formedfunction(value)
+## is\_well\_formedfunction(value)
 > The `is_well_formed` method of String values returns a boolean indicating whether this string contains any lone surrogates.
 - value: the string value
 - return value: Returns true if this string does not contain any lone surrogates, false otherwise.
 
 
-### last\_index\_of(value, search, pos)
+## last\_index\_of(value, search, pos)
 > The `last_index_of` method of String values searches this string and returns the index of the last occurrence of the specified substring. It takes an optional starting position and returns the last occurrence of the specified substring at an index less than or equal to the specified number.
 - value: the string value
 - search: Substring to search for. All values are coerced to strings, so omitting it or passing undefined causes lastIndexOf() to search for the string "undefined", which is rarely what you want.
@@ -107,7 +107,7 @@
 
 - return value: The index of the last occurrence of searchString found, or -1 if not found.
 
-### match(value, regex)
+## match(value, regex)
 > The `match` method retrieves the result of matching a string against a regular expression.
 - value: the string value
 - regex: A regular expression object, or any object that has a Symbol.match method.
@@ -123,7 +123,7 @@
   - If the g flag is not used, only the first complete match and its related capturing groups are returned. In this case, match() will return the same result as RegExp.prototype.exec() (an array with some extra properties).
 
 
-### match_all(value, regex)
+## match_all(value, regex)
 > The `match_all` method returns an iterator of all results matching a string against a regular expression, including capturing groups.
 - value: the string value
 - regex: A regular expression object, or any object that has a Symbol.matchAll method.
@@ -135,12 +135,12 @@
 
 - return value: An iterable iterator object (which is not restartable) of matches.
 
-### normalize(value)
+## normalize(value)
 > The `normalize` method returns the Unicode Normalization Form of the string.
 - value: the string value
 - return value: A string containing the Unicode Normalization Form of the given string.
 
-### pad_end(value, len, pad)
+## pad_end(value, len, pad)
 > The `pad_end` method pads the current string with a given string (repeated, if needed) so that the resulting string reaches a given length. The padding is applied from the end of the current string.
 - value: the string value
 - len: The length of the resulting string once the current str has been padded. If the value is less than or equal to str.length, the current string will be returned as-is.
@@ -149,7 +149,7 @@
 - return value: A String of the specified targetLength with the padString applied at the end of the current str.
 
 
-### pad_start(value, len, pad)
+## pad_start(value, len, pad)
 > The `pad_start` method pads the current string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of the current string.
 - value: the string value
 - len: The length of the resulting string once the current str has been padded. If the value is less than or equal to str.length, then str is returned as-is.
@@ -158,7 +158,7 @@
 - return value: A String of the specified targetLength with padString applied from the start.
 
 
-### repeat(value, count)
+## repeat(value, count)
 > The `repeat` method constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together.
 - value: the string value
 - count: An integer between 0 and +Infinity, indicating the number of times to repeat the string.
@@ -167,7 +167,7 @@
 
 
 
-### replace(value, pattern, replacement)
+## replace(value, pattern, replacement)
 > The `replace` method returns a new string with one, some, or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function called for each match. If pattern is a string, only the first occurrence will be replaced. The original string is left unchanged.
 - value: the string value
 - pattern: Can be a string or an object with a Symbol.replace method — the typical example being a regular expression. Any value that doesn't have the Symbol.replace method will be coerced to a string.
@@ -178,7 +178,7 @@
 - return value: A new string, with one, some, or all matches of the pattern replaced by the specified replacement.
 
 
-### replace_all(value, pattern, replacement)
+## replace_all(value, pattern, replacement)
 > The `replace_all` method returns a new string with all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match. The original string is left unchanged.
 - value: the string value
 - pattern:
@@ -187,7 +187,7 @@
 - return value: A new string, with all matches of a pattern replaced by a replacement.
 
 
-### search(value, pattern)
+## search(value, pattern)
 > The `search` method executes a search for a match between a regular expression and this String object.
 - value: the string value
 - pattern: A regular expression object, or any object that has a Symbol.search method.
@@ -197,7 +197,7 @@
 - return value: The index of the first match between the regular expression and the given string, or -1 if no match was found.
 
 
-### slice(value, start, end)
+## slice(value, start, end)
 > The `slice` method extracts a section of a string and returns it as a new string, without modifying the original string.
 - value: the string value
 - start: The index of the first character to include in the returned substring.
@@ -206,7 +206,7 @@
 - return value: A new string containing the extracted section of the string.
 
 
-### split(value, separator, limit)
+## split(value, separator, limit)
 > The `split` method takes a pattern and divides a String into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array.
 - value: the string value
 - separator: The pattern describing where each split should occur. Can be undefined, a string, or an object with a Symbol.split method — the typical example being a regular expression. Omitting separator or passing undefined causes split() to return an array with the calling string as a single element. All values that are not undefined or objects with a @@split method are coerced to strings.
@@ -217,7 +217,7 @@
 
 - return value: An Array of strings, split at each point where the separator occurs in the given string.
 
-### starts_with(value, search, pos)
+## starts_with(value, search, pos)
 > The `starts_with` method determines whether a string begins with the characters of a specified string, returning true or false as appropriate.
 - value: the string value
 - search: The characters to be searched for at the start of this string. Cannot be a regex. All values that are not regexes are coerced to strings, so omitting it or passing undefined causes startsWith() to search for the string "undefined", which is rarely what you want.
@@ -226,7 +226,7 @@
 - return value: true if the given characters are found at the beginning of the string, including when searchString is an empty string; otherwise, false.
 
 
-### substring(value, start, end)
+## substring(value, start, end)
 > The `substring` method returns the part of the string from the start index up to and excluding the end index, or to the end of the string if no end index is supplied.
 - value: the string value
 - start: The index of the first character to include in the returned substring.
@@ -236,33 +236,33 @@
 
 
 
-### to\_lower\_case(value)
+## to\_lower\_case(value)
 > The `to_lower_case` method returns the calling string value converted to lower case.
 - value: the string value
 
 - return value: A new string representing the calling string converted to lower case.
 
 
-### to\_upper\_case(value)
+## to\_upper\_case(value)
 > The `to_upper_case` method returns the calling string value converted to uppercase (the value will be converted to a string if it isn't one).
 - value: the string value
 
 - return value: A new string representing the calling string converted to upper case.
 
-### trim(value)
+## trim(value)
 > The `trim` method removes whitespace from both ends of a string and returns a new string, without modifying the original string.
 - value: the string value
 
 - return value: A new string representing str stripped of whitespace from both its beginning and end. Whitespace is defined as white space characters plus line terminators. 
 
 
-### trim_end(value)
+## trim_end(value)
 > The `trim_end` method removes whitespace from the end of a string and returns a new string, without modifying the original string. trimRight() is an alias of this method.
 - value: the string value
 
 - return value: A new string representing str stripped of whitespace from its end (right side). Whitespace is defined as white space characters plus line terminators.
 
-### trim_start(value)
+## trim_start(value)
 > The `trim_start` method removes whitespace from the beginning of a string and returns a new string, without modifying the original string. trimLeft() is an alias of this method.
 - value: the string value
 

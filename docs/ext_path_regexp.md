@@ -1,8 +1,8 @@
-## PathRegexp
+# PathRegexp
 > import ext.PathRegexp as pexp;
 
 
-### match(regex, path)
+## match(regex, path)
 > Match the url path with a simple regex like pattern and return a `match result` userdata.
 
 - values: regex pattern
@@ -17,7 +17,7 @@
 
 ```
 
-### get\_param(match_result, key)
+## get\_param(match_result, key)
 > get the key value from the match result value
 
 - match_result: userdata return from the `match` when success
@@ -41,7 +41,7 @@ if match_result {
 
 ```
 
-### get\_params(match_result)
+## get\_params(match_result)
 > get the key value from the match result value
 
 - match_result: userdata return from the `match` when success

@@ -1,13 +1,13 @@
-## statement
+# statement
 
-### import
+## import
 ```
 import abc.bcd as bc;
 ```
 
 > `abc.bcd` is the module path. `bc` is the alias. Statements end with `;`
 
-### function
+## function
 
 ``` wby
 
@@ -22,7 +22,7 @@ fn binary_plus(val1, val2) {
 
 ```
 
-### if
+## if
 
 ``` wby
 if a > 2 && b == 'a' {
@@ -37,7 +37,7 @@ if a > 2 && b == 'a' {
 
 ```
 
-### switch
+## switch
 
 ``` wby
 switch a {
@@ -59,7 +59,7 @@ switch a {
 
 ```
 
-### while
+## while
 
 ``` wby
 
@@ -78,7 +78,7 @@ assert( value == 5);
 ```
 
 
-### for
+## for
 
 ``` wby
 
@@ -92,7 +92,7 @@ for (let i = 0; i < 10; i++) {
 
 ```
 
-### assignment
+## assignment
 
 > Variables must be declared with the `let` keyword before they can be used
 
@@ -124,7 +124,7 @@ assert(n == 'Jack' && a == 10);
 ```
 
 
-### block
+## block
 
 ``` wby
 
@@ -151,7 +151,7 @@ assert(n == 'Jack' && a == 10);
 
 ```
 
-### defer
+## defer
 
 ``` wby
 
@@ -174,7 +174,7 @@ fn get_user_orders(user, pwd, host, name){
 
 ```
 
-### stop
+## stop
 
 > stop the program and exit with a value
 
@@ -191,7 +191,7 @@ if i > 10 {
 
 ```
 
-### function call
+## function call
 
 ``` wby
 import std.array as arr;
@@ -206,7 +206,7 @@ assert(b == [1, 2]);
 
 ```
 
-### Closure
+## Closure
 
 ``` wby
 |arg1, arg2| => {
@@ -246,7 +246,7 @@ assert(result == ["exuberant", "destruction", "present"]);
 
 
 
-### try catch finally throw
+## try catch finally throw
 
 ``` wby
 

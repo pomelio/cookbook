@@ -1,7 +1,7 @@
-## ShowDown
+# ShowDown
 > import ext.ShowDown as sd;
 
-### get_data(path)
+## get_data(path)
   > download document to a string
 
   - params:

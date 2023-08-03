@@ -1,6 +1,6 @@
-## Project structure and development tools
+# Project structure and development tools
 
-### Project directory structure
+## Project directory structure
 ```
 
 ---/project root

@@ -1,4 +1,4 @@
-## modules
+# modules
 
 > The extension of a module file is `wby`. Functions and variables can be defined in the module, and all these functions and variables can be referenced by other modules.
 

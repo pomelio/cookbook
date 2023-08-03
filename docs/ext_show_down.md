@@ -1,7 +1,7 @@
-## ShowDown
+# ShowDown
 > import ext.ShowDown as sd;
 
-### make_html(path)
+## make_html(path)
   > translate the markedown document to html
 
   - params:

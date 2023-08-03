@@ -1,6 +1,6 @@
-### Project entry point
+# Project entry point
 
-#### program directory structure
+## program directory structure
 ```
 
 ---/project root

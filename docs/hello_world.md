@@ -1,4 +1,4 @@
-## Hello World project
+# Hello World project
 
 - Create a new Repository on Github. The file name is `/bin/index.wby`
 

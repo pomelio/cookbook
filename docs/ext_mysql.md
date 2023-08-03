@@ -1,9 +1,9 @@
 
-## mysql
+# mysql
 > import ext.mysql as mysql;
 
 
-### new_connection(config)
+## new_connection(config)
 >  create a mysql `connection` userdata
 
 -params:
@@ -32,7 +32,7 @@
 - return value:
   > the mysql connection userdata
 
-### query(conn, sql, params)
+## query(conn, sql, params)
   > execute query
 
   - params:
@@ -43,44 +43,44 @@
   - return value:
     > return statement executed result
 
-### begin_transaction(conn)
+## begin_transaction(conn)
   > begin a transaction.
 
   - params:
     - conn: mysql connection userdata
 
-### commit(conn)
+## commit(conn)
   > commit a transaction.
 
   - params:
     - conn: mysql connection userdata
 
-### rollback(conn)
+## rollback(conn)
   > rollback a transaction.
 
   - params:
     - conn: mysql connection userdata
 
-### end(conn)
+## end(conn)
   > end a connection.
 
   - params:
     - conn: mysql connection userdata
 
-### destroy(conn)
+## destroy(conn)
   > destory a transaction.
 
   - params:
     - conn: mysql connection userdata
 
-### escape(conn, value)
+## escape(conn, value)
   > escape a value for a prepared statement
 
   - params:
     - conn: mysql connection userdata
     - value: escaped value
 
-### format(conn, sql, values)
+## format(conn, sql, values)
   > prepare a sql statement with values
 
   - params:

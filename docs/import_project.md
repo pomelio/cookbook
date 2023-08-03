@@ -1,6 +1,6 @@
-### Github repository integration
+# Github repository integration
 
-#### Github acess token generation
+## Github acess token generation
 
 > The `access token` enables the platform to read the resources of the github repository. Public projects can also be read without tokens, but because Github has a very low `Rate limit` for anonymous access, 50 times per hour. This limit is too low. Therefore, even for public projects, the platform still needs `access tokens` to read the resources of the repository.
 
@@ -15,7 +15,7 @@
 
 ![webhook](/docs/access_token_content_readonly.png)
 
-#### Webhook notifications
+## Webhook notifications
 
 > The platform provides a webhook link for each project. You can set this link to the webhook of the github repository. In this way, when the Repository has a git push message, the system will be notified. In this way, the system can also update the corresponding program. Keep the platform's program and Github in sync.
 
