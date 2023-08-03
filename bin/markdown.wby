@@ -1,5 +1,5 @@
 import ext.HttpContext as web;
-import ext.Showdown as shd;
+import ext.MarkDownIt as md;
 import std.string as str;
 import ext.mustache as mch;
 import ext.Docs as docs;
@@ -38,7 +38,12 @@ let side_bar_html = mch.render('/docs/sidebar.mustache');
 let PAGE_URL = 'https://' + web.hostname() + ppath;
 let PAGE_IDENTIFIER = ppath;
 
-let content = shd.make_html(ppath);
+let md_result = md.render(ppath);
+let title = md.get_title(md_result);
+let content = md.get_html(md_result);
+if title == undefined {
+  title = 'chatsarah.com';
+}
 let html = mch.render('/docs/layout.mustache');
 
 web.body(html);
