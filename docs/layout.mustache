@@ -42,7 +42,7 @@
 
 
 <style>
-	pre > code {
+	pre {
 		tab-size: 4;
 		counter-reset: linecounter;
 		padding: 0;
@@ -52,12 +52,12 @@
 		line-height: 16px;
 	}
 
-	pre > code span.line {
+	pre span.line {
 		counter-increment: linecounter;
 		line-height: 16px;
 	}
 
-	pre > code span.line::before {
+	pre span.line::before {
 		content: counter(linecounter);
 		color: red;
 		width: 30px;
@@ -70,7 +70,7 @@
 		line-height: 16px;
 	}
 
-	pre > code span.line:nth-child(odd)::before {
+	pre span.line:nth-child(odd)::before {
 		background-color: #555;
 	}
 	</style>
@@ -89,7 +89,7 @@
 		}
 	}
 	window.addEventListener("load", function () {
-		var pres = document.getElementsByTagName("pre");
+		var pres = document.getElementsByTagName("pre > code ");
 		for (var i = 0; i < pres.length; i++) {
 			addLineClass(pres[i]);
 		}
