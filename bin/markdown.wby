@@ -41,7 +41,9 @@ let PAGE_IDENTIFIER = ppath;
 let md_result = md.render(ppath);
 let title = md.get_title(md_result);
 let content = md.get_html(md_result);
-
+if title == undefined {
+  title = 'chatsarah.com';
+}
 let html = mch.render('/docs/layout.mustache');
 
 web.body(html);
