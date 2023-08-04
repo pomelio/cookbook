@@ -1,4 +1,4 @@
-# CookBook
+# CookBook 🦘
 
 This document is the starting point for developers to learn. It contains the following sections:
 
