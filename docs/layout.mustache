@@ -44,19 +44,17 @@
 <style>
 	pre {
 		tab-size: 4;
-		counter-reset: linecounter;
 		padding: 0;
 		font-size: 16px;
 		line-height: 16px;
 	}
 
 	pre span.line {
-		counter-increment: linecounter;
+		
 		line-height: 16px;
 	}
 
 	pre span.line::before {
-		content: counter(linecounter);
 		width: 30px;
 		display: inline-block;
 		border-right: 1px dotted #ccc;
@@ -67,9 +65,6 @@
 		line-height: 16px;
 	}
 
-	pre span.line:nth-child(odd)::before {
-		
-	}
 	</style>
 	<script type="text/javascript">
 	function addLineClass (pre) {
