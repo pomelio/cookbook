@@ -44,17 +44,19 @@
 <style>
 	pre {
 		tab-size: 4;
+		counter-reset: linecounter;
 		padding: 0;
 		font-size: 16px;
 		line-height: 16px;
 	}
 
 	pre span.line {
-		
+		counter-increment: linecounter;
 		line-height: 16px;
 	}
 
 	pre span.line::before {
+		content: counter(linecounter);
 		width: 30px;
 		display: inline-block;
 		border-right: 1px dotted #ccc;
@@ -75,7 +77,6 @@
 		for(var i = 0; i < lines.length; i++) {
 			var span = document.createElement("span");
 			span.className = "line";
-			span.innerText = lines[i]; // can use innerHTML also
 			pre.appendChild(span);
 			pre.appendChild(document.createTextNode("\n"));
 		}
