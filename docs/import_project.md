@@ -6,7 +6,7 @@
 > The `access token` enables the platform to read the resources of the github repository. Public projects can also be read without tokens, but because Github has a very low `Rate limit` for anonymous access, 50 times per hour. This limit is too low. Therefore, even for public projects, the platform still needs `access tokens` to read the resources of the repository.
 
 
-- Generate an `access_token` from https://github.com/settings/personal-access-tokens/new
+- Generate an `access_token` from [personal-access-tokens](https://github.com/settings/personal-access-tokens/new)
 - Put the `Expiration` long enough, because the platform needs to sync github resources through this access token
 - Select the project, only allow to read the resources of the Reposit you specify
 - Grant Permissions, Contents read-only permission
