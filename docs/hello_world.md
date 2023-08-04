@@ -1,6 +1,7 @@
 # Hello World project
+> This is a demo project to show the classic `hello world` program.
 
-- Create a new Repository on Github. The file name is `/bin/index.wby`
+## Create a new Repository on Github. The file name is `/bin/index.wby`
 
 ```
 import ext.HttpContext as web;
@@ -12,6 +13,9 @@ web.body(text);
 ```
 
   ![hello github](/docs/hello_github.png)
+
+
+## import the github repository into the developing server.
     
   ![hello debug](/docs/hello_debug.png)
     

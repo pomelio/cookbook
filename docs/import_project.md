@@ -1,4 +1,5 @@
 # Github repository integration
+> The project is hosted by user's github repository. The project can be imported into the platform. The project is linked with github reposity by the github `webhook` and `permissions`.
 
 ## Github acess token generation
 

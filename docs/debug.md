@@ -1,9 +1,8 @@
 # Project debugging
-
-> Only the development environment can debug programs. The production environment can not.
+> Once the github repository is imported into the developing server. The project can be started to debug.
 
 - The debugger is a web program
-- After the debugger is turned on, all subsequent http requests will be intercepted by the debugger. Therefore, after debugging, please close the debugger, otherwise subsequent http requests will always be intercepted by the debugger.
+- After the debugger is started, all subsequent http requests will be intercepted by the debugger. Therefore, after debugging, please close the debugger, otherwise subsequent http requests will always be intercepted by the debugger.
 - The debugger can set breakpoints, step through debugging, inspect variable values, etc.
 
   ![debug button](/docs/github_debug_button.png)
