@@ -24,10 +24,11 @@ fn binary_plus(...values) {
 }
 
 ```
-> `plus1` and `binary_plus` are `function name`
-> `(value)`, the `value` is `argument`
-> `(value1, value2)`, the `value1` and `value2` are `argument`.
-> `(...values)`, `values` is a dynamic length variable which is an `array` value.
+
+- `plus1` and `binary_plus` are `function name`.
+- `(value)`, the `value` is `argument`.
+- `(value1, value2)`, the `value1` and `value2` are `argument`.
+- `(...values)`, `values` is a dynamic length variable which is an `array` value.
  
 ## if
 
