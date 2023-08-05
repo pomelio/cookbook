@@ -1,11 +1,16 @@
 # statement
 
 ## import
+> import `module_path` as `alias`;
+- `module_path`: It is `identifiers` separated by `.`
+- `alias`: is an `identifiers`
+
+examples:
 ```
 import abc.bcd as bc;
 ```
-
-- `abc.bcd` is the `module path`. `bc` is the `alias`. `import` statement ends with `;`
+- `abc.bcd` is the `module_path`. `bc` is the `alias`. 
+- `import` statement ends with `;`
 
 ## function
 > fn `function_name`(`argument1`, `argument2`)
