@@ -5,7 +5,7 @@
 import abc.bcd as bc;
 ```
 
-> `abc.bcd` is the `module path`. `bc` is the `alias`. `import` statement ends with `;`
+- `abc.bcd` is the `module path`. `bc` is the `alias`. `import` statement ends with `;`
 
 ## function
 
@@ -24,7 +24,6 @@ fn binary_plus(...values) {
 }
 
 ```
-
 - `plus1` and `binary_plus` are `function name`.
 - `(value)`, the `value` is `argument`.
 - `(value1, value2)`, the `value1` and `value2` are `argument`.
