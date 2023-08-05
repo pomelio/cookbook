@@ -5,11 +5,11 @@
 import abc.bcd as bc;
 ```
 
-> `abc.bcd` is the module path. `bc` is the alias. Statements end with `;`
+> `abc.bcd` is the `module path`. `bc` is the `alias`. `import` statement ends with `;`
 
 ## function
 
-``` wby
+```
 
 fn plus1(value) {
    return value + 1;
@@ -19,12 +19,19 @@ fn binary_plus(val1, val2) {
    return val1 + val2;
 }
 
+fn binary_plus(...values) {
+   //body of function
+}
 
 ```
-
+> `plus1` and `binary_plus` are `function name`
+> `(value)`, the `value` is `argument`
+> `(value1, value2)`, the `value1` and `value2` are `argument`.
+> `(...values)`, `values` is a dynamic length variable which is an `array` value.
+ 
 ## if
 
-``` wby
+```
 if a > 2 && b == 'a' {
    b = 1;
 } elsif a > 3 {
@@ -61,7 +68,7 @@ switch a {
 
 ## while
 
-``` wby
+```
 
 let value = 0;
 
