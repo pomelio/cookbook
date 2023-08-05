@@ -72,7 +72,7 @@
 	</style>
 	<script type="text/javascript">
 	function addLineClass (pre) {
-		var lines = pre.innerText.split("\n"); // can use innerHTML also
+		var lines = pre.innerText.trim().split("\n"); // can use innerHTML also
 		while(pre.childNodes.length > 0) {
 			pre.removeChild(pre.childNodes[0]);
 		}
