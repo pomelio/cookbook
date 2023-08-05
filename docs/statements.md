@@ -35,9 +35,18 @@ fn binary_plus(...values) {
 - `(value)`, the `value` is `argument`.
 - `(value1, value2)`, the `value1` and `value2` are `argument`.
 - `(...values)`, `values` is a dynamic length variable which is an `array` value.
+
+
+## `expression` of `true`
+> The the value of `expression` is `true` when the value is `true`, number not `0`, `''`, `undefined` or `null`.
+
  
 ## if
+> when the `expression` value is `true`, the block afterwards is executed.
+- if `expression` {
+- elsif `expression` {
 
+examples:
 ```
 if a > 2 && b == 'a' {
    b = 1;
