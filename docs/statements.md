@@ -22,6 +22,10 @@ fn binary_plus(...values) {
    //body of function
 }
 ```
+> fn `function_name`(`argument1`, `argument2`)
+- the `function name` is an `identifier`.
+- the `argument` is `identifier`.
+
 - `plus1` and `binary_plus` are `function name`.
 - `(value)`, the `value` is `argument`.
 - `(value1, value2)`, the `value1` and `value2` are `argument`.
