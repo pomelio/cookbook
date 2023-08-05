@@ -7,7 +7,7 @@ let b = "i love you!";
 let c = `i love {a}`;
 assert(c == 'i love Australia');
 ```
-> {a} is replaced with the variable `a`'s value.
+> {a} is replaced with the variable `a`'s value which is `Australia`
 
 
 ## number
