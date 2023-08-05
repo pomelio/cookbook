@@ -14,8 +14,8 @@ import abc.bcd as bc;
 
 
 ## block
-> A `block` starts with `{` and ends with `}`, and statemts are included between. `block` can include other `blocks`.
-> The variables inside the block will be clean when the block ends.
+> A `block` starts with `{` and ends with `}`, and statemts are included between. A `block` can include other `blocks`.
+> The variables inside a block will be clean when the block ends.
 
 
 examples:
@@ -45,11 +45,11 @@ examples:
 ```
 
 ## expression of success
-> The value of `expression` is `failed` when the boolean value is `false`, number are `0`, string are `''` or `undefined` or `null`, othewise the value is `success`.
+> The value of `expression` is `failed` when the boolean value is `false`, number value is `0`, string value is `''` or `undefined` or `null`, othewise the value is `success`.
 
  
 ## if
-> when the `expression` value is `success`, the block afterwards is executed.
+> When the `expression` value is `success`, the block afterwards is executed.
 - if `expression` {
 - elsif `expression` {
 
@@ -69,7 +69,12 @@ if a > 2 && b == 'a' {
 
 ## switch
 
-``` wby
+> When the `expression` value matches the case's value, the block afterwards of the case is executed.
+- switch `expression` {
+- '_', it is the `default` case. It is executed when the cases before are not matched.
+
+examples:
+```
 switch a {
 
    case 1: {
@@ -90,9 +95,11 @@ switch a {
 ```
 
 ## while
+> When the `expression` value is success, the block afterwards is executed in loop. The loop will be break only when the `expression` value is failed.
+
+- while `expression` {
 
 ```
-
 let value = 0;
 
 while value < 10 {
@@ -104,14 +111,18 @@ while value < 10 {
 }
 
 assert( value == 5);
-
 ```
 
 
 ## for
+> for (`initialization`; `condition`; `afterthought`) {
 
-``` wby
+- initialization: optinal. An expression (including assignment expressions) or variable declaration evaluated once before the loop begins. Typically used to initialize a counter variable. This expression may optionally declare new variables with var or let keywords.
+- An expression to be evaluated before each loop iteration. If this expression evaluates success, statement is executed. If the expression evaluates failed, execution exits the loop and goes to the first statement after the for construct.
+- afterthought: optional. An expression to be evaluated at the end of each loop iteration. This occurs before the next evaluation of condition. Generally used to update or increment the counter variable.
 
+examples:
+```
 for (let i = 0; i < 10; i++) {
   
    if i < 4 {
