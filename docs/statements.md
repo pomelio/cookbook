@@ -12,31 +12,6 @@ import abc.bcd as bc;
 - `abc.bcd` is the `module_path`. `bc` is the `alias`. 
 - `import` statement ends with `;`
 
-## function
-> fn `function_name`(`argument1`, `argument2`)
-- the `function name` is an `identifier`.
-- the `argument` is `identifier`.
-
-> examples:
-```
-fn plus1(value) {
-   return value + 1;
-}
-
-fn binary_plus(val1, val2) {
-   return val1 + val2;
-}
-
-fn binary_plus(...values) {
-   //body of function
-}
-```
-- `plus1` and `binary_plus` are `function name`.
-- `(value)`, the `value` is `argument`.
-- `(value1, value2)`, the `value1` and `value2` are `argument`.
-- `(...values)`, `values` is a dynamic length variable which is an `array` value.
-
-
 
 ## block
 > A `block` starts with `{` and ends with `}`, and statemts are included between. `block` can include other `blocks`.
@@ -219,6 +194,34 @@ if i > 10 {
 
 
 ```
+
+
+
+## function
+> fn `function_name`(`argument1`, `argument2`)
+- the `function name` is an `identifier`.
+- the `argument` is `identifier`.
+
+> examples:
+```
+fn plus1(value) {
+   return value + 1;
+}
+
+fn binary_plus(val1, val2) {
+   return val1 + val2;
+}
+
+fn binary_plus(...values) {
+   //body of function
+}
+```
+- `plus1` and `binary_plus` are `function name`.
+- `(value)`, the `value` is `argument`.
+- `(value1, value2)`, the `value1` and `value2` are `argument`.
+- `(...values)`, `values` is a dynamic length variable which is an `array` value.
+
+
 
 ## function call
 
