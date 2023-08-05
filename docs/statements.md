@@ -37,12 +37,12 @@ fn binary_plus(...values) {
 - `(...values)`, `values` is a dynamic length variable which is an `array` value.
 
 
-## `expression` of `true`
-> The the value of `expression` is `true` when the value is `true`, number not `0`, `''`, `undefined` or `null`.
+## expression of success
+> The the value of `expression` is `success` when the value is `true`, number not `0`, `''`, `undefined` or `null`.
 
  
 ## if
-> when the `expression` value is `true`, the block afterwards is executed.
+> when the `expression` value is `success`, the block afterwards is executed.
 - if `expression` {
 - elsif `expression` {
 
