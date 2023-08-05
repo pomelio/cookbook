@@ -37,8 +37,40 @@ fn binary_plus(...values) {
 - `(...values)`, `values` is a dynamic length variable which is an `array` value.
 
 
+
+## block
+> A `block` starts with `{` and ends with `}`, and statemts are included between. `block` can include other `blocks`.
+> The variables inside the block will be clean when the block ends.
+
+
+examples:
+```
+
+{
+
+   let a = 1;
+   a += 1;
+
+   let b = 'add';
+
+
+   {
+     let a = 'ddd';
+     assert( a == 'ddd');
+
+     let c = 1;
+
+   }
+   // c is removed
+
+   assert( a == 2);
+
+}
+
+```
+
 ## expression of success
-> The the value of `expression` is `success` when the value is `true`, number not `0`, `''`, `undefined` or `null`.
+> The value of `expression` is `failed` when the boolean value is `false`, number are `0`, string are `''` or `undefined` or `null`, othewise the value is `success`.
 
  
 ## if
@@ -147,32 +179,6 @@ assert(n == 'Jack' && a == 10);
 ```
 
 
-## block
-
-``` wby
-
-{
-
-   let a = 1;
-   a += 1;
-
-   let b = 'add';
-
-
-   {
-     let a = 'ddd';
-     assert( a == 'ddd');
-
-     let c = 1;
-
-   }
-   // c is removed
-
-   assert( a == 2);
-
-}
-
-```
 
 ## defer
 
