@@ -2,51 +2,60 @@
 
 ## string
 ```
-'abc'
-'i love you!'
-
+let a = 'Australia';
+let b = "i love you!";
+let c = `i love {a}`;
+assert(c == 'i love Australia');
 ```
 
 
 ## number
 ```
-123
-1.23
+let a = 123;
+let a = 1.23;
+let c = 0x2F804;
+let d = 0.255e3;
 ```
 
 
 ## boolean variables
 ```
-true
-false
+let a = true;
+let b = false;
 ```
 
 
 ## array
 ```
-['abc', 'cde']
-[1, 2, ...a]
-[1, 3, 5, 6]
-[1, 2, 3, 'abc', [1, 2, 3]]
+let a = ['abc', 'cde'];
+let b = [1, 2, ...a];
+assert(b == [1, 2, 'abc', 'cde']);
+let c  = [1, 3, 5, 6];
+let d  = [1, 2, 3, 'abc', [1, 2, 3], {a: 1, b: 'dfd'}];
 ```
 
 > `...a` is an array variable spread
 
 ## Map
 ```
-{ a: 1, b: 3, c: '123'}
-{ a: [1, 2, 3], b: 'add'}
-{ a: 1, b: { c: '122', d: 1}}
-{ a: '3', ...abc}
+let a = { a: 1, b: 3, c: '123'};
+let b = { a: [1, 2, 3], b: 'add'};
+let c = { a: 1, b: { c: '122', d: 1}};
+let abc = {a: 'a', abc: 'abc'};
+let d = { a: '3', ...abc};
+assert(d == {a: 'a', abc: 'abc'});
 ```
-
-
-
-> `...abc` is a map variable spread
+> `...abc` is a map variable spread. The `a` is 'a' instead of '3', because overwriting.
 
 ## null
+```
+let a = null;
+```
 
 ## undefined
+```
+let a = undefined;
+```
 
 ## UserData
 
