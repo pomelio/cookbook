@@ -17,8 +17,8 @@
           "md": "/docs/entry_point.md"
         },
         {
-          "title": "import project",
-          "md": "/docs/import_project.md"
+          "title": "github integration",
+          "md": "/docs/github_integration.md"
         },
         {
           "title": "debug project",
