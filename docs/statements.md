@@ -12,6 +12,7 @@ import abc.bcd as bc;
 - the `function name` is an `identifier`.
 - the `argument` is `identifier`.
 
+> examples:
 ```
 fn plus1(value) {
    return value + 1;
@@ -25,7 +26,6 @@ fn binary_plus(...values) {
    //body of function
 }
 ```
-> examples:
 - `plus1` and `binary_plus` are `function name`.
 - `(value)`, the `value` is `argument`.
 - `(value1, value2)`, the `value1` and `value2` are `argument`.
