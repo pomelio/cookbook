@@ -10,7 +10,6 @@ import abc.bcd as bc;
 ## function
 
 ```
-
 fn plus1(value) {
    return value + 1;
 }
@@ -22,7 +21,6 @@ fn binary_plus(val1, val2) {
 fn binary_plus(...values) {
    //body of function
 }
-
 ```
 - `plus1` and `binary_plus` are `function name`.
 - `(value)`, the `value` is `argument`.
