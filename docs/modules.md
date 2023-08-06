@@ -20,12 +20,15 @@ let module1 = {
 }
 ```
 
+Modules are loaded by the platform when a variable or function of module is referenced. This makes sure the
+other pages or modules can use the referenced module.
 
 
 There are 2 kinds of modules:
 - built-in module,  which is developed by the platform. The built-in module path starts with `std` or `ext`
 - user defined module, which is a file with extension `.wby` and saved under the `/bin/modules` folder.
 
+The module `std.global` doesn't need to be imported and the functions and variables in this module can be referenced directly.
 
 ## user defined module
 > The extension of a user defined module file is `.wby`. Functions and variables can be defined in the module, and all these functions and variables can be referenced by other modules and pages.

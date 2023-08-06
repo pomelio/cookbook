@@ -50,16 +50,28 @@ examples:
 
 examples:
 ```
-if a > 2 && b == 'a' {
-   b = 1;
-} elsif a > 3 {
-   b = 2;
-} elsif a > 4 {
-   b = 3;
-} else {
-   b = 4;
+let a = 3;
+
+if a == 3 {
+    assert(a == 3);
 }
 
+if a == 3 {
+    assert(a == 3);
+} else {
+    assert(false);
+}
+
+
+if a == 3 {
+    assert(a == 3);
+} elsif a == 4 {
+   assert(false);
+} elsif a == 45 {
+    assert(false);
+} else {
+    assert(false);
+}
 ```
 
 ## switch
@@ -95,17 +107,22 @@ switch a {
 - while `expression` {
 
 ```
-let value = 0;
-
-while value < 10 {
-   value++;
-   if value > 4 {
-     break;
-   }
-
+let b = 0;
+while b < 100 {
+    b++;
 }
 
-assert( value == 5);
+assert(b == 100);
+
+let c = 0; 
+while c < 100 {
+    c++;
+    if c > 10 {
+        break;
+    }
+}
+
+assert(c == 11);
 ```
 
 
@@ -128,6 +145,14 @@ for (let i = 0; i < 10; i++) {
 
 ```
 
+```
+let b = 0;
+for (let i = 0; i < 10; i+=2) {
+    b = i++;
+}
+assert(b == 9);
+```
+
 ## assignment
 
 > Assignment is for assign a value to a variable.
@@ -137,31 +162,44 @@ The value can come from:
 - from an existing variable
 - from an expression
 
-``` wby
-let i = 1;
-i = i + 1;
-i += 1;
-i++;
-i -= 1;
-i *= 2;
-i /= 2;
+```
+import std.string as str;
 
-let [a, b] = [1, 2, 3];
-assert(a == 1 && b == 2)
 
-let [_, ...b] = [1, 2, 3];
-assert( b == [2, 3]);
+let abc = 'abc';
 
-let name = 'Jack';
-let age = 10;
-let gender = 'male';
+let abcd = str.substring(abc, 1) + '/' + str.substring(abc, 2) ;
 
-let s = {age, gender};
 
-let {name: n, age: a} = {name, ...s};
+let a = 1;
+let b = 2;
+let c = 'abc';
 
-assert(n == 'Jack' && a == 10);
 
+
+let [i, j, k] = [1, 3, 5];
+
+info('i:' + i + ',j:' + j + ',k:' + k);
+
+
+let aa = [1, 3, 5];
+
+let ii = undefined;
+let jj = undefined;
+let kk = undefined;
+
+[ii, jj, kk] = [1, 3, 5];
+
+info('ii:' + ii + ',jj:' + jj + ',kk:' + kk);
+
+{
+    assert(ii == 1);
+    let ii = 100;
+    assert(ii == 100);
+
+    let ii = 'abc';
+    assert(ii == 'abc');
+}
 ```
 
 
@@ -285,21 +323,40 @@ assert(result == ["exuberant", "destruction", "present"]);
 
 ```
 
+```
+import std.array as arr;
+
+
+let a = [{title: 'a', md:'1'}, {title:'b', md:'2'}];
+for (let i = 0; i < len(a); i++) {
+    let aaa =  arr.map(a, |ii| => {
+        return {
+            ...ii,
+            index: i
+        };
+    });
+    assert(aaa[0]['index'] == i);
+    assert(aaa[1]['index'] == i);
+}
+```
 
 ## try catch finally throw
 > The try...catch statement is comprised of a try block and either a catch block, a finally block, or both. The code in the try block is executed first, and if it throws an exception, the code in the catch block will be executed. The code in the finally block will always be executed before control flow exits the entire construct.
 
 ```
+
 try {
-
-   throw({code: 2048, message: 'example error'});
-
-} catch(err) {
-   if (err.code == 2048) {
-     assert(err.message == 'example error');
-   }
-
+    let a = 1;
+    {
+        let b = a;
+        throw({message:'abc', code: 1025});
+    }
+    
+} catch (e) {
+    if (e['code'] == 1025) {
+        console('this is my error:' + e['message']);
+    }
 } finally {
-
+    console('this is finally.');
 }
 ```
