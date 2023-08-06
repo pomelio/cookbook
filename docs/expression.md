@@ -42,3 +42,30 @@ a1
 
 ## comments
 > // this is a comment
+
+
+
+## expression value of success
+> The value of `expression` is `failed` when the boolean value is `false`, number value is `0`, string value is `''` or `undefined` or `null`, othewise the value is `success`.
+
+failed expression value examples:
+```
+false
+0
+undefined
+null
+''
+""
+``
+```
+
+## equals operator
+> The equals `==` operator can be used in different types of values
+
+```
+1 == 1
+'abc' == 'abc'
+true == true
+[1,2] == [1,2]
+{a: 'abc', b: 1, c:[1, 2]} == {a: 'abc', b: 1, c:[1, 2]}
+```

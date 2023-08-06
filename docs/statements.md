@@ -20,7 +20,6 @@ import abc.bcd as bc;
 
 examples:
 ```
-
 {
 
    let a = 1;
@@ -41,15 +40,11 @@ examples:
    assert( a == 2);
 
 }
-
 ```
-
-## expression of success
-> The value of `expression` is `failed` when the boolean value is `false`, number value is `0`, string value is `''` or `undefined` or `null`, othewise the value is `success`.
 
  
 ## if
-> When the `expression` value is `success`, the block afterwards is executed.
+> When the `expression` value is `success`, the block statement afterwards is executed.
 - if `expression` {
 - elsif `expression` {
 
@@ -69,9 +64,9 @@ if a > 2 && b == 'a' {
 
 ## switch
 
-> When the `expression` value matches the case's value, the block afterwards of the case is executed.
+> When the `expression` value `equals` the case's value, the block statement afterwards of the case is executed.
 - switch `expression` {
-- '_', it is the `default` case. It is executed when the cases before are not matched.
+- '_', it is the `default` case. It is executed when the cases before are not equal.
 
 examples:
 ```
@@ -95,7 +90,7 @@ switch a {
 ```
 
 ## while
-> When the `expression` value is success, the block afterwards is executed in loop. The loop will be break only when the `expression` value is failed.
+> When the `expression` value is success, the block statement afterwards is executed in loop. The loop will be break only when the `expression` value is failed.
 
 - while `expression` {
 
@@ -135,7 +130,12 @@ for (let i = 0; i < 10; i++) {
 
 ## assignment
 
-> Variables must be declared with the `let` keyword before they can be used
+> Assignment is for assign a value to a variable.
+
+The value can come from:
+- from a literal value such as `'abc'`, `123`, `tre`, `[1, 2, 3]`
+- from an existing variable
+- from an expression
 
 ``` wby
 let i = 1;
@@ -167,6 +167,7 @@ assert(n == 'Jack' && a == 10);
 
 
 ## defer
+> A defer statement defers the execution of a function until the surrounding block statement ends. The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding block ends. 
 
 ``` wby
 
@@ -235,6 +236,7 @@ fn binary_plus(...values) {
 
 
 ## function call
+> calling a function by name and argument values.
 
 ``` wby
 import std.array as arr;
@@ -250,8 +252,9 @@ assert(b == [1, 2]);
 ```
 
 ## Closure
+> A closure is a anonymous function inline declaration that references variables from parent blockes. The function may access and assign to the referenced variables; in this sense the function is "bound" to the variables.
 
-``` wby
+```
 |arg1, arg2| => {
    statement1;
    statement2;
@@ -260,22 +263,17 @@ assert(b == [1, 2]);
 
 ```
 
-``` wby
-
+```
 import std.array as arr;
 
-fn listOrders(user, callback) {
-   let orders = callback(user);
-   return arr.filter(orders, |a| => {
-     return a.amount < 10;
-   });
-
-}
-
+let max_price = 100;
+let matched_orders = arr.filter(orders, |a| => {
+   return a.amount < max_prie;
+});
 ```
 
 
-``` wby
+```
 import std.array as arr;
 
 
@@ -288,11 +286,10 @@ assert(result == ["exuberant", "destruction", "present"]);
 ```
 
 
-
 ## try catch finally throw
+> The try...catch statement is comprised of a try block and either a catch block, a finally block, or both. The code in the try block is executed first, and if it throws an exception, the code in the catch block will be executed. The code in the finally block will always be executed before control flow exits the entire construct.
 
-``` wby
-
+```
 try {
 
    throw({code: 2048, message: 'example error'});
@@ -305,6 +302,4 @@ try {
 } finally {
 
 }
-
-
 ```

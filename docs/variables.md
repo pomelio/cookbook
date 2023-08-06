@@ -1,4 +1,8 @@
 # variables
+> `variables` must be declared firstly, then the variable can be referenced. 
+
+- The variable can be declared by an `assignment` statement with the `let` keyword.
+- The variable with same name can be declared multi times, Later declarations override earlier declarations.
 
 ## string
 ```
