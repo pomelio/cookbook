@@ -1,7 +1,7 @@
 
 # string
 
-> Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the index_of() method, or extracting substrings with the substring() method.
+Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the index_of() method, or extracting substrings with the substring() method.
 
 > import std.string as str;
 
