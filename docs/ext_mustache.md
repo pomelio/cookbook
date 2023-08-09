@@ -2,7 +2,7 @@
 > import ext.mustache as m;
 
 ## render(path)
-> render from a mustache template with available variables
+> render from a mustache template with all available variables. All variables defined before this statement and in the scope or parents scopes are available for the mustache template.
 
 - params:
   - path: the template path.

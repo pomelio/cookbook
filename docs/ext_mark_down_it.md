@@ -2,7 +2,7 @@
 > import ext.ShowDown as sd;
 
 ## render(path)
-> translate the markedown document to `html`. It will extract the first heading as the `title` and first paragraph as the `excerpt`
+> translate the markedown document to `html`. It will extract the first heading as the `title` and first paragraph as the `excerpt`. These can be set in the page `title` and `meta` tag of `description` to improve the `SEO` ranking.
 
 - params:
   - path: the markdown document path.
