@@ -98,8 +98,8 @@
           "md": "/docs/ext_mustache.md"
         },
         {
-          "title": "ShowDown",
-          "md": "/docs/ext_show_down.md"
+          "title": "MarkDownIt",
+          "md": "/docs/ext_mark_down_it.md"
         },
         {
           "title": "Docs",

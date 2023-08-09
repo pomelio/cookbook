@@ -119,13 +119,15 @@ assert(fid['id'] == '090bbe23e3cfa94876e2e0ea3ab8202f');
     - conn: mysql connection userdata
 
 ## end(conn)
-  > end a connection.
+  > There are two ways to end a connection. Terminating a connection gracefully is done by calling the `end` method:
+  > This will make sure all previously enqueued queries are still before sending a COM_QUIT packet to the MySQL server. If a fatal error occurs before the COM_QUIT packet can be sent, an err argument will be provided to the callback, but the connection will be terminated regardless of that.
 
+  
   - params:
     - conn: mysql connection userdata
 
 ## destroy(conn)
-  > destory a transaction.
+  > An alternative way to end the connection is to call the `destroy`` method. This will cause an immediate termination of the underlying socket. Additionally `destroy` guarantees that no more events or callbacks will be triggered for the connection
 
   - params:
     - conn: mysql connection userdata

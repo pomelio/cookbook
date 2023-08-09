@@ -1,14 +1,24 @@
-# mustache
-> import ext.mustache as m;
+# MarkDownIt
+> import ext.ShowDown as sd;
 
 ## render(path)
-> render from a mustache template with available variables
+> translate the markedown document to `html`. It will extract the first heading as the `title` and first paragraph as the `excerpt`
 
 - params:
-  - path: the template path.
+  - path: the markdown document path.
 
 - return value:
-  > string value which is from the template and variables.
+  > return render result userdata
+
+
+## get_html(result)
+> return the `html` from the render result userdata 
+
+## get_title(result)
+> return the `title` from the render result userdata 
+
+## get_excerpt(result)
+> return the `excerpt` from the render result userdata 
 
 
 ```
