@@ -1,5 +1,5 @@
 # Hello World project
-> This is a demo project to show the classic `hello world` program.
+> This is a demo project to show the classic `hello world` app.
 
 The open source hello repository
 
