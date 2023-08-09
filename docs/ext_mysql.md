@@ -43,6 +43,63 @@
   - return value:
     > return statement executed result
 
+
+insert examples:
+```
+import ext.mysql as mysql;
+
+
+let conn = mysql.new_connection({
+    host: 'localhost',
+    user: 'root',
+    password : 'sds12#22',
+    database : 'wby'
+});
+
+defer mysql.end(conn);
+
+let sql = "delete from project where id=?";
+let result = mysql.query(conn, sql, ['090bbe23e3cfa94876e2e0ea3ab8202f']);
+assert(1 == result['affectedRows']);
+
+sql = "insert into project (id, accountID, createTime, name) values ('090bbe23e3cfa94876e2e0ea3ab8202f', '090bbe23e3cfa94876e2e0ea3ab8202f', 1686303145750, 'test')";
+
+result = mysql.query(conn, sql);
+assert(1 == result['affectedRows']);
+```
+
+select examples:
+```
+import ext.mysql as mysql;
+
+info('mysql.select -> start');
+
+let conn = mysql.new_connection({
+    host: 'localhost',
+    user: 'root',
+    password : 'sds12#22',
+    database : 'wby'
+});
+
+defer mysql.end(conn);
+
+let sql = "delete from project where id=?";
+let result = mysql.query(conn, sql, ['090bbe23e3cfa94876e2e0ea3ab8202f']);
+
+sql = "insert into project (id, accountID, createTime, name) values ('090bbe23e3cfa94876e2e0ea3ab8202f', '090bbe23e3cfa94876e2e0ea3ab8202f', 1686303145750, 'test')";
+
+result = mysql.query(conn, sql);
+assert(1 == result['affectedRows']);
+
+sql = "select * from project where id=?";
+
+let rows = mysql.query(conn, sql, ['090bbe23e3cfa94876e2e0ea3ab8202f']);
+
+let fid = rows[0];
+assert(fid['id'] == '090bbe23e3cfa94876e2e0ea3ab8202f');
+
+```
+
 ## begin_transaction(conn)
   > begin a transaction.
 
