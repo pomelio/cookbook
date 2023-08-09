@@ -41,6 +41,18 @@ if match_result {
 
 ```
 
+```
+import ext.PathRegexp as pathRegexp;
+import std.array as arr;
+
+let result = pathRegexp.match('/abc(.)*', '/abc/1/a/b/c.wby?a=b');
+if result {
+  let ii = pathRegexp.get_param(result, 0);
+  let pp = arr.join(ii, '');
+  assert(pp == '/1/a/b/c.wby?a=b');
+}
+```
+
 ## get\_params(match_result)
 > get the key value from the match result value
 
