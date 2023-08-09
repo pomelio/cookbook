@@ -1,5 +1,5 @@
 {
-  "title": "🦘chatsarah.com",
+  "title": "chatsarah.com",
   "sections":[
     {
       "title": "Cook book",
@@ -35,7 +35,7 @@
       "topics":[
         {
           "title": "introduction",
-          "md": "/docs/cookbook_start.md"
+          "md": "/docs/cookbook.md"
         }
       ]
     },
