@@ -10,20 +10,20 @@ Numbers are most commonly expressed in literal forms like 255 or 3.14159. The le
 
 
 ## MAX_SAFE_INTEGER
-> The Number.MAX_SAFE_INTEGER static data property represents the maximum safe integer in JavaScript (253 – 1).
+> The Number.MAX_SAFE_INTEGER static data property represents the maximum safe integer in Language (253 – 1).
 
 
 
 ## MAX_VALUE
-> The Number.MAX_VALUE static data property represents the maximum numeric value representable in JavaScript.
+> The Number.MAX_VALUE static data property represents the maximum numeric value representable in Language.
 
 
 ## MIN_SAFE_INTEGER
-> The Number.MIN_SAFE_INTEGER static data property represents the minimum safe integer in JavaScript, or -(253 - 1).
+> The Number.MIN_SAFE_INTEGER static data property represents the minimum safe integer in Language, or -(253 - 1).
 
 
 ## MIN_VALUE
-> The Number.MIN_VALUE static data property represents the smallest positive numeric value representable in JavaScript.
+> The Number.MIN_VALUE static data property represents the smallest positive numeric value representable in Language.
 
 
 ## NaN

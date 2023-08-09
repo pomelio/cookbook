@@ -16,15 +16,15 @@
         - password: The password of that MySQL user.
         - database: Name of the database to use for this connection (Optional).
         - charset: The charset for the connection. This is called "collation" in the SQL-level of MySQL (like       utf8_general_ci). If a SQL-level charset is specified (like utf8mb4) then the default collation for that charset is used. (Default: 'UTF8_GENERAL_CI')
-        - timezone: The timezone configured on the MySQL server. This is used to type cast server date/time values to JavaScript Date object and vice versa. This can be 'local', 'Z', or an offset in the form +HH:MM or -HH:MM. (Default: 'local')
+        - timezone: The timezone configured on the MySQL server. This is used to type cast server date/time values to Language Date object and vice versa. This can be 'local', 'Z', or an offset in the form +HH:MM or -HH:MM. (Default: 'local')
         - connectTimeout: The milliseconds before a timeout occurs during the initial connection to the MySQL server. (Default: 10000)
         - stringifyObjects: Stringify objects instead of converting to values. (Default: false)
         insecureAuth: Allow connecting to MySQL instances that ask for the old (insecure) authentication method. (Default: false)
-        - typeCast: Determines if column values should be converted to native JavaScript types. (Default: true)
+        - typeCast: Determines if column values should be converted to native Language types. (Default: true)
         queryFormat: A custom query format function. See Custom format.
         supportBigNumbers: When dealing with big numbers (BIGINT and DECIMAL columns) in the database, you should enable this option (Default: false).
-        - bigNumberStrings: Enabling both supportBigNumbers and bigNumberStrings forces big numbers (BIGINT and DECIMAL columns) to be always returned as JavaScript String objects (Default: false). Enabling supportBigNumbers but leaving bigNumberStrings disabled will return big numbers as String objects only when they cannot be accurately represented with [JavaScript Number objects] (https://tc39.es/ecma262/#sec-ecmascript-language-types-number-type) (which happens when they exceed the [-2^53, +2^53] range), otherwise they will be returned as Number objects. This option is ignored if supportBigNumbers is disabled.
-        dateStrings: Force date types (TIMESTAMP, DATETIME, DATE) to be returned as strings rather than inflated into JavaScript Date objects. Can be true/false or an array of type names to keep as strings. (Default: false)
+        - bigNumberStrings: Enabling both supportBigNumbers and bigNumberStrings forces big numbers (BIGINT and DECIMAL columns) to be always returned as Language String objects (Default: false). Enabling supportBigNumbers but leaving bigNumberStrings disabled will return big numbers as String objects only when they cannot be accurately represented with [Language Number objects] (https://tc39.es/ecma262/#sec-ecmascript-language-types-number-type) (which happens when they exceed the [-2^53, +2^53] range), otherwise they will be returned as Number objects. This option is ignored if supportBigNumbers is disabled.
+        dateStrings: Force date types (TIMESTAMP, DATETIME, DATE) to be returned as strings rather than inflated into Language Date objects. Can be true/false or an array of type names to keep as strings. (Default: false)
         - multipleStatements: Allow multiple mysql statements per query. Be careful with this, it could increase the scope of SQL injection attacks. (Default: false)
         flags: List of connection flags to use other than the default ones. It is also possible to blacklist default ones. For more information, check Connection Flags.
         
