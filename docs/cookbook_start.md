@@ -17,10 +17,10 @@
 
 ## advantages:
 - simple, small, beauty.
-- development language source code lines number less than 100.
-- based on bootstrap and traditional js and css, without other complex development knowleges.
-- markdown documents and source codes hosted and managed by github.
+- program source code lines number less than 100.
+- based on `bootstrap` and traditional `js` and `css`, without other complex development knowleges.
+- `markdown` documents and source codes hosted and managed by `github`.
 - speed fast.
-- project website hosted with it's own domain name and ssl certificate installation automatically.
+- project website hosted with it's own `domain name` and `ssl certificate` installation automatically.
 - easily to add more functionalities and features to fit your own requirements.
 
