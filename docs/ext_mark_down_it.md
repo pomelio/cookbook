@@ -75,5 +75,6 @@ let excerpt = md.get_excerpt(md_result);
 let html = mch.render('/docs/layout.mustache');
 
 web.body(html);
-
 ```
+
+- line 15: download the `path` variable specified resources.
