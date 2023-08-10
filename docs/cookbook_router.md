@@ -25,7 +25,7 @@ if str.ends_with(ppath, '.md') {
 } elsif str.starts_with(ppath, '/docs') {
   dd.download(ppath);
 } else {
-  dispatch(ppath, {});
+  web.set_status(404);
 }
 ```
 
@@ -44,5 +44,5 @@ The above 3 lines import 3 built-in modules. All the functions included in the 3
 
 - line 14 - 15: when the url path value `starsWith` `/docs`, The request is to downlod the documents such as the `js` or `css` or other resources, we dispatch the request to the `DownloadDocs` module's `download` function to handle the downloading request. 
 
-- line 16 - 17, otherwise we dispatch the request to the other `page` which match the url path.
+- line 16 - 17, otherwise we response with status code 404 which is not found.
 
