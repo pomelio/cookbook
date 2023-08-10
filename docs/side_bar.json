@@ -38,8 +38,12 @@
           "md": "/docs/cookbook.md"
         },
         {
-          "title": "introduction",
+          "title": "project structure",
           "md": "/docs/cookbook_structure.md"
+        },
+        {
+          "title": "page router",
+          "md": "/docs/cookbook_router.md"
         }
       ]
     },
