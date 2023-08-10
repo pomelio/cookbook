@@ -127,8 +127,8 @@ A side bar includes multi sections. Each section populate template with variable
 ```
 - line 1: {{{i}}} is from the for loop of the below screenshot
 - line 2: {{{title}}} is from section title
-- line 4 - 8: loop to render a `topic`
-- line 6: this is a topic's `active` property, `title` property and `md` property
+- line 4 - 8: loop to render a `topic` from variable `topics`.
+- line 6: this is a topic's `active` property, `title` property and `md` property. the `...t` is a topic variable spead which include property `title` and `md`.
 
 ![section_topics](/docs/section_topics.png)
 
