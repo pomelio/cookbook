@@ -14,5 +14,5 @@ if str.ends_with(ppath, '.md') {
 } elsif str.starts_with(ppath, '/docs') {
   dd.download(ppath);
 } else {
-  dispatch(ppath, {});
+  web.set_status(404);
 }

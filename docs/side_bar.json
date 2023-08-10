@@ -36,6 +36,10 @@
         {
           "title": "introduction",
           "md": "/docs/cookbook.md"
+        },
+        {
+          "title": "introduction",
+          "md": "/docs/cookbook_structure.md"
         }
       ]
     },
