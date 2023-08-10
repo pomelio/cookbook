@@ -44,6 +44,10 @@
         {
           "title": "page router",
           "md": "/docs/cookbook_router.md"
+        },
+        {
+          "title": "response static files",
+          "md": "/docs/ext_download_docs.md"
         }
       ]
     },

@@ -6,7 +6,7 @@
 ## router page
 > the path of router page is `/bin/index.wby`
 
-github [link](https://github.com/pomelio/cookbook/blob/main/bin/index.wby) 
+github [router page's source code](https://github.com/pomelio/cookbook/blob/main/bin/index.wby) 
 
 ```
 import ext.HttpContext as web;
@@ -30,8 +30,8 @@ if str.ends_with(ppath, '.md') {
 ```
 
 explanation:
-- line 1: import the `HttpContext` module
-- line 2: import the `string` module
+- line 1: import the [HttpContext](/docs/ext_http_context.md) module
+- line 2: import the [string](/docs/std_string.md) module
 - line 3: import the `DownloadDocs` module
 
 The above 3 lines import 3 built-in modules. All the functions included in the 3 above modules can be referenced in the `router page`.
