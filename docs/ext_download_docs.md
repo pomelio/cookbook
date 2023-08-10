@@ -1,5 +1,5 @@
-# ShowDown
-> import ext.ShowDown as sd;
+# DownloadDocs
+> This module is for helping to downloading the static resources.
 
 ## download(path)
 > response with the static resources.

@@ -46,6 +46,10 @@
           "md": "/docs/cookbook_router.md"
         },
         {
+          "title": "markdown page",
+          "md": "/docs/cookbook_markdown.md"
+        },
+        {
           "title": "response static files",
           "md": "/docs/ext_download_docs.md"
         }
@@ -133,6 +137,10 @@
         {
           "title": "HttpContext",
           "md": "/docs/ext_http_context.md"
+        },
+        {
+          "title": "DownloadDocs",
+          "md": "/docs/ext_download_docs.md"
         }
       ]
     }
