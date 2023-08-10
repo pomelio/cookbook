@@ -1,11 +1,11 @@
 # Markdown Page
 > This page is for generate a html page from a side bar on the left side and a markdown document on the right side.
 
-The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json)
+The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as `/docs/side_bar.json` [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json)
 
 
 ## page template
-> All the markdown page is from a `mustache` template. The file name is [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
+> All the markdown page is from a `mustache` template. The file name is `/docs/layout.mustache` [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
 
 The page includes 2 parts, the left part is a `side bar` and the right part is a `markdown document` output.
 [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar_content.png)
@@ -16,7 +16,7 @@ The page `title` is from the markdown document's first `heading` element. The fi
 
 
 ## side bar
-> The side bar is at left side of a page. It is based on a [bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/). The content of the side bar is from a json file named [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json).
+> The side bar is at left side of a page. It is based on a [bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/). The content of the side bar is from a json file name `/docs/side_bar.json` [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json).
 
 ### JSON data
 > The `side bar` is a json file. It include a `title` and `sections`. Each `section` has a `title` and `topics`. Each `topic` includes a `title` and a `path` to a markdown document.
@@ -110,7 +110,7 @@ please see the following screenshot
 
 #### each section
 
-the section template [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/sidebar_section.mustache)
+the section template `/docs/sidebar_section.mustache` [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/sidebar_section.mustache)
 A side bar includes multi sections. Each section populate template with variables.
 
 ```
