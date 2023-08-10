@@ -2,7 +2,7 @@
   "title": "chatsarah.com",
   "sections":[
     {
-      "title": "Cook book",
+      "title": "➡️ Cook book",
       "topics":[
         {
           "title": "What the platfrom is",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "title": "open source Cookbook",
+      "title": "➡️ open source Cookbook",
       "topics":[
         {
           "title": "introduction",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "title": "language grammer",
+      "title": "➡️ language grammer",
       "topics":[
         {
           "title": "variables",
@@ -78,7 +78,7 @@
     },
     
     {
-      "title": "std modules",
+      "title": "➡️ std modules",
       "topics":[
         {
           "title": "global",
@@ -108,7 +108,7 @@
     },
     
     {
-      "title": "extensions",
+      "title": "➡️ extensions",
       "topics":[
         {
           "title": "PathRegexp",
