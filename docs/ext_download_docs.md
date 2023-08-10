@@ -26,3 +26,6 @@ if str.ends_with(ppath, '.md') {
   web.set_status(404);
 }
 ```
+
+
+- line 15: download the `path` variable specified resources.
