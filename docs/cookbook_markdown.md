@@ -110,7 +110,7 @@ please see the following screenshot
 
 #### each section
 
-the section template![github](/docs/github-30.png)[github](https://github.com/pomelio/cookbook/blob/main/docs/sidebar_section.mustache)
+the section template [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/sidebar_section.mustache)
 A side bar includes multi sections. Each section populate template with variables.
 
 ```
