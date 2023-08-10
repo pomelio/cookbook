@@ -1,22 +1,22 @@
 # Markdown Page
 > This page is for generate a html page from a side bar on the left side and a markdown document on the right side.
 
-The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as [/docs/side_bar.json](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json)
+The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json)
 
 
 ## page template
-> All the markdown page is from a `mustache` template. The file name is [/docs/layout.mustache](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
+> All the markdown page is from a `mustache` template. The file name is [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
 
 The page includes 2 parts, the left part is a `side bar` and the right part is a `markdown document` output.
-[side bar and markdown content](https://github.com/pomelio/cookbook/blob/main/docs/side_bar_content.png)
+[![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar_content.png)
 
 
 The page `title` is from the markdown document's first `heading` element. The first paragraph element is the page's `excerpt` which is the content of `description meta` element content. These are used for improving SEO ranking.
-[title and excerpt](https://github.com/pomelio/cookbook/blob/main/docs/title_excerpt.png)
+[![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/title_excerpt.png)
 
 
 ## side bar
-> The side bar is at left side of a page. It is based on a [bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/). The content of the side bar is from a json file named [/docs/side_bar.json](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json).
+> The side bar is at left side of a page. It is based on a [bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/). The content of the side bar is from a json file named [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json).
 
 ### JSON data
 > The `side bar` is a json file. It include a `title` and `sections`. Each `section` has a `title` and `topics`. Each `topic` includes a `title` and a `path` to a markdown document.
@@ -88,7 +88,7 @@ The page `title` is from the markdown document's first `heading` element. The fi
 
 
 ### bootstrap NavBar
-> The Navbar template is located at `/docs/sidebar.mustache`. github [link](https://github.com/pomelio/cookbook/blob/main/docs/sidebar.mustache)
+> The Navbar template is located at `/docs/sidebar.mustache`. [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/sidebar.mustache)
 
 ```
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -134,7 +134,7 @@ A side bar includes multi sections. Each section populate template with variable
 
 
 
-## markdown page [link](https://github.com/pomelio/cookbook/blob/main/bin/markdown.wby)
+## markdown page [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/bin/markdown.wby)
 ```
 import ext.HttpContext as web;
 import ext.MarkDownIt as md;
