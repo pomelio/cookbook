@@ -1,14 +1,14 @@
 # Markdown Page
 > This page is for generate a html page from a side bar on the left side and a markdown document on the right side.
 
-The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as `/docs/side_bar.json`.
+The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as [/docs/side_bar.json](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json)
 
 
 ## page template
 > All the markdown page is from a `mustache` template. The file name is [/docs/layout.mustache](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
 
 The page includes 2 parts, the left part is a `side bar` and the right part is a `markdown document` output.
-[side bar and markdown content](/docs/side_bar_content.png)
+[side bar and markdown content](https://github.com/pomelio/cookbook/blob/main/docs/side_bar_content.png)
 
 
 The page `title` is from the markdown document's first `heading` element. The first paragraph element is the page's `excerpt` which is the content of `description meta` element content. These are used for improving SEO ranking.
@@ -106,7 +106,7 @@ The page `title` is from the markdown document's first `heading` element. The fi
 - lin 8: this is the `sections_html`
 
 please see the following screenshot
-![title sections](https://github.com/pomelio/cookbook/blob/main/docs/title_sections.png)
+![title sections](/docs/title_sections.png)
 
 #### each section
 
