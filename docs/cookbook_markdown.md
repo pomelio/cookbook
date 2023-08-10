@@ -130,7 +130,7 @@ A side bar includes multi sections. Each section populate template with variable
 - line 4 - 8: loop to render a `topic`
 - line 6: this is a topic's `active` property, `title` property and `md` property
 
-~[section_topics](/docs/section_topics.png)
+![section_topics](/docs/section_topics.png)
 
 
 
