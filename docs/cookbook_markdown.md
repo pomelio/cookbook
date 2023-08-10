@@ -12,11 +12,11 @@ The page includes 2 parts, the left part is a `side bar` and the right part is a
 
 
 The page `title` is from the markdown document's first `heading` element. The first paragraph element is the page's `excerpt` which is the content of `description meta` element content. These are used for improving SEO ranking.
-[title and excerpt](/docs/title_excerpt.png)
+[title and excerpt](https://github.com/pomelio/cookbook/blob/main/docs/title_excerpt.png)
 
 
 ## side bar
-> The side bar is at left side of a page. It is based on a [bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/). The content of the side bar is from a json file named [/docs/side_bar.json](/docs/side_bar.json).
+> The side bar is at left side of a page. It is based on a [bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/). The content of the side bar is from a json file named [/docs/side_bar.json](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json).
 
 ### JSON data
 > The `side bar` is a json file. It include a `title` and `sections`. Each `section` has a `title` and `topics`. Each `topic` includes a `title` and a `path` to a markdown document.
@@ -106,7 +106,7 @@ The page `title` is from the markdown document's first `heading` element. The fi
 - lin 8: this is the `sections_html`
 
 please see the following screenshot
-![title sections](/docs/title_sections.png)
+![title sections](https://github.com/pomelio/cookbook/blob/main/docs/title_sections.png)
 
 #### each section
 
