@@ -16,10 +16,3 @@ web.body(text);
 
 ```
 
-  ![hello github](/docs/hello_github.png)
-
-
-## import the github repository into the developing server.
-    
-  ![hello debug](/docs/hello_debug.png)
-    
