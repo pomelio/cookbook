@@ -9,7 +9,7 @@ The open source hello repository
 ## Create a new Repository on Github. The file name is `/bin/index.wby`
 
 ```
-import ext.HttpContext as web;
+import ext.web as web;
 
 let text = 'hello world!';
 

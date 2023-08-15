@@ -9,7 +9,7 @@
 github [router page's source code](https://github.com/pomelio/cookbook/blob/main/bin/index.wby) 
 
 ```
-import ext.HttpContext as web;
+import ext.web as web;
 import std.string as str;
 import ext.DownloadDocs as dd;
 
@@ -30,7 +30,7 @@ if str.ends_with(ppath, '.md') {
 ```
 
 explanation:
-- line 1: import the [HttpContext](/docs/ext_http_context.md) module
+- line 1: import the [web](/docs/ext_http_context.md) module
 - line 2: import the [string](/docs/std_string.md) module
 - line 3: import the `DownloadDocs` module
 

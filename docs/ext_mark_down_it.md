@@ -25,7 +25,7 @@
 
 
 ```
-import ext.HttpContext as web;
+import ext.web as web;
 import ext.MarkDownIt as md;
 import std.string as str;
 import ext.mustache as mch;

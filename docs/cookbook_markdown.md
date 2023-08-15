@@ -134,7 +134,7 @@ A side bar includes multi sections. Each section populate template with variable
 
 ## markdown page [![github](/docs/github-30.png)](https://github.com/pomelio/cookbook/blob/main/bin/markdown.wby)
 ```
-import ext.HttpContext as web;
+import ext.web as web;
 import ext.MarkDownIt as md;
 import std.string as str;
 import ext.mustache as mch;
@@ -185,7 +185,7 @@ let html = mch.render('/docs/layout.mustache');
 
 web.body(html);
 ```
-- line 1: import the HttpContext module which is for helping to handle http request response
+- line 1: import the web module which is for helping to handle http request response
 - line 2: import the MarkdownIt module which is for process markdown document.
 - line 3: import the string module which is for helping to process string.
 - line 4: import the mustache module which is for helping to process template.

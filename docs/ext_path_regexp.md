@@ -29,7 +29,7 @@
 > The path regex examples:
 ```
 import ext.PathRegexp as preg;
-import ext.HttpContext as web;
+import ext.web as web;
 
 //   path: /abc/123
 let ppath = web.path();
@@ -64,7 +64,7 @@ if result {
 > The path regex examples:
 ```
 import ext.PathRegexp as preg;
-import ext.HttpContext as web;
+import ext.web as web;
 
 //   path: /abc/123
 let ppath = web.path();

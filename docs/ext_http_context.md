@@ -1,10 +1,10 @@
 
-# HttpContext
+# web
 > A Context encapsulates http request and response objects into a single object which provides many helpful methods for writing web applications and APIs. These operations are used so frequently in HTTP server development.
 
 A Context is created per request, and is referenced in a page.
 
-> import ext.HttpContext as web;
+> import ext.web as web;
 
 ## attachment(filename)
 > download response attachment

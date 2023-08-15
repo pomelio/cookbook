@@ -7,7 +7,7 @@
 - params:
   - path: the document path.
 ```
-import ext.HttpContext as web;
+import ext.web as web;
 import std.string as str;
 import ext.DownloadDocs as dd;
 
