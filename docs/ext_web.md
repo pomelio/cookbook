@@ -165,3 +165,32 @@ A Context is created per request, and is referenced in a page.
 
 ## files()
 > get the request uploaed files
+
+
+
+## send_file(path)
+> response with the static resources.
+
+- params:
+  - path: the document path.
+```
+import ext.web as web;
+import std.string as str;
+
+
+let ppath = web.path();
+
+if ppath == '/' {
+  ppath = '/docs/start.md';
+}
+
+if str.ends_with(ppath, '.md') {
+  dispatch('/markdown', {});
+} elsif str.starts_with(ppath, '/docs') {
+  web.send_file(ppath);
+} else {
+  web.set_status(404);
+}
+```
+
+- line 14 - 15: when the `ppath` variable value starts with the `/docs`, it downloads the specified resources. such as `/docs/entry_point.png`

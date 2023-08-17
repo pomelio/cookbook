@@ -136,11 +136,7 @@
         },
         {
           "title": "web",
-          "md": "/docs/ext_http_context.md"
-        },
-        {
-          "title": "DownloadDocs",
-          "md": "/docs/ext_download_docs.md"
+          "md": "/docs/ext_web.md"
         }
       ]
     }
