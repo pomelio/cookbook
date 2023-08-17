@@ -5,11 +5,7 @@ import ext.DownloadDocs as dd;
 
 let ppath = web.path();
 
-if ppath == '/' {
-  ppath = '/docs/start.md';
-}
-
-if str.ends_with(ppath, '.md') {
+if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/markdown', {});
 } elsif str.starts_with(ppath, '/docs') {
   dd.download(ppath);
