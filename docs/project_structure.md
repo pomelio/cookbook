@@ -16,4 +16,4 @@
 - The `bin/modules` directory is for user defined modules. The `pages` can `import` these modules by the `import statement`.
 
 
-![project file system structure](/docs/project_file_structure.png)
+![project file system structure](/public/images/project_file_structure.png)

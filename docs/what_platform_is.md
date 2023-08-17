@@ -9,4 +9,4 @@ Features:
 - After the development is completed, the repositories on github can be published to the production environment. The production is a serverless environment.
 
 
-![platform structure](/docs/wby_platform.png)
+![platform structure](/public/images/wby_platform.png)

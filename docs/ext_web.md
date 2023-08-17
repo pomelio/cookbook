@@ -193,4 +193,4 @@ if str.ends_with(ppath, '.md') {
 }
 ```
 
-- line 14 - 15: when the `ppath` variable value starts with the `/docs`, it downloads the specified resources. such as `/docs/entry_point.png`
+- line 14 - 15: when the `ppath` variable value starts with the `/public`, it downloads the specified resources. such as `/public/images/entry_point.png`

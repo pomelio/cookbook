@@ -13,4 +13,4 @@ The `/bin/index.wby` is the router page, because all http requests are sent to t
 
 - All http requests will be sent to the `/bin/index.wby` program for processing
 
-![entry_point](/docs/entry_point.png)
+![entry_point](/public/images/entry_point.png)

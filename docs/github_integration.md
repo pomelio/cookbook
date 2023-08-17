@@ -12,9 +12,9 @@
 - Grant Permissions, Contents read-only permission
 - Generate `acess token` and save it
 
-![webhook](/docs/access_token_repository.png)
+![webhook](/public/images/access_token_repository.png)
 
-![webhook](/docs/access_token_content_readonly.png)
+![webhook](/public/images/access_token_content_readonly.png)
 
 ## Webhook notifications
 
@@ -24,4 +24,4 @@
 - Set the `content Type` of the webhook to `application/json`
 - Save the `Secret`. This secret is used for webhook signature verification
 
-![webhook](/docs/webhook.png)
+![webhook](/public/images/webhook.png)
