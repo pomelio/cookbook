@@ -6,7 +6,8 @@
 ![project files](/public/images/cookbook_files.png)
 
 - the `/bin` folder is for containing the programs
-- the `/docs` folder is for containing the documents such as `js, css, png, jpeg, txt, json, md` files
+- the `/docs` folder is for containing the private documents such as `json, md` files
+- the `/public` folder is for containing the public documents such as `js, css, png, jpeg` files
 
 
 ## integration with github
