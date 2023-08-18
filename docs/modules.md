@@ -3,22 +3,6 @@
 - module is a `map` value
 - module includes variables and functions. These variables and function can be referenced by the `import` statement
 
-Basically, a module is a `map` value as bellow:
-```
-let module1 = {
-   variable1: 'xxx'.
-   variable2: 1323,
-   variable3: {
-      dd: 'dfd',
-   },
-   function1: fn abc(arg1, arg2) {
-      ...
-   },
-   function2: fn abc(arg1, arg2) {
-      ...
-   }
-}
-```
 
 Modules are loaded by the platform when a variable or function of module is referenced. This makes sure the
 other pages or modules can use the referenced module.
