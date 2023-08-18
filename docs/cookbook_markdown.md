@@ -1,16 +1,18 @@
 # Markdown Page
-> The markdown page is for generate a html page from a markdown document on the right side and a side bar on the left side.
+> The `markdown` page is for generating a html page from a markdown document on the right side and a side bar on the left side.
 
 The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as ![github](/public/images/github-30.png) [/docs/side_bar.json](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json)
 
 
 ## page template
-> All the markdown page is from a `mustache` template. The file name is ![github](/public/images/github-30.png)[/docs/layout.mustache](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
+> The `html` of the markdown page is from a `mustache` template. The file is at ![github](/public/images/github-30.png)[/docs/layout.mustache](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
 
 The page includes 2 parts, the left part is a `side bar` and the right part is a `markdown document` output.
+
 ![side bar and content](/public/images/side_bar_content.png)
 
 The page `title` is from the markdown document's first `heading` element. The first paragraph element is the page's `excerpt` which is the content of `description meta` element content. These are used for improving SEO ranking.
+
 ![side bar and content](/public/images/title_excerpt.png)
 
 ## side bar
