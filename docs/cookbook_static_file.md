@@ -2,7 +2,6 @@
 > js, css, images These files are placed in the public folder, when accessing these files, the `send_file` of the `web` module can return these files.
 
 
-```
 ## send_file(path)
 > response with the static resources.
 
@@ -29,4 +28,3 @@ if str.ends_with(ppath, '.md') {
 ```
 
 - line 14 - 15: when the `ppath` variable value starts with the `/public`, it sends the specified resources. such as `/public/images/entry_point.png`
-```
