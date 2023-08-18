@@ -51,7 +51,7 @@
         },
         {
           "title": "response static files",
-          "md": "/docs/ext_download_docs.md"
+          "md": "/docs/cookbook_static_file.md"
         }
       ]
     },
