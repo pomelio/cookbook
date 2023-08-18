@@ -1,7 +1,7 @@
 # Markdown Page
-> This page is for generate a html page from a side bar on the left side and a markdown document on the right side.
+> The markdown page is for generate a html page from a markdown document on the right side and a side bar on the left side.
 
-The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as `/docs/side_bar.json` [![github](/public/images/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json)
+The markdown documents are saved under the `/docs` folder. The side bar which is a json file saved as `/docs/side_bar.json` ![github](/public/images/github-30.png) [side bar](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json)
 
 
 ## page template

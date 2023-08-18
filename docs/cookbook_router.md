@@ -6,7 +6,7 @@
 ## router page
 > the path of router page is `/bin/index.wby`
 
-github [router page's source code](https://github.com/pomelio/cookbook/blob/main/bin/index.wby) 
+![github source](/public/images/github-30.png) [router page's source code](https://github.com/pomelio/cookbook/blob/main/bin/index.wby) 
 
 ```
 import ext.web as web;
@@ -25,7 +25,7 @@ if ppath == '/' || str.ends_with(ppath, '.md') {
 ```
 
 explanation:
-- line 1: import the [web](/docs/ext_http_context.md) module
+- line 1: import the [web](/docs/ext_web.md) module
 - line 2: import the [string](/docs/std_string.md) module
 
 
