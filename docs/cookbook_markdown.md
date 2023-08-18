@@ -5,7 +5,7 @@ The markdown documents are saved under the `/docs` folder. The side bar which is
 
 
 ## page template
-> All the markdown page is from a `mustache` template. The file name is `/docs/layout.mustache` [![github](/public/images/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
+> All the markdown page is from a `mustache` template. The file name is ![github](/public/images/github-30.png)[/docs/layout.mustache](https://github.com/pomelio/cookbook/blob/main/docs/layout.mustache)
 
 The page includes 2 parts, the left part is a `side bar` and the right part is a `markdown document` output.
 ![side bar and content](/public/images/side_bar_content.png)
@@ -14,7 +14,7 @@ The page `title` is from the markdown document's first `heading` element. The fi
 ![side bar and content](/public/images/title_excerpt.png)
 
 ## side bar
-> The side bar is at left side of a page. It is based on a [bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/). The content of the side bar is from a json file name `/docs/side_bar.json` [![github](/public/images/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json).
+> The side bar is at left side of a page. It is based on a [bootstrap Navbar](https://getbootstrap.com/docs/5.0/components/navbar/). The content of the side bar is from a json file name ![github](/public/images/github-30.png) [/docs/side_bar.json](https://github.com/pomelio/cookbook/blob/main/docs/side_bar.json).
 
 ### JSON data
 > The `side bar` is a json file. It include a `title` and `sections`. Each `section` has a `title` and `topics`. Each `topic` includes a `title` and a `path` to a markdown document.
@@ -86,7 +86,7 @@ The page `title` is from the markdown document's first `heading` element. The fi
 
 
 ### bootstrap NavBar
-> The Navbar template is located at `/docs/sidebar.mustache`. [![github](/public/images/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/sidebar.mustache)
+> The Navbar template is located at ![github](/public/images/github-30.png) [/docs/sidebar.mustache](https://github.com/pomelio/cookbook/blob/main/docs/sidebar.mustache)
 
 ```
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
@@ -108,7 +108,7 @@ please see the following screenshot
 
 #### each section
 
-the section template `/docs/sidebar_section.mustache` [![github](/public/images/github-30.png)](https://github.com/pomelio/cookbook/blob/main/docs/sidebar_section.mustache)
+the section template ![github](/public/images/github-30.png) [/docs/sidebar_section.mustache](https://github.com/pomelio/cookbook/blob/main/docs/sidebar_section.mustache)
 A side bar includes multi sections. Each section populate template with variables.
 
 ```
@@ -132,7 +132,7 @@ A side bar includes multi sections. Each section populate template with variable
 
 
 
-## markdown page [![github](/public/images/github-30.png)](https://github.com/pomelio/cookbook/blob/main/bin/markdown.wby)
+## markdown page ![github](/public/images/github-30.png) [/bin/markdown.wby](https://github.com/pomelio/cookbook/blob/main/bin/markdown.wby)
 ```
 import ext.web as web;
 import ext.MarkDownIt as md;
