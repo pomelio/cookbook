@@ -1,9 +1,9 @@
 # project structure
 
 ## files in the github repository
-[https://github.com/pomelio/cookbook/tree/main/](https://github.com/pomelio/cookbook/tree/main/)
+![github source](/public/images/github-30.png)  [https://github.com/pomelio/cookbook/tree/main/](https://github.com/pomelio/cookbook/tree/main/)
 
-![project files](/public/images/cookbook_files.png)
+
 
 - the `/bin` folder is for containing the programs
 - the `/docs` folder is for containing the private documents such as `json, md` files
