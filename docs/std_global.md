@@ -154,21 +154,16 @@ assert(fcon);
 
 import ext.web as web;
 import std.string as str;
-import ext.DownloadDocs as dd;
 
 
 let ppath = web.path();
 
-if ppath == '/' {
-  ppath = '/docs/start.md';
-}
-
-if str.ends_with(ppath, '.md') {
+if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/markdown', {});
-} elsif str.starts_with(ppath, '/docs') {
-  dd.download(ppath);
+} elsif str.starts_with(ppath, '/public') {
+  web.send_file(ppath);
 } else {
-  dispatch(ppath, {});
+  web.set_status(404);
 }
 
 ```
