@@ -20,8 +20,12 @@ let section_html_list = [];
 
 for (let i = 0; i < len(sections); i++) {
   let section = sections[i];
+  section['close'] = false;
   let topics = section['topics'];
   topics = arr.map(topics, |t|=>{
+    if !section['close'] {
+      section['close'] = t['md'] != ppath;
+    }
     return {...t, active: t['md'] == ppath};
   });
   
