@@ -1,7 +1,7 @@
 <li>
     <button type="button"
         class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
-        aria-controls="section_{{i}}" data-collapse-toggle="section_{{i}}">
+    >
 
         <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>{{title}}</span>
         <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
@@ -11,7 +11,7 @@
                 clip-rule="evenodd"></path>
         </svg>
     </button>
-    <ul id="section_{{i}}" class="{{#close}}hidden{{/close}} py-2 space-y-2">
+    <ul class="py-2 space-y-2">
         {{#topics}}
         <li>
             <a href="{{md}}"
