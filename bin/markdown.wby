@@ -2,7 +2,7 @@ import ext.web as web;
 import ext.MarkDownIt as md;
 import std.string as str;
 import ext.mustache as mch;
-import ext.Docs as docs;
+import ext.github as github;
 import std.array as arr;
 
 let ppath = web.path();
@@ -10,7 +10,7 @@ if ppath == '/' {
   ppath = '/docs/start.md';
 }
 
-let side_bar_data = docs.get_data('/docs/side_bar.json');
+let side_bar_data = github.get_content('/docs/side_bar.json');
 
 let side_bar_json = parse_json(side_bar_data);
 
