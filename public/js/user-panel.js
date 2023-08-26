@@ -88,7 +88,7 @@ $(document).ready(
                 </div>
 `;
 
-        const id = '#login-panel';
+        const id = '#user-panel';
         
         $(component_id).replaceWith(html);
 
