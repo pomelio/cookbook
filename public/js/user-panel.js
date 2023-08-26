@@ -21,7 +21,7 @@ $(document).ready(
             
             <ul class="py-1" role="none">
                 <li>
-                    <a href="#"
+                    <a href="/auth/google"
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"><div class="flex items-center ml-1">
                         <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
@@ -30,7 +30,7 @@ $(document).ready(
                     </div></a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="/auth/github"
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"><div class="flex items-center ml-1">
                     <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -45,6 +45,7 @@ $(document).ready(
         
 `;
         if (myAccount) {
+            myAccount = JSON.parse(myAccount);
             html = `
         <div id="user-panel" class="flex items-center ml-3 hidden">
             <div>
@@ -83,6 +84,13 @@ $(document).ready(
         const component_id = '#user-panel';
         
         $(component_id).replaceWith(html);
+        
+        var options = {};
+        if (myAccount) {
+            options.account = myAccount;
+        }
+        var event = new CustomEvent('MyAccount', options);
+        document.dispatchEvent(event);
 
     }
 );
