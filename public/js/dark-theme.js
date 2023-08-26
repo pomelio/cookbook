@@ -24,7 +24,7 @@ $(document).ready(
 
         
 
-        const component_id = 'theme-toggle';
+        const component_id = '#theme-toggle';
         
         $(component_id).replaceWith(html);
 
