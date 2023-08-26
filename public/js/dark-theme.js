@@ -25,8 +25,8 @@ $(document).ready(
         
 
         const component_id = 'theme-toggle';
-        const themeToggleBtn = document.getElementById(component_id);
-        themeToggleBtn.replaceWith(html);
+        
+        $(component_id).replaceWith(html);
 
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -50,7 +50,7 @@ $(document).ready(
     
         let event = new Event('dark-mode');
     
-        themeToggleBtn.addEventListener('click', function () {
+        $(component_id).click( function () {
     
             // toggle icons
             themeToggleDarkIcon.classList.toggle('hidden');
