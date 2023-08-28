@@ -54,7 +54,10 @@ $(document).ready(
 
         initDropdowns();
 
-        $("#googleAuth").click(authGoogle);
+        $("#googleAuth").click((e) => {
+            e.preventDefault();
+            authGoogle();
+        });
         
         var options = {};
         if (myAccount) {
@@ -106,6 +109,7 @@ $(document).ready(
         
 
         function authGoogle() {
+            
             axios({
                 method: 'get',
                 url: '/auth/google',
