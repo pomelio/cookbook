@@ -5,6 +5,8 @@ function PopupWindow(id, url, options = {}) {
     this.options = options;
 }
 
+
+
 PopupWindow.prototype.open = function() {
     this.window = window.open(this.url, this.id, toQuery(this.options, ','));
 }
@@ -69,4 +71,31 @@ function popup_auth_window(id, url, options = {}) {
     popup.poll();
 
     return popup;
+}
+
+
+function toParams(query) {
+    const q = query.replace(/^\??\//, '');
+  
+    return q.split('&').reduce((values, param) => {
+      const [key, value] = param.split('=');
+  
+      values[key] = value;
+  
+      return values;
+    }, {});
+}
+  
+function toQuery(params, delimiter = '&') {
+    const keys = Object.keys(params);
+  
+    return keys.reduce((str, key, index) => {
+      let query = `${str}${key}=${params[key]}`;
+  
+      if (index < (keys.length - 1)) {
+        query += delimiter;
+      }
+  
+      return query;
+    }, '');
 }
