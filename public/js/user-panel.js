@@ -8,7 +8,7 @@ $(document).ready(
         var html = `
     <div id="login-panel" class="flex items-center ml-3">
         <div>
-            <button id="dropdownButton" type="button" onclick="toggleDropdown()"
+            <button type="button" data-dropdown-toggle="dropdownMenu"
                 class="flex text-sm rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                 id="user-menu-button-2" aria-expanded="false">
                 <span class="sr-only">Open user menu</span>
@@ -49,11 +49,10 @@ $(document).ready(
         if (myAccount) {
             html = renderUserPanel(myAccount);
         }
-        var dropdown = getDropDown();
-
-        
         
         $(component_id).replaceWith(html);
+
+        initDropdowns();
         
         var options = {};
         if (myAccount) {
@@ -63,16 +62,14 @@ $(document).ready(
         document.dispatchEvent(event);
 
 
-        function toggleDropdown() {
-            dropdown.toggle();
-        }
+        
 
         function renderUserPanel(myAccount) {
             myAccount = JSON.parse(myAccount);
             var html = `
         <div id="user-panel" class="flex items-center ml-3">
             <div>
-                <button id="dropdownButton" type="button" onclick="toggleDropdown()"
+                <button id="dropdownButton" type="button" data-dropdown-toggle="dropdownMenu"
                     class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                     id="user-menu-button-2" aria-expanded="false">
                     <span class="sr-only">Open user menu</span>
@@ -104,11 +101,7 @@ $(document).ready(
             return html;
         }
 
-        function getDropDown() {
-            const dropdownMenuEle = document.getElementById('dropdownMenu');
-            const dropdownButtonEle = document.getElementById('dropdownButton');
-            return new Dropdown(dropdownMenuEle, dropdownButtonEle, {});
-        }
+        
 
         function authGoogle() {
             axios({
@@ -120,6 +113,8 @@ $(document).ready(
                     localStorage.setItemItem('my-account', JSON.stringify(account));
                     let html = renderUserPanel(account);
                     $(component_id).replaceWith(html);
+
+                    initDropdowns();
                     var options = {};
                     if (myAccount) {
                         options.account = myAccount;
