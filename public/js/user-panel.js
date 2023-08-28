@@ -8,9 +8,9 @@ $(document).ready(
         var html = `
     <div id="login-panel" class="flex items-center ml-3">
         <div>
-            <button type="button"
+            <button id="dropdownButton" type="button" onclick="toggleDropdown()"
                 class="flex text-sm rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                id="user-menu-button-2" aria-expanded="false" data-dropdown-trigger="click" data-dropdown-toggle="dropdown-login">
+                id="user-menu-button-2" aria-expanded="false">
                 <span class="sr-only">Open user menu</span>
                 <svg class="w-6 h-6 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
 <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
@@ -19,7 +19,7 @@ $(document).ready(
         </div>
 
         <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
-            id="dropdown-login">
+            id="dropdownMenu">
             
             <ul class="py-1" role="none">
                 <li>
@@ -49,6 +49,9 @@ $(document).ready(
         if (myAccount) {
             html = renderUserPanel(myAccount);
         }
+        var dropdown = getDropDown();
+
+        
         
         $(component_id).replaceWith(html);
         
@@ -59,14 +62,19 @@ $(document).ready(
         var event = new CustomEvent('MyAccount', options);
         document.dispatchEvent(event);
 
+
+        function toggleDropdown() {
+            dropdown.toggle();
+        }
+
         function renderUserPanel(myAccount) {
             myAccount = JSON.parse(myAccount);
             var html = `
         <div id="user-panel" class="flex items-center ml-3">
             <div>
-                <button type="button"
+                <button id="dropdownButton" type="button" onclick="toggleDropdown()"
                     class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                    id="user-menu-button-2" aria-expanded="false" data-dropdown-toggle="dropdown-2">
+                    id="user-menu-button-2" aria-expanded="false">
                     <span class="sr-only">Open user menu</span>
                     <img class="w-8 h-8 rounded-full"
                         src="${myAccount.photo}" alt="user photo">
@@ -74,7 +82,7 @@ $(document).ready(
             </div>
 
             <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
-                id="dropdown-2">
+                id="dropdownMenu">
                 <div class="px-4 py-3" role="none">
                     <p class="text-sm text-gray-900 dark:text-white" role="none">
                         ${myAccount.nickName}
@@ -94,6 +102,12 @@ $(document).ready(
         </div>
 `;
             return html;
+        }
+
+        function getDropDown() {
+            const dropdownMenuEle = document.getElementById('dropdownMenu');
+            const dropdownButtonEle = document.getElementById('dropdownButton');
+            return new Dropdown(dropdownMenuEle, dropdownButtonEle, {});
         }
 
         function authGoogle() {
