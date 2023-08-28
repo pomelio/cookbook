@@ -1,6 +1,8 @@
 $(document).ready(
     function(){
 
+        const component_id = '#user-panel';
+
         var myAccount = localStorage.getItem('my-account');
 
         var html = `
@@ -21,7 +23,7 @@ $(document).ready(
             
             <ul class="py-1" role="none">
                 <li>
-                    <a href="/auth/google"
+                    <a href="#" onclick="authGoogle()"
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"><div class="flex items-center ml-1">
                         <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
@@ -30,7 +32,7 @@ $(document).ready(
                     </div></a>
                 </li>
                 <li>
-                    <a href="/auth/github"
+                <a href="#" onclick="authGithub()"
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"><div class="flex items-center ml-1">
                     <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -45,8 +47,21 @@ $(document).ready(
         
 `;
         if (myAccount) {
+            html = renderUserPanel(myAccount);
+        }
+        
+        $(component_id).replaceWith(html);
+        
+        var options = {};
+        if (myAccount) {
+            options.account = myAccount;
+        }
+        var event = new CustomEvent('MyAccount', options);
+        document.dispatchEvent(event);
+
+        function renderUserPanel(myAccount) {
             myAccount = JSON.parse(myAccount);
-            html = `
+            var html = `
         <div id="user-panel" class="flex items-center ml-3 hidden">
             <div>
                 <button type="button"
@@ -78,19 +93,32 @@ $(document).ready(
             </div>
         </div>
 `;
+            return html;
         }
 
+        function authGoogle() {
+            axios({
+                method: 'get',
+                url: '/auth/google',
+            }).then(result => {
+                var popup = popup_auth_window('google-auth', result.url, { height: 1000, width: 600 });
+                popup.then(account => {
+                    localStorage.setItemItem('my-account', JSON.stringify(account));
+                    let html = renderUserPanel(account);
+                    $(component_id).replaceWith(html);
+                    var options = {};
+                    if (myAccount) {
+                        options.account = myAccount;
+                    }
+                    var event = new CustomEvent('MyAccount', options);
+                    document.dispatchEvent(event);
 
-        const component_id = '#user-panel';
-        
-        $(component_id).replaceWith(html);
-        
-        var options = {};
-        if (myAccount) {
-            options.account = myAccount;
+                });
+                popup.catch(err => {
+                    console.log(err);
+                })
+            });
         }
-        var event = new CustomEvent('MyAccount', options);
-        document.dispatchEvent(event);
 
     }
 );

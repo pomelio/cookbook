@@ -62,7 +62,7 @@ PopupWindow.prototype.poll = function() {
     });
 }
 
-function popup_window(id, url, options = {}) {
+function popup_auth_window(id, url, options = {}) {
     const popup = new PopupWindow(id, url, options);
 
     popup.open();
