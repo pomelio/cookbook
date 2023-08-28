@@ -22,8 +22,8 @@ $(document).ready(
             id="dropdownMenu">
             
             <ul class="py-1" role="none">
-                <li>
-                    <a href="#" onclick="authGoogle()"
+                <li id="googleAuth">
+                    <a href="#"
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"><div class="flex items-center ml-1">
                         <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
@@ -31,8 +31,8 @@ $(document).ready(
 </svg>Google
                     </div></a>
                 </li>
-                <li>
-                <a href="#" onclick="authGithub()"
+                <li id="githubAuth">
+                <a href="#"
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"><div class="flex items-center ml-1">
                     <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -53,6 +53,8 @@ $(document).ready(
         $(component_id).replaceWith(html);
 
         initDropdowns();
+
+        $("#googleAuth").click(authGoogle);
         
         var options = {};
         if (myAccount) {
