@@ -9,7 +9,7 @@ if ppath == '/' || str.ends_with(ppath, '.md') {
 } elsif str.starts_with(ppath, '/public') {
   web.send_file(ppath);
 } elsif ppath == '/auth/google' {
-  dispatch('auth_google', {});
+  dispatch('/auth_google', {});
 } else {
   web.set_status(404);
 }
