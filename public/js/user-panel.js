@@ -114,7 +114,7 @@ $(document).ready(
                 method: 'get',
                 url: '/auth/google',
             }).then(result => {
-                var popup = popup_auth_window('google-auth', result.url, { height: 1000, width: 600 });
+                var popup = popup_auth_window('google-auth', result.data.url, { height: 1000, width: 600 });
                 popup.then(account => {
                     localStorage.setItemItem('my-account', JSON.stringify(account));
                     let html = renderUserPanel(account);
