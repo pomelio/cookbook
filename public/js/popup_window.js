@@ -80,7 +80,7 @@ function toParams(query) {
     return q.split('&').reduce((values, param) => {
       const [key, value] = param.split('=');
   
-      values[key] = decodeURIComponent(value);
+      values[key] = value;
   
       return values;
     }, {});
