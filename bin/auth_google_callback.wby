@@ -1,12 +1,9 @@
 import ext.google as google;
 import ext.web as web;
 
-let scopes = [
-      'https://www.googleapis.com/auth/userinfo.profile',
-      'https://www.googleapis.com/auth/userinfo.email'
-];
+let {code} = web.request_body();
 
-let callback_result = google.get_callback(scopes, {}, {});
+let callback_result = google.get_callback(code, {}, {});
 let tokens = google.get_callback_tokens(callbackResult);
 let google_client = google.new_client(tokens, {});
 

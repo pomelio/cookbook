@@ -10,6 +10,8 @@ if ppath == '/' || str.ends_with(ppath, '.md') {
   web.send_file(ppath);
 } elsif ppath == '/auth/google' {
   dispatch('/auth_google', {});
+} elsif ppath == '/auth/google/callback' {
+  dispatch('/auth_google_callback', {});
 } else {
   web.set_status(404);
 }
