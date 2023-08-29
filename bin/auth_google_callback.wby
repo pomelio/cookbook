@@ -3,8 +3,8 @@ import ext.web as web;
 
 let {code} = web.request_body();
 
-let callback_result = google.get_callback(code, {}, {});
-let tokens = google.get_callback_tokens(callbackResult);
+let auth_result = google.get_auth_result(code, {}, {});
+let tokens = google.get_access_tokens(auth_result);
 let google_client = google.new_client(tokens, {});
 
 let info_options = {
