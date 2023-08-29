@@ -1,9 +1,9 @@
 import ext.google as google;
 import ext.web as web;
 
-let {code} = web.request_body();
+let {code, state} = web.request_body();
 
-let auth_result = google.get_auth_result(code, {}, {});
+let auth_result = google.get_auth_result(code, {}, state);
 let tokens = google.get_access_tokens(auth_result);
 let google_client = google.new_client(tokens, {});
 
