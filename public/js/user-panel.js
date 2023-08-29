@@ -116,9 +116,13 @@ $(document).ready(
             }).then(result => {
                 var popup = popup_auth_window('google-auth', result.data.url, { height: 1000, width: 600 });
                 popup.then(authResult => {
+                    let data = {
+                        code: authResult.code
+                    };
                     axios({
-                        method: 'get',
+                        method: 'post',
                         url: '/auth/google/callback',
+                        data
                     }).then(account => {
                         localStorage.setItemItem('my-account', JSON.stringify(account));
                         let html = renderUserPanel(account);
