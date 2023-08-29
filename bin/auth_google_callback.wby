@@ -7,10 +7,7 @@ let auth_result = google.get_auth_result(code, {}, state);
 let tokens = google.get_access_tokens(auth_result);
 let google_client = google.new_client(tokens, {});
 
-let info_options = {
-      resourceName: 'people/me',
-      personFields: 'emailAddresses'
-};
-let user_info = google.get_user_info(google_client, info_options);
+
+let user_info = google.get_user_info(google_client);
 
 web.body(user_info);
