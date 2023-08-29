@@ -1,0 +1,19 @@
+import ext.google as google;
+import ext.web as web;
+
+let scopes = [
+      'https://www.googleapis.com/auth/userinfo.profile',
+      'https://www.googleapis.com/auth/userinfo.email'
+];
+
+let callback_result = google.get_callback(scopes, {}, {});
+let tokens = google.get_callback_tokens(callbackResult);
+let google_client = google.new_client(tokens, {});
+
+let info_options = {
+      resourceName: 'people/me',
+      personFields: 'emailAddresses'
+};
+let user_info = google.get_user_info(google_client, info_options);
+
+web.body(user_info);

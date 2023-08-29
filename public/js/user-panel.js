@@ -115,18 +115,23 @@ $(document).ready(
                 url: '/auth/google',
             }).then(result => {
                 var popup = popup_auth_window('google-auth', result.data.url, { height: 1000, width: 600 });
-                popup.then(account => {
-                    localStorage.setItemItem('my-account', JSON.stringify(account));
-                    let html = renderUserPanel(account);
-                    $(component_id).replaceWith(html);
+                popup.then(authResult => {
+                    axios({
+                        method: 'get',
+                        url: '/auth/google/callback',
+                    }).then(account => {
+                        localStorage.setItemItem('my-account', JSON.stringify(account));
+                        let html = renderUserPanel(account);
+                        $(component_id).replaceWith(html);
 
-                    initDropdowns();
-                    var options = {};
-                    if (myAccount) {
-                        options.account = myAccount;
-                    }
-                    var event = new CustomEvent('MyAccount', options);
-                    document.dispatchEvent(event);
+                        initDropdowns();
+                        var options = {};
+                        if (myAccount) {
+                            options.account = myAccount;
+                        }
+                        var event = new CustomEvent('MyAccount', options);
+                        document.dispatchEvent(event);
+                    });
 
                 });
                 popup.catch(err => {
