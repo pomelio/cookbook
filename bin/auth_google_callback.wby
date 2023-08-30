@@ -1,5 +1,5 @@
 import ext.google as google;
-import ex.web as web;
+import ext.web as web;
 import ext.github as github;
 
 let {code, state} = web.request_body();
