@@ -123,7 +123,8 @@ $(document).ready(
                         method: 'post',
                         url: '/auth/google/callback',
                         data
-                    }).then(account => {
+                    }).then(resp => {
+                        let account = resp.data;
                         localStorage.setItemItem('my-account', JSON.stringify(account));
                         let html = renderUserPanel(account);
                         $(component_id).replaceWith(html);
