@@ -125,8 +125,9 @@ $(document).ready(
                         data
                     }).then(resp => {
                         let account = resp.data;
-                        localStorage.setItem('my-account', JSON.stringify(account));
-                        let html = renderUserPanel(account);
+                        let accountStr = JSON.stringify(account);
+                        localStorage.setItem('my-account', accountStr);
+                        let html = renderUserPanel(accountStr);
                         $(component_id).replaceWith(html);
 
                         initDropdowns();
