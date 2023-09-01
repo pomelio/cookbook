@@ -21,7 +21,7 @@ try {
   info('error');
 }
 
-user_info_docs = user_info_docs.filter(u => u.email !== user_info.email);
+user_info_docs = user_info_docs.filter(|u| => u.email !== user_info.email);
 user_info_docs.push(user_info);
 github.save_text(user_info_docs_path, stringify_json(user_info_docs));
 
