@@ -12,7 +12,7 @@ let google_client = google.new_client(tokens, {});
 let user_info = google.get_user_info(google_client);
 let user_info_txt = stringify_json(user_info);
 
-let user_info_docs_path = '/docs/data/user_inf.json';
+let user_info_docs_path = '/docs/data/user_info.json';
 let user_info_docs = [];
 try {
       let user_info_docs_json = github.get_content(user_info_docs_path);
