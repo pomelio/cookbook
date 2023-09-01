@@ -13,8 +13,14 @@ let user_info = google.get_user_info(google_client);
 let user_info_txt = stringify_json(user_info);
 
 let user_info_docs_path = '/docs/data/user_inf.json';
-let user_info_docs_json = github.get_content(user_info_docs_path);
-let user_info_docs = parse_json(user_info_docs_json);
+let user_info_docs = [];
+try {
+      let user_info_docs_json = github.get_content(user_info_docs_path);
+      user_info_docs = parse_json(user_info_docs_json);
+} catch (err) {
+  info('error');
+}
+
 user_info_docs = user_info_docs.filter(u => u.email !== user_info.email);
 user_info_docs.push(user_info);
 github.save_text(user_info_docs_path, stringify_json(user_info_docs));
