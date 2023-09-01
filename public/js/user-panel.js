@@ -125,7 +125,7 @@ $(document).ready(
                         data
                     }).then(resp => {
                         let account = resp.data;
-                        localStorage.setItemItem('my-account', JSON.stringify(account));
+                        localStorage.setItem('my-account', JSON.stringify(account));
                         let html = renderUserPanel(account);
                         $(component_id).replaceWith(html);
 
