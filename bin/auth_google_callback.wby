@@ -1,6 +1,8 @@
 import ext.google as google;
 import ext.web as web;
 import ext.github as github;
+import std.array as arr;
+
 
 let {code, state} = web.request_body();
 
@@ -21,8 +23,8 @@ try {
   info('error');
 }
 
-user_info_docs = user_info_docs.filter(|u| => u.email != user_info.email);
-user_info_docs.push(user_info);
+user_info_docs = arr.filter(user_info_docs, |u| => u.email != user_info.email);
+arr.push(user_info_docs, user_info);
 github.save_text(user_info_docs_path, stringify_json(user_info_docs));
 
 web.body(user_info);
