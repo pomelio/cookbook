@@ -61,7 +61,7 @@ $(document).ready(
         
         var options = {};
         if (myAccount) {
-            options.account = myAccount;
+            options.account = JSON.parse(myAccount);
         }
         var event = new CustomEvent('MyAccount', options);
         document.dispatchEvent(event);
@@ -73,7 +73,7 @@ $(document).ready(
             myAccount = JSON.parse(myAccount);
             let picture = myAccount.picture;
             let name = myAccount.name;
-            let email = myAccount.email;
+            
             let html = `
         <div id="user-panel" class="flex items-center ml-3">
             <div>
@@ -92,9 +92,7 @@ $(document).ready(
                     <p class="text-sm text-gray-900 dark:text-white" role="none">
                         ${name}
                     </p>
-                    <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                        ${email}
-                    </p>
+                    
                 </div>
                 <ul class="py-1" role="none">
                     <li>
@@ -134,9 +132,10 @@ $(document).ready(
                         $(component_id).replaceWith(html);
 
                         initDropdowns();
+
                         var options = {};
                         if (myAccount) {
-                            options.account = myAccount;
+                            options.account = account;
                         }
                         var event = new CustomEvent('MyAccount', options);
                         document.dispatchEvent(event);
