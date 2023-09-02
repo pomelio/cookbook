@@ -2,7 +2,7 @@ import ext.google as google;
 import ext.web as web;
 
 let scopes = [
-      'openid'
+      'https://www.googleapis.com/auth/userinfo.profile'
 ];
 
 let url = google.authorize_url(scopes, {}, {});
