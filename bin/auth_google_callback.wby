@@ -23,8 +23,11 @@ try {
   info('error');
 }
 
-user_info_docs = arr.filter(user_info_docs, |u| => u['email'] != user_info['email']);
-arr.push(user_info_docs, user_info);
-github.save_text(user_info_docs_path, stringify_json(user_info_docs));
+user_info_doc = arr.find(user_info_docs, |u| => u['id'] == user_info['id']);
+if !user_info_doc || user_info_doc != user_info {
+      user_info_docs = arr.filter(user_info_docs, |u| => u['id'] != user_info['id']);
+      arr.push(user_info_docs, user_info);
+      github.save_text(user_info_docs_path, stringify_json(user_info_docs));
+}
 
 web.body(user_info);
