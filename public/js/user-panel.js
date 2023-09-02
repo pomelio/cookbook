@@ -71,7 +71,10 @@ $(document).ready(
 
         function renderUserPanel(myAccount) {
             myAccount = JSON.parse(myAccount);
-            var html = `
+            let picture = myAccount.picture;
+            let name = myAccount.name;
+            let email = myAccount.email;
+            let html = `
         <div id="user-panel" class="flex items-center ml-3">
             <div>
                 <button id="dropdownButton" type="button" data-dropdown-toggle="dropdownMenu"
@@ -79,7 +82,7 @@ $(document).ready(
                     id="user-menu-button-2" aria-expanded="false">
                     <span class="sr-only">Open user menu</span>
                     <img class="w-8 h-8 rounded-full"
-                        src="${myAccount.picture}" alt="user photo">
+                        src="${picture}" alt="user photo">
                 </button>
             </div>
 
@@ -87,10 +90,10 @@ $(document).ready(
                 id="dropdownMenu">
                 <div class="px-4 py-3" role="none">
                     <p class="text-sm text-gray-900 dark:text-white" role="none">
-                        ${myAccount.name}
+                        ${name}
                     </p>
                     <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                        ${myAccount.email}
+                        ${email}
                     </p>
                 </div>
                 <ul class="py-1" role="none">
