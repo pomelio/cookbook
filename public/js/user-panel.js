@@ -5,7 +5,37 @@ $(document).ready(
 
         var myAccount = localStorage.getItem('my-account');
 
-        var html = `
+        
+        if (myAccount) {
+            html = renderUserPanel(myAccount);
+        } else {
+            html = renderLoginPanel();
+        }
+        
+        $(component_id).replaceWith(html);
+
+        initDropdowns();
+
+        $("#googleAuth").click((e) => {
+            e.preventDefault();
+            authGoogle();
+        });
+
+        $("#logout").click((e) => {
+            e.preventDefault();
+            logout();
+        });
+        
+        var options = {};
+        if (myAccount) {
+            options.account = JSON.parse(myAccount);
+        }
+        var event = new CustomEvent('MyAccount', options);
+        document.dispatchEvent(event);
+
+
+        function renderLoginPanel() {
+            var html = `
     <div id="user-panel" class="flex items-center ml-3">
         <div>
             <button type="button" data-dropdown-toggle="dropdownMenu"
@@ -46,27 +76,8 @@ $(document).ready(
     </div>
         
 `;
-        if (myAccount) {
-            html = renderUserPanel(myAccount);
+            return html;
         }
-        
-        $(component_id).replaceWith(html);
-
-        initDropdowns();
-
-        $("#googleAuth").click((e) => {
-            e.preventDefault();
-            authGoogle();
-        });
-        
-        var options = {};
-        if (myAccount) {
-            options.account = JSON.parse(myAccount);
-        }
-        var event = new CustomEvent('MyAccount', options);
-        document.dispatchEvent(event);
-
-
         
 
         function renderUserPanel(myAccount) {
@@ -95,7 +106,7 @@ $(document).ready(
                     
                 </div>
                 <ul class="py-1" role="none">
-                    <li>
+                    <li id="logout">
                         <a href="#"
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                             role="menuitem">Sign out</a>
@@ -133,6 +144,16 @@ $(document).ready(
 
                         initDropdowns();
 
+                        $("#googleAuth").click((e) => {
+                            e.preventDefault();
+                            authGoogle();
+                        });
+                
+                        $("#logout").click((e) => {
+                            e.preventDefault();
+                            logout();
+                        });
+
                         var options = {};
                         if (myAccount) {
                             options.account = account;
@@ -145,6 +166,26 @@ $(document).ready(
                 popup.catch(err => {
                     console.log(err);
                 })
+            });
+        }
+
+        function logout() {
+
+            localStorage.removeItem('my-account');
+            let html = renderLoginPanel();
+        
+            $(component_id).replaceWith(html);
+
+            initDropdowns();
+
+            $("#googleAuth").click((e) => {
+                e.preventDefault();
+                authGoogle();
+            });
+    
+            $("#logout").click((e) => {
+                e.preventDefault();
+                logout();
             });
         }
 
