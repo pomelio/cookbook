@@ -2,6 +2,7 @@ import ext.google as google;
 import ext.web as web;
 import ext.github as github;
 import std.array as arr;
+import ext.jwt as jwt;
 
 
 let {code, state} = web.request_body();
@@ -12,6 +13,10 @@ let google_client = google.new_client(tokens, {});
 
 
 let user_info = google.get_user_info(google_client);
+let user_id = user_info['id'];
+let user_token = jwt.sign({id: user_id});
+user_info['token'] = user_token;
+
 let user_info_txt = stringify_json(user_info);
 
 let user_info_docs_path = '/docs/data/user_info.json';
