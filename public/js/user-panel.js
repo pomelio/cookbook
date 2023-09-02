@@ -79,7 +79,7 @@ $(document).ready(
                     id="user-menu-button-2" aria-expanded="false">
                     <span class="sr-only">Open user menu</span>
                     <img class="w-8 h-8 rounded-full"
-                        src="${myAccount.photo}" alt="user photo">
+                        src="${myAccount.picture}" alt="user photo">
                 </button>
             </div>
 
@@ -87,7 +87,7 @@ $(document).ready(
                 id="dropdownMenu">
                 <div class="px-4 py-3" role="none">
                     <p class="text-sm text-gray-900 dark:text-white" role="none">
-                        ${myAccount.nickName}
+                        ${myAccount.name}
                     </p>
                     <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
                         ${myAccount.email}
