@@ -6,7 +6,7 @@ $(document).ready(
         var myAccount = localStorage.getItem('my-account');
 
         var html = `
-    <div id="login-panel" class="flex items-center ml-3">
+    <div id="user-panel" class="flex items-center ml-3">
         <div>
             <button type="button" data-dropdown-toggle="dropdownMenu"
                 class="flex text-sm rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
