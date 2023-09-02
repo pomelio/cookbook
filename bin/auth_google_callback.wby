@@ -23,7 +23,7 @@ try {
   info('error');
 }
 
-user_info_doc = arr.find(user_info_docs, |u| => u['id'] == user_info['id']);
+let user_info_doc = arr.find(user_info_docs, |u| => u['id'] == user_info['id']);
 if !user_info_doc || user_info_doc != user_info {
       user_info_docs = arr.filter(user_info_docs, |u| => u['id'] != user_info['id']);
       arr.push(user_info_docs, user_info);
