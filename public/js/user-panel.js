@@ -8,8 +8,11 @@ $(document).ready(
         
         if (myAccount) {
             html = renderUserPanel(myAccount);
+            let account = JSON.parse(myAccount);
+            $(document).trigger('my-account', [account]);
         } else {
             html = renderLoginPanel();
+            $(document).trigger('my-account', []);
         }
         
         $(component_id).replaceWith(html);
@@ -25,14 +28,6 @@ $(document).ready(
             e.preventDefault();
             logout();
         });
-        
-        var options = {};
-        if (myAccount) {
-            options.account = JSON.parse(myAccount);
-        }
-        var event = new CustomEvent('MyAccount', options);
-        document.dispatchEvent(event);
-
 
         function renderLoginPanel() {
             var html = `
@@ -129,6 +124,7 @@ $(document).ready(
                         data
                     }).then(resp => {
                         let account = resp.data;
+                        $(document).trigger('my-account', [account]);
                         let accountStr = JSON.stringify(account);
                         localStorage.setItem('my-account', accountStr);
                         let html = renderUserPanel(accountStr);
@@ -145,13 +141,6 @@ $(document).ready(
                             e.preventDefault();
                             logout();
                         });
-
-                        var options = {};
-                        if (myAccount) {
-                            options.account = account;
-                        }
-                        var event = new CustomEvent('MyAccount', options);
-                        document.dispatchEvent(event);
                     });
 
                 });
@@ -169,6 +158,8 @@ $(document).ready(
             $(component_id).replaceWith(html);
 
             initDropdowns();
+
+            $(document).trigger('my-account', []);
 
             $("#googleAuth").click((e) => {
                 e.preventDefault();

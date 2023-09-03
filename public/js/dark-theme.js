@@ -1,6 +1,8 @@
 $(document).ready(
     function(){
 
+        let darkMode = null;
+
         var html = `    
     <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button"
         class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
@@ -32,8 +34,10 @@ $(document).ready(
 
         if (currentTheme === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
+            darkMode = 'dark';
         } else {
             document.documentElement.classList.remove('dark');
+            darkMode = 'light';
         }
     
     
@@ -50,7 +54,7 @@ $(document).ready(
     
         
     
-        let event = new Event('dark-mode');
+        
     
         $(component_id).click( function () {
     
@@ -65,9 +69,11 @@ $(document).ready(
                 if (localStorage.getItem('color-theme') === 'light') {
                     document.documentElement.classList.add('dark');
                     localStorage.setItem('color-theme', 'dark');
+                    darkMode = 'dark';
                 } else {
                     document.documentElement.classList.remove('dark');
                     localStorage.setItem('color-theme', 'light');
+                    darkMode = 'light';
                 }
     
                 // if NOT set via local storage previously
@@ -75,13 +81,15 @@ $(document).ready(
                 if (document.documentElement.classList.contains('dark')) {
                     document.documentElement.classList.remove('dark');
                     localStorage.setItem('color-theme', 'light');
+                    darkMode = 'light';
                 } else {
                     document.documentElement.classList.add('dark');
                     localStorage.setItem('color-theme', 'dark');
+                    darkMode = 'dark';
                 }
             }
-    
-            document.dispatchEvent(event);
+            
+            $(document).trigger('dark-mode', [darkMode]);
     
         });
     }
