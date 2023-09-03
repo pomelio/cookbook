@@ -1,3 +1,3 @@
-$(document).on('my-account', (account) => {
+$(document).on('my-account', (event, account) => {
     console.log('event my-account');
 });
