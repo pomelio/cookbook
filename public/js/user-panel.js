@@ -19,11 +19,6 @@ $(document).ready(
 
         initDropdowns();
 
-        $("#googleAuth").click((e) => {
-            e.preventDefault();
-            authGoogle();
-        });
-
         $("#logout").click((e) => {
             e.preventDefault();
             logout();
@@ -47,13 +42,13 @@ $(document).ready(
             id="dropdownMenu">
             
             <ul class="py-1" role="none">
-                <li id="googleAuth">
-                    <a href="#"
+                <li>
+                    <a href="/login"
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem"><div class="flex items-center ml-1">
-                        <svg class="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
-<path fill-rule="evenodd" d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z" clip-rule="evenodd"/>
-</svg>Google
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 15">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 7.5h11m0 0L8 3.786M12 7.5l-4 3.714M12 1h3c.53 0 1.04.196 1.414.544.375.348.586.82.586 1.313v9.286c0 .492-.21.965-.586 1.313A2.081 2.081 0 0 1 15 14h-3"/>
+  </svg>Log In
                     </div></a>
                 </li>
                 
@@ -105,50 +100,6 @@ $(document).ready(
             return html;
         }
 
-        
-
-        function authGoogle() {
-            
-            axios({
-                method: 'get',
-                url: '/auth/google',
-            }).then(result => {
-                var popup = popup_auth_window('google-auth', result.data.url, { height: 1000, width: 600 });
-                popup.then(authResult => {
-                    let data = {
-                        code: authResult.code
-                    };
-                    axios({
-                        method: 'post',
-                        url: '/auth/google/callback',
-                        data
-                    }).then(resp => {
-                        let account = resp.data;
-                        $(document).trigger('my-account', [account]);
-                        let accountStr = JSON.stringify(account);
-                        localStorage.setItem('my-account', accountStr);
-                        let html = renderUserPanel(accountStr);
-                        $(component_id).replaceWith(html);
-
-                        initDropdowns();
-
-                        $("#googleAuth").click((e) => {
-                            e.preventDefault();
-                            authGoogle();
-                        });
-                
-                        $("#logout").click((e) => {
-                            e.preventDefault();
-                            logout();
-                        });
-                    });
-
-                });
-                popup.catch(err => {
-                    console.log(err);
-                })
-            });
-        }
 
         function logout() {
 
@@ -160,11 +111,6 @@ $(document).ready(
             initDropdowns();
 
             $(document).trigger('my-account', []);
-
-            $("#googleAuth").click((e) => {
-                e.preventDefault();
-                authGoogle();
-            });
     
             $("#logout").click((e) => {
                 e.preventDefault();
