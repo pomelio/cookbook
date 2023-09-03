@@ -6,6 +6,8 @@ let ppath = web.path();
 
 if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/markdown', {});
+} elsif ppath == '/auth/google' {
+  dispatch('/login', {});
 } elsif str.starts_with(ppath, '/public') {
   web.send_file(ppath);
 } elsif ppath == '/auth/google' {

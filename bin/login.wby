@@ -1,0 +1,9 @@
+import ext.web as web;
+import ext.mustache as mch;
+
+
+let footer = mch.render('/docs/footer.mustache');
+
+let html = mch.render('/docs/login.mustache');
+
+web.body(html);
