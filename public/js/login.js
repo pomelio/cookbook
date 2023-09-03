@@ -11,7 +11,7 @@ $(document).ready(
             return;
         }
 
-        const params = toParams(popup.location.search.replace(/^\?/, ''));
+        const params = toParams(window.location.search.replace(/^\?/, ''));
 
         let redirect = params['redirect'];
         if (!redirect) {
