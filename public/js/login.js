@@ -68,7 +68,7 @@ $(document).ready(
                         $(document).trigger('my-account', [account]);
                         let accountStr = JSON.stringify(account);
                         localStorage.setItem('my-account', accountStr);
-                        let url = window.location.protocol + "://" + window.location.hostname + redirect;
+                        let url = window.location.protocol + "//" + window.location.hostname + redirect;
                         window.location.href = url;
                     });
 
