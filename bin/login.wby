@@ -2,6 +2,7 @@ import ext.web as web;
 import ext.mustache as mch;
 
 
+let header = mch.render('/docs/header.mustache');
 let footer = mch.render('/docs/footer.mustache');
 
 let html = mch.render('/docs/login.mustache');
