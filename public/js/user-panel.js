@@ -25,6 +25,7 @@ $(document).ready(
         });
 
         function renderLoginPanel() {
+            var currentURL = window.location.href;
             var html = `
     <div id="user-panel" class="flex items-center ml-3">
         <div>
@@ -43,7 +44,7 @@ $(document).ready(
             
             <ul class="py-1" role="none">
                 <li>
-                    <a href="/login"
+                    <a href="/login?redirect=${currentURL}"
                         class="block px-4 py-2 text-sm text-gray-700 inline-flex hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                         role="menuitem">
                         Log In
