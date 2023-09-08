@@ -5,17 +5,17 @@ $(document).ready(
 
         var myAccount = localStorage.getItem('my-account');
 
-        
+        var redirect = window.location.protocol + "//" + window.location.hostname;
         if (myAccount) {
-            window.location.href="/";
+            window.location.href= redirect;
             return;
         }
 
         const params = toParams(window.location.search.replace(/^\?/, ''));
 
-        let redirect = params['redirect'];
-        if (!redirect) {
-            redirect = "/";
+        let nredirect = params['redirect'];
+        if (!nredirect) {
+            redirect = nredirect;
         }
         
         html = renderLoginPanel();
@@ -68,8 +68,7 @@ $(document).ready(
                         $(document).trigger('my-account', [account]);
                         let accountStr = JSON.stringify(account);
                         localStorage.setItem('my-account', accountStr);
-                        let url = window.location.protocol + "//" + window.location.hostname + redirect;
-                        window.location.href = url;
+                        window.location.href = redirect;
                     });
 
                 });
