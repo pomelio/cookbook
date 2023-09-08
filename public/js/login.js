@@ -14,7 +14,7 @@ $(document).ready(
         const params = toParams(window.location.search.replace(/^\?/, ''));
 
         let nredirect = params['redirect'];
-        if (!nredirect) {
+        if (nredirect) {
             redirect = nredirect;
         }
         

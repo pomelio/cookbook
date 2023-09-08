@@ -25,7 +25,7 @@ $(document).ready(
         });
 
         function renderLoginPanel() {
-            var currentURL = window.location.href;
+            var currentURL = encodeURIComponent(window.location.href);
             var html = `
     <div id="user-panel" class="flex items-center ml-3">
         <div>
