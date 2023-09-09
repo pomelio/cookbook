@@ -1,4 +1,7 @@
-# mysql
+---
+id: ext_squel
+---
+# squel
 > import ext.squel as sql;
 
 ## select()

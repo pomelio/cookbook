@@ -1,9 +1,12 @@
-# Cookbook app router
+---
+id: router_page
+---
+# router page
 > Every http `request` will be sent to the `router Page`, and then `dispatch` to other `Pages` by the `router page`.
 
 ![platform structure](/public/images/wby_platform.png)
 
-## router page
+
 > the path of router page is `/bin/index.wby`
 
 ![github source](/public/images/github-icon.png) [router page's source code](https://github.com/pomelio/cookbook/blob/main/bin/index.wby) 

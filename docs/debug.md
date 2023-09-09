@@ -1,3 +1,6 @@
+---
+id: project_debug
+---
 # Project debugging
 > Once the github repository is imported into the developing server. The project can be started to debug.
 

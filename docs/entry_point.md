@@ -1,3 +1,6 @@
+---
+id: entry_point
+---
 # Project entry point
 > The entry point of a project is the `index.wby` page. The path is `/bin/index.wby`. All http requests will be sent to this page.
 

@@ -1,3 +1,6 @@
+---
+id: project_sturcture
+---
 # Project structure and development tools
 > The project is hosted on a github repository. The development tools are located on the development server.
 

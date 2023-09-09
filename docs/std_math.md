@@ -1,4 +1,6 @@
-
+---
+id: std_math
+---
 # math
 > import std.math as math;
 

@@ -1,4 +1,7 @@
 ---
+id: start
+---
+---
 title: The content of the cookbook
 description: The cookbook incudes sections of what the platform is.
 content_id: cookbook-summary

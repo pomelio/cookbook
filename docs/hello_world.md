@@ -1,3 +1,6 @@
+---
+id: hello_world
+---
 # Hello World project
 > This is a demo project to show the classic `hello world` app.
 

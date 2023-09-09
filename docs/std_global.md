@@ -1,4 +1,6 @@
-
+---
+id: std_global
+---
 # global
 > Functions in the global module can be directly referenced without importing the module and indicating the module name
 

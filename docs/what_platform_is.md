@@ -1,3 +1,6 @@
+---
+id: what_the_platform_is
+---
 # What the platform is
 > The platform is a `Pages` running serverless environment. These pages are suited for web development.
 

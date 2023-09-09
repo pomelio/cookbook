@@ -1,3 +1,6 @@
+---
+id: ext_pathregexp
+---
 # PathRegexp
 > import ext.PathRegexp as pexp;
 

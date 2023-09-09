@@ -1,4 +1,7 @@
 
+---
+id: ext_mysql
+---
 # mysql
 > import ext.mysql as mysql;
 

@@ -1,3 +1,6 @@
+---
+id: ext_mustache
+---
 # mustache
 > import ext.mustache as m;
 

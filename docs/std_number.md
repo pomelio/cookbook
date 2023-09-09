@@ -1,4 +1,6 @@
-
+---
+id: std_number
+---
 # number
 Numbers are most commonly expressed in literal forms like 255 or 3.14159. The lexical grammar contains a more detailed reference.
 

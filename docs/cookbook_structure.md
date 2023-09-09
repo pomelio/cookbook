@@ -1,3 +1,6 @@
+---
+id: project_structure
+---
 # project structure
 
 ## files in the github repository

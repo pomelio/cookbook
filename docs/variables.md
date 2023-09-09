@@ -1,3 +1,6 @@
+---
+id: variables
+---
 # variables
 > `variables` must be declared firstly, then the variable can be referenced. 
 

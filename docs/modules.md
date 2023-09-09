@@ -1,3 +1,6 @@
+---
+id: modules
+---
 # modules
 > module are for the re-usable program. 
 - module is a `map` value
