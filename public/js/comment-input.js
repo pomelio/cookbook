@@ -36,16 +36,4 @@ $(document).on('my-account', (event, account) => {
 
     let html = renderInput();
     $(component_id).replaceWith(html);
-
-    if (account) {
-        $("#comment-message").disable = false;
-        $("#comment-message-button").disable = false; 
-    } else {
-        $("#comment-message").disable = true;
-        $("#comment-message-button").disable = true;   
-    }
-    
-    
-    
-
 });

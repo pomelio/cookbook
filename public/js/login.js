@@ -26,10 +26,6 @@ $(document).ready(
             authGoogle();
         });
 
-        $("#logout").click((e) => {
-            e.preventDefault();
-            logout();
-        });
 
         function renderLoginPanel() {
             var html = `
