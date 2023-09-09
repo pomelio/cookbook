@@ -47,7 +47,7 @@ let md_result = md.render(ppath);
 let title = md.get_meta(md_result, 'title');
 let content = md.get_html(md_result);
 if title == undefined {
-  title = 'no title;
+  title = 'no title';
 }
 let summary = md.get_meta(md_result, 'summary');
 let html = mch.render('/docs/layout.mustache');
