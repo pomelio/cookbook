@@ -6,7 +6,7 @@
 ## router page
 > the path of router page is `/bin/index.wby`
 
-![github source](/public/images/github-30.png) [router page's source code](https://github.com/pomelio/cookbook/blob/main/bin/index.wby) 
+![github source](/public/images/github-icon.png) [router page's source code](https://github.com/pomelio/cookbook/blob/main/bin/index.wby) 
 
 ```
 import ext.web as web;

@@ -1,7 +1,7 @@
 # project structure
 
 ## files in the github repository
-![github source](/public/images/github-30.png) [https://github.com/pomelio/cookbook/tree/main/](https://github.com/pomelio/cookbook/tree/main/)
+![github source](/public/images/github-icon.png) [https://github.com/pomelio/cookbook/tree/main/](https://github.com/pomelio/cookbook/tree/main/)
 
 ![project files](/public/images/cookbook_files.png)
 
