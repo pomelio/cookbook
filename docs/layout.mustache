@@ -68,6 +68,14 @@
 </style>
 
 <script type="text/javascript">
+//for global variables
+{{#metas}}
+	var _meta_{{name}} = "{{value}}";
+{{/metas}}
+
+</script>
+
+<script type="text/javascript">
 	function addLineClass (pre) {
 		var lines = pre.innerText.trim().split("\n"); // can use innerHTML also
 		while(pre.childNodes.length > 0) {
