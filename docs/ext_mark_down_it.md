@@ -20,10 +20,10 @@ id: ext_markdownit
 ## get_html(result)
 > return the `html` from the render result userdata 
 
-## get_title(result)
+## get_meta(result, key)
 > return the `title` from the render result userdata 
 
-## get_excerpt(result)
+## get_mtas(result)
 > return the `excerpt` from the render result userdata 
 
 
@@ -69,12 +69,12 @@ let PAGE_URL = 'https://' + web.hostname() + ppath;
 let PAGE_IDENTIFIER = ppath;
 
 let md_result = md.render(ppath);
-let title = md.get_title(md_result);
+let title = md.get_meta(md_result, 'title');
 let content = md.get_html(md_result);
 if title == undefined {
   title = 'chatsarah.com';
 }
-let excerpt = md.get_excerpt(md_result);
+let description = md.get_meta(md_result, 'description');
 let html = mch.render('/docs/layout.mustache');
 
 web.body(html);

@@ -56,12 +56,12 @@ let PAGE_URL = 'https://' + web.hostname() + ppath;
 let PAGE_IDENTIFIER = ppath;
 
 let md_result = md.render(ppath);
-let title = md.get_title(md_result);
+let title = md.get_meta(md_result, 'title');
 let content = md.get_html(md_result);
 if title == undefined {
   title = 'chatsarah.com';
 }
-let excerpt = md.get_excerpt(md_result);
+let discription = md.get_meta(md_result, 'discription');
 let html = mch.render('/docs/layout.mustache');
 
 web.body(html);
