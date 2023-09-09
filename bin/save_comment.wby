@@ -1,0 +1,38 @@
+import ext.google as google;
+import ext.web as web;
+import ext.github as github;
+import std.array as arr;
+import ext.jwt as jwt;
+
+
+let {user_id, content_id, comment} = web.request_body();
+
+let auth_result = google.get_auth_result(code, {}, state);
+let tokens = google.get_access_tokens(auth_result);
+let google_client = google.new_client(tokens, {});
+
+
+let user_info = google.get_user_info(google_client);
+
+let user_info_txt = stringify_json(user_info);
+
+let user_info_docs_path = '/docs/data/user_info.json';
+let user_info_docs = [];
+try {
+      let user_info_docs_json = github.get_content(user_info_docs_path);
+      user_info_docs = parse_json(user_info_docs_json);
+} catch (err) {
+  info('error');
+}
+
+let user_info_doc = arr.find(user_info_docs, |u| => u['id'] == user_info['id']);
+if !user_info_doc || user_info_doc != user_info {
+      user_info_docs = arr.filter(user_info_docs, |u| => u['id'] != user_info['id']);
+      arr.push(user_info_docs, user_info);
+      github.save_text(user_info_docs_path, stringify_json(user_info_docs));
+}
+
+let user_id = user_info['id'];
+let user_token = jwt.sign({id: user_id});
+user_info['token'] = user_token;
+web.body(user_info);

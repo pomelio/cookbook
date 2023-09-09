@@ -36,4 +36,39 @@ $(document).on('my-account', (event, account) => {
 
     let html = renderInput();
     $(component_id).replaceWith(html);
+
+    $("#comment-messge-button").on("click", event => {
+        event.preventDefault();
+        var comment = $("#comment-messge").value;
+        if (comment.trim()) {
+            axios({
+                method: 'post',
+                url: '/auth/google',
+            }).then(result => {
+                var popup = popup_auth_window('google-auth', result.data.url, { height: 1000, width: 600 });
+                popup.then(authResult => {
+                    let data = {
+                        code: authResult.code
+                    };
+                    axios({
+                        method: 'post',
+                        url: '/auth/google/callback',
+                        data
+                    }).then(resp => {
+                        let account = resp.data;
+                        $(document).trigger('my-account', [account]);
+                        let accountStr = JSON.stringify(account);
+                        localStorage.setItem('my-account', accountStr);
+                        window.location.href = redirect;
+                    });
+
+                });
+                popup.catch(err => {
+                    console.log(err);
+                })
+            });
+        }
+    });
+
+    
 });

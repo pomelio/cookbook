@@ -3,6 +3,7 @@ import std.string as str;
 
 
 let ppath = web.path();
+let method = web.method();
 
 if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/markdown', {});
@@ -14,6 +15,8 @@ if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/auth_google', {});
 } elsif ppath == '/auth/google/callback' {
   dispatch('/auth_google_callback', {});
+} elsif method == 'POST' && ppath == '/comment/save' {
+  dispatch('/save_comment', {});
 } else {
   web.set_status(404);
 }
