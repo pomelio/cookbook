@@ -43,6 +43,8 @@ let footer = mch.render('/docs/footer.mustache');
 let PAGE_URL = 'https://' + web.hostname() + ppath;
 let PAGE_IDENTIFIER = ppath;
 
+let DOC_PATH = ppath;
+
 let md_result = md.render(ppath);
 let title = md.get_meta_value(md_result, 'title');
 let metas = md.get_metas(md_result);

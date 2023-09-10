@@ -39,33 +39,26 @@ $(document).on('my-account', (event, account) => {
 
     $("#comment-messge-button").on("click", event => {
         event.preventDefault();
-        var comment = $("#comment-messge").value;
-        if (comment.trim()) {
+        var comment = $("#comment-messge").value.trim();
+       
+        if (comment) {
+            let data = {
+                id: "{{_DOC_PATH}}",
+                value: comment,
+            }
+            let headers = {
+                'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': 'Bearer ' + account.token,
+            };
+            
             axios({
                 method: 'post',
-                url: '/auth/google',
+                url: '/comment/save',
+                data,
+                headers,
             }).then(result => {
-                var popup = popup_auth_window('google-auth', result.data.url, { height: 1000, width: 600 });
-                popup.then(authResult => {
-                    let data = {
-                        code: authResult.code
-                    };
-                    axios({
-                        method: 'post',
-                        url: '/auth/google/callback',
-                        data
-                    }).then(resp => {
-                        let account = resp.data;
-                        $(document).trigger('my-account', [account]);
-                        let accountStr = JSON.stringify(account);
-                        localStorage.setItem('my-account', accountStr);
-                        window.location.href = redirect;
-                    });
-
-                });
-                popup.catch(err => {
-                    console.log(err);
-                })
+                //addNewComment(creq);
+                console.log('adc');
             });
         }
     });
