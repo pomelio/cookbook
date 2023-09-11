@@ -39,7 +39,7 @@ $(document).on('my-account', (event, account) => {
 
     $("#comment-messge-button").on("click", event => {
         event.preventDefault();
-        var comment = $("#comment-messge").value.trim();
+        var comment = $("#comment-messge").val().trim();
        
         if (comment) {
             let data = {
