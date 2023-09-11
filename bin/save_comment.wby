@@ -7,7 +7,7 @@ import ext.jwt as jwt;
 let token = jwt.verify();
 
 let user_id = token['id'];
-let id = uuid();
+let id = 'abc';
 let {doc, value} = web.request_body();
 
 let comment = {
