@@ -43,7 +43,7 @@ $(document).on('my-account', (event, account) => {
        
         if (comment) {
             let data = {
-                id: "{{_DOC_PATH}}",
+                doc: "{{_DOC_PATH}}",
                 value: comment,
             }
             let headers = {
