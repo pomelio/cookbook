@@ -11,7 +11,7 @@ let id = 'abc';
 let {doc, value} = web.request_body();
 
 let comment = {
-    id,
+    id:id,
     user_id,
     doc,
     value
