@@ -10,7 +10,7 @@ $(document).on('my-account', (event, account) => {
     <label for="message" class="justify-self-start block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Message</label>
     <textarea id="comment-message" rows="4" class="block mb-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
     <div class="basis-1/4">
-        <button id="comment-messge-button" type="button" class="px-3 py-2 text-xs font-medium text-center text-gray-700 hover:bg-gray-100 dark:text-gray-300  dark:hover:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
+        <button id="comment-message-button" type="button" class="px-3 py-2 text-xs font-medium text-center text-gray-700 hover:bg-gray-100 dark:text-gray-300  dark:hover:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save</button>
     </div>
 </div>
 `;
@@ -24,7 +24,7 @@ $(document).on('my-account', (event, account) => {
     <label for="message" class="justify-self-start block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Message</label>
     <textarea disabled id="comment-message" rows="4" class="block mb-2 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..."></textarea>
     <div class="basis-1/4">
-        <a href="${loginURL}" id="comment-messge-button" type="button" class="px-3 py-2 text-xs font-medium text-center text-gray-700 hover:bg-gray-100 dark:text-gray-300  dark:hover:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</a>
+        <a href="${loginURL}" id="comment-message-button" type="button" class="px-3 py-2 text-xs font-medium text-center text-gray-700 hover:bg-gray-100 dark:text-gray-300  dark:hover:text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</a>
     </div>
 </div>
 `;
@@ -37,9 +37,9 @@ $(document).on('my-account', (event, account) => {
     let html = renderInput();
     $(component_id).replaceWith(html);
 
-    $("#comment-messge-button").on("click", event => {
+    $("#comment-message-button").on("click", event => {
         event.preventDefault();
-        var comment = $("#comment-messge").val().trim();
+        var comment = $("#comment-message").val().trim();
        
         if (comment) {
             let data = {
