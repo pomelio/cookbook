@@ -7,11 +7,14 @@ import ext.jwt as jwt;
 let token = jwt.verify();
 
 let user_id = token['id'];
-let id = uuid();
-let {doc, value} = web.request_body();
+
+let {doc, id, value} = web.request_body();
+if !id {
+  id = uuid();
+}
 
 let comment = {
-    id:id,
+    id,
     user_id,
     doc,
     value
@@ -22,13 +25,13 @@ let comment_txt = stringify_json(comment);
 let comment_docs_path = '/docs/data/comment.json';
 let comment_docs = [];
 try {
-      let comment_docs_json = github.get_content(comment_docs_path);
-      comment_docs = parse_json(comment_docs_json);
+    let comment_docs_json = github.get_content(comment_docs_path);
+    comment_docs = parse_json(comment_docs_json);
 } catch (err) {
   info('error');
 }
 
-
+comment_docs = arr.filter(comment_docs, |u| => u['id'] != comment['id']);
 arr.push(comment_docs, comment);
 github.save_text(comment_docs_path, stringify_json(comment_docs));
 
