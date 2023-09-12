@@ -28,7 +28,6 @@ try {
     let comment_docs_json = github.get_content(comment_docs_path);
     comment_docs = parse_json(comment_docs_json);
 } catch (err) {
-  info('error');
 }
 
 comment_docs = arr.filter(comment_docs, |u| => u['id'] != comment['id']);
