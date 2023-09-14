@@ -22,7 +22,7 @@ let comment = {
     user_id,
     doc,
     value,
-    create_time,
+    create_time
 };
 
 let comment_txt = stringify_json(comment);
