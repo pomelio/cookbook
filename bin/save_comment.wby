@@ -15,7 +15,7 @@ if !id {
 }
 
 let dt = date.from_number();
-create_time = date.value_of(td);
+let create_time = date.value_of(dt);
 
 let comment = {
     id,
