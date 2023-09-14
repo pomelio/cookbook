@@ -2,6 +2,7 @@ import ext.web as web;
 import ext.github as github;
 import std.array as arr;
 import ext.jwt as jwt;
+import date as date;
 
 
 let token = jwt.verify();
@@ -13,11 +14,15 @@ if !id {
   id = uuid();
 }
 
+let dt = date.from_number();
+create_time = date.value_of(td);
+
 let comment = {
     id,
     user_id,
     doc,
-    value
+    value,
+    create_time,
 };
 
 let comment_txt = stringify_json(comment);

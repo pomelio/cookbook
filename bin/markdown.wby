@@ -53,6 +53,23 @@ if !title {
   title = 'no title';
 }
 let description = md.get_meta_value(md_result, 'description');
+
+
+let comments_data = github.get_content('/docs/comment.json');
+let comments = parse_json(comments_data);
+
+let comments_html = null;
+
+for (let i = 0; i < len(comments); i++) {
+  let comment = comments[i];
+  let 
+
+}
+
+
+
+
+
 let html = mch.render('/docs/layout.mustache');
 
 web.body(html);
