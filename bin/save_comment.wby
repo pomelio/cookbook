@@ -2,7 +2,7 @@ import ext.web as web;
 import ext.github as github;
 import std.array as arr;
 import ext.jwt as jwt;
-import date as date;
+import std.date as date;
 
 
 let token = jwt.verify();
