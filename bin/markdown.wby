@@ -46,7 +46,7 @@ let PAGE_IDENTIFIER = ppath;
 
 let DOC_PATH = ppath;
 
-let md_result = md.renderTemplate(ppath);
+let md_result = md.render(ppath);
 let title = md.get_meta_value(md_result, 'title');
 let metas = md.get_metas(md_result);
 let content = md.get_html(md_result);
