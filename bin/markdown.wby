@@ -17,6 +17,7 @@ let side_bar_json = parse_json(side_bar_data);
 let sections = side_bar_json['sections'];
 
 let section_html_list = [];
+let tmplSection = mch.init('/docs/sidebar_section.mustache');
 
 for (let i = 0; i < len(sections); i++) {
   let section = sections[i];
@@ -28,24 +29,24 @@ for (let i = 0; i < len(sections); i++) {
   });
   
   let title = section['title'];
-  let section_html = mch.render('/docs/sidebar_section.mustache');
+  let section_html = mch.render(tmplSection);
   arr.push(section_html_list, section_html);
 }
 
 let title = side_bar_json['title'];
 let sections_html = arr.join(section_html_list, '');
 
-let side_bar_html = mch.render('/docs/sidebar.mustache');
+let side_bar_html = mch.renderTemplate('/docs/sidebar.mustache');
 
-let header = mch.render('/docs/header.mustache');
-let footer = mch.render('/docs/footer.mustache');
+let header = mch.renderTemplate('/docs/header.mustache');
+let footer = mch.renderTemplate('/docs/footer.mustache');
 
 let PAGE_URL = 'https://' + web.hostname() + ppath;
 let PAGE_IDENTIFIER = ppath;
 
 let DOC_PATH = ppath;
 
-let md_result = md.render(ppath);
+let md_result = md.renderTemplate(ppath);
 let title = md.get_meta_value(md_result, 'title');
 let metas = md.get_metas(md_result);
 let content = md.get_html(md_result);
@@ -74,15 +75,17 @@ if user_info_docs_json != undefined {
 
 let comments_html = [];
 
+let tmplComment = mch.init('/docs/comment.mustache');
+
 for (let i = 0; i < len(comments); i++) {
   let comment = comments[i];
   let user = arr.find(user_info_docs, |u| => u.id == user.id);
-  let comment_html = mch.render('/docs/comment.mustache');
+  let comment_html = mch.render(tmplComment);
   comments_html.push(comment_html);
 }
 
 comments_html = arr.join(comments_html, '');
 
-let html = mch.render('/docs/layout.mustache');
+let html = mch.renderTemplate('/docs/layout.mustache');
 
 web.body(html);
