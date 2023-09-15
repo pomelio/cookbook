@@ -31,7 +31,7 @@ let comment_docs_path = '/docs/data/comment.json';
 let comment_docs = [];
 
 let comment_docs_json = github.get_content(comment_docs_path);
-if comment_docs_json == undefined {
+if comment_docs_json != undefined {
   comment_docs = parse_json(comment_docs_json);
 }
 
