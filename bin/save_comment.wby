@@ -36,7 +36,7 @@ if comment_docs_json != undefined {
 }
 
 comment_docs = arr.filter(comment_docs, |u| => u['id'] != comment['id']);
-arr.push(comment_docs, comment);
+arr.unshift(comment_docs, comment);
 github.save_text(comment_docs_path, stringify_json(comment_docs));
 
 web.body(comment);
