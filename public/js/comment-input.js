@@ -58,7 +58,7 @@ $(document).on('my-account', (event, account) => {
                 headers,
             }).then(result => {
                 //addNewComment(creq);
-                console.log('adc');
+                window.location.reload();
             });
         }
     });
