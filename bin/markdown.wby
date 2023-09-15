@@ -81,7 +81,7 @@ for (let i = 0; i < len(comments); i++) {
   let comment = comments[i];
   let user = arr.find(user_info_docs, |u| => u['id'] == comment['user_id']);
   let comment_html = mch.render(tmplComment);
-  comments_html.push(comment_html);
+  arr.push(comments_html, comment_html);
 }
 
 comments_html = arr.join(comments_html, '');
