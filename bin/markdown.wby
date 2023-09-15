@@ -58,7 +58,7 @@ let description = md.get_meta_value(md_result, 'description');
 
 let comments = [];
 
-let comments_json = github.get_content('/docs/comment.json');
+let comments_json = github.get_content('/docs/data/comment.json');
 if comments_json != undefined {
   comments = parse_json(comments_json);
 }      
