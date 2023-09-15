@@ -61,9 +61,9 @@ let comments = [];
 let comments_json = github.get_content('/docs/data/comment.json');
 if comments_json != undefined {
   comments = parse_json(comments_json);
-}      
-     
+}
 
+comments = arr.filter(comments, |c| => c.doc == DOC_PATH);
 
 let user_info_docs_path = '/docs/data/user_info.json';
 let user_info_docs = [];
