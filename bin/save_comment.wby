@@ -29,10 +29,10 @@ let comment_txt = stringify_json(comment);
 
 let comment_docs_path = '/docs/data/comment.json';
 let comment_docs = [];
-try {
-    let comment_docs_json = github.get_content(comment_docs_path);
-    comment_docs = parse_json(comment_docs_json);
-} catch (err) {
+
+let comment_docs_json = github.get_content(comment_docs_path);
+if comment_docs_json == undefined {
+  comment_docs = parse_json(comment_docs_json);
 }
 
 comment_docs = arr.filter(comment_docs, |u| => u['id'] != comment['id']);

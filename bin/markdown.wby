@@ -55,20 +55,33 @@ if !title {
 let description = md.get_meta_value(md_result, 'description');
 
 
-let comments_data = github.get_content('/docs/comment.json');
-let comments = parse_json(comments_data);
+let comments = [];
 
-let comments_html = null;
+let comments_json = github.get_content('/docs/comment.json');
+if comments_json == undefined {
+  comments = parse_json(comments_json);
+}      
+     
+
+
+let user_info_docs_path = '/docs/data/user_info.json';
+let user_info_docs = [];
+
+let user_info_docs_json = github.get_content(user_info_docs_path);
+if user_info_docs_json == undefined {
+  user_info_docs = parse_json(user_info_docs_json);
+}
+
+let comments_html = [];
 
 for (let i = 0; i < len(comments); i++) {
   let comment = comments[i];
-  let 
-
+  let user = user_info_docs.find(u => u.id === user.id);
+  let comment_html = mch.render('/docs/comment.mustache');
+  comments_html.push(comment_html);
 }
 
-
-
-
+comments_html = arr.join(comments_html, '');
 
 let html = mch.render('/docs/layout.mustache');
 
