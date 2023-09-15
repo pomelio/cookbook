@@ -19,7 +19,7 @@ let user_info_docs_path = '/docs/data/user_info.json';
 let user_info_docs = [];
 
 let user_info_docs_json = github.get_content(user_info_docs_path);
-id user_info_docs_json != undefined {
+if user_info_docs_json != undefined {
       user_info_docs = parse_json(user_info_docs_json);
 }
 
