@@ -79,6 +79,7 @@ let tmplComment = mch.init('/docs/comment.mustache');
 
 for (let i = 0; i < len(comments); i++) {
   let comment = comments[i];
+  comment.value = md.render_source(comment.value);
   let user = arr.find(user_info_docs, |u| => u['id'] == comment['user_id']);
   let comment_html = mch.render(tmplComment);
   arr.push(comments_html, comment_html);
