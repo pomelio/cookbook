@@ -1,0 +1,32 @@
+import ext.web as web;
+import ext.github as github;
+import std.array as arr;
+import ext.jwt as jwt;
+import std.date as date;
+
+
+let token = jwt.verify();
+
+let user_id = token['id'];
+
+let {id} = web.request_body();
+if !id {
+  throw new {
+    message: `comment is not found.`,
+    name: 'ERR_NOT_FOUND'.
+  };
+}
+
+
+let comment_docs_path = '/docs/data/comment.json';
+let comment_docs = [];
+
+let comment_docs_json = github.get_content(comment_docs_path);
+if comment_docs_json != undefined {
+  comment_docs = parse_json(comment_docs_json);
+}
+
+comment_docs = arr.filter(comment_docs, |u| => u['id'] != id);
+github.save_text(comment_docs_path, stringify_json(comment_docs));
+
+web.body({status: 'OK'});

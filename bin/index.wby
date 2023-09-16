@@ -2,8 +2,11 @@ import ext.web as web;
 import std.string as str;
 
 
+
 let ppath = web.path();
 let method = web.method();
+
+let match_result = web.match('/comment/:id');
 
 if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/markdown', {});
@@ -17,6 +20,10 @@ if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/auth_google_callback', {});
 } elsif method == 'POST' && ppath == '/comment/save' {
   dispatch('/save_comment', {});
+} elsif method == 'POST' && ppath == '/comment/remove' {
+  dispatch('/remove_comment', {});
+} elsif method == 'GET' &&  web.match('/comment/:id') {
+  dispatch('/get_comment', {});
 } else {
   web.set_status(404);
 }

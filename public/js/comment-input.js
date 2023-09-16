@@ -45,7 +45,13 @@ $(document).on('my-account', (event, account) => {
             let data = {
                 doc: _DOC_PATH,
                 value: comment,
+            };
+
+            let commentID = $("#comment-message").data('commentId');
+            if (commentID) {
+                data.id = commentID;
             }
+
             let headers = {
                 'Content-Type': 'application/json;charset=UTF-8',
                 'Authorization': 'Bearer ' + account.token,
@@ -64,4 +70,9 @@ $(document).on('my-account', (event, account) => {
     });
 
     
+});
+
+$(document).on('edit-comment', (event, comment) => {
+    $("#comment-message").val(comment.value);
+    $("#comment-message").data('commentId', comment.id);
 });

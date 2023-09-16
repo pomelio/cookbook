@@ -1,0 +1,26 @@
+import ext.web as web;
+import ext.github as github;
+import ext.array as arr;
+import ext.jwt as jwt;
+
+let token = jwt.verify();
+
+let comment_id = web.get_match_param('/comment/:id', 'id');
+
+let comment_docs_path = '/docs/data/comment.json';
+let comment_docs = [];
+
+let comment_docs_json = github.get_content(comment_docs_path);
+if comment_docs_json != undefined {
+  comment_docs = parse_json(comment_docs_json);
+}
+
+let comment = arr.find(comment_docs, |c| => c['id'] == comment_id);
+if (!comment) {
+    web.set_status(404);
+    web.body('comment is not found.');
+} else {
+    web.body(comment);
+}
+
+

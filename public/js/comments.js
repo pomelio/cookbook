@@ -34,6 +34,46 @@ $(document).on('my-account', (event, account) => {
         return html;
     }
 
+    function remove(account, id) {
+        let data = {
+            id,
+        }
+        let headers = {
+            'Content-Type': 'application/json;charset=UTF-8',
+            'Authorization': 'Bearer ' + account.token,
+        };
+        
+        axios({
+            method: 'post',
+            url: '/comment/remove',
+            data,
+            headers,
+        }).then(result => {
+            //addNewComment(creq);
+            window.location.reload(true);
+        });
+    }
+
+    function retrive(account, id) {
+        let data = {
+        };
+        
+        let headers = {
+            'Content-Type': 'application/json;charset=UTF-8',
+            'Authorization': 'Bearer ' + account.token,
+        };
+        
+        axios({
+            method: 'get',
+            url: '/comment/' + id,
+            data,
+            headers,
+        }).then(result => {
+            //addNewComment(creq);
+            $(document).trigger('edit-comment', [result]);
+        });
+    }
+
 
     if (account) {
         $(".comment-buttons").each(function(i, obj){
@@ -41,7 +81,16 @@ $(document).on('my-account', (event, account) => {
             let user_id = $(this).data('userId');
             if (user_id == account.id) {
                 let html = render(comment_id);
-                $(this).replaceWith(html)
+                $(this).replaceWith(html);
+
+                $("#edit-" + comment_id).click(e => {
+                    retrive(account, comment_id);
+                });
+
+                $("#remove-" + comment_id).click(e => {
+                    remove(account, comment_id);
+                });
+
             }
             
         });
