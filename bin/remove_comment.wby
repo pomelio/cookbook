@@ -11,10 +11,10 @@ let user_id = token['id'];
 
 let {id} = web.request_body();
 if !id {
-  throw new {
+  throw({
     message: `comment is not found.`,
     name: 'ERR_NOT_FOUND'.
-  };
+  });
 }
 
 
