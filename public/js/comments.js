@@ -35,7 +35,7 @@ $(document).on('my-account', (event, account) => {
     }
 
 
-    if (!account) {
+    if (account) {
         $(".comment-buttons").each(function(i, obj){
             let comment_id = $(this).data('commentId');
             let html = render(comment_id);
