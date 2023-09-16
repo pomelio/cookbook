@@ -87,8 +87,8 @@ $(document).on('my-account', (event, account) => {
                     e.preventDefault();
                     retrive(account, comment_id);
                     $([document.documentElement, document.body]).animate({
-                        scrollTop: $("#comment-message").offset().top
-                    }, 2000);
+                        scrollTop: $("#comment-input").offset().top
+                    }, 1000);
                 });
 
                 $("#remove-" + comment_id).click(e => {
