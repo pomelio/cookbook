@@ -38,8 +38,12 @@ $(document).on('my-account', (event, account) => {
     if (account) {
         $(".comment-buttons").each(function(i, obj){
             let comment_id = $(this).data('commentId');
-            let html = render(comment_id);
-            $(this).replaceWith(html)
+            let user_id = $(this).data('userId');
+            if (user_id == account.id) {
+                let html = render(comment_id);
+                $(this).replaceWith(html)
+            }
+            
         });
         
     }
