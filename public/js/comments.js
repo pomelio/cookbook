@@ -84,10 +84,12 @@ $(document).on('my-account', (event, account) => {
                 $(this).replaceWith(html);
 
                 $("#edit-" + comment_id).click(e => {
+                    e.preventDefault();
                     retrive(account, comment_id);
                 });
 
                 $("#remove-" + comment_id).click(e => {
+                    e.preventDefault();
                     remove(account, comment_id);
                 });
 
