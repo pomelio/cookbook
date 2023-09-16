@@ -84,7 +84,7 @@ $(document).on('my-account', (event, account) => {
                 $(this).replaceWith(html);
 
                 $("#edit-" + comment_id).click(e => {
-                    e.preventDefault();
+                    //e.preventDefault();
                     retrive(account, comment_id);
                     $([document.documentElement, document.body]).animate({
                         scrollTop: $("#comment-input").offset().top
@@ -92,7 +92,7 @@ $(document).on('my-account', (event, account) => {
                 });
 
                 $("#remove-" + comment_id).click(e => {
-                    e.preventDefault();
+                    //e.preventDefault();
                     remove(account, comment_id);
                 });
 
