@@ -1,6 +1,6 @@
+import std.array as arr;
 import ext.web as web;
 import ext.github as github;
-import ext.array as arr;
 import ext.jwt as jwt;
 
 let token = jwt.verify();
