@@ -43,7 +43,7 @@ $(document).ready(
             return html;
         }
         
-
+/*
         function authGoogle() {
             
             axios({
@@ -51,6 +51,37 @@ $(document).ready(
                 url: '/auth/google',
             }).then(result => {
                 var popup = popup_auth_window('google-auth', result.data.url, { height: 1000, width: 600 });
+                popup.then(authResult => {
+                    let data = {
+                        code: authResult.code
+                    };
+                    axios({
+                        method: 'post',
+                        url: '/auth/google/callback',
+                        data
+                    }).then(resp => {
+                        let account = resp.data;
+                        $(document).trigger('my-account', [account]);
+                        let accountStr = JSON.stringify(account);
+                        localStorage.setItem('my-account', accountStr);
+                        window.location.href = redirect;
+                    });
+
+                });
+                popup.catch(err => {
+                    console.log(err);
+                })
+            });
+        }
+*/
+
+
+        function authGoogle() {
+            axios({
+                method: 'get',
+                url: '/auth/google',
+            }).then(result => {
+                var popup = show_frame_window('login-window', result.data.url, { styles:"height: 1000; width: 600" });
                 popup.then(authResult => {
                     let data = {
                         code: authResult.code
