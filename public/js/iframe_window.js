@@ -12,7 +12,8 @@ IFrameWindow.prototype.open = function() {
 
 </iframe>
 `;
-  $(id).replaceWith(html);
+  let idSelector = `#${this.id}`;
+  $(idSelector).replaceWith(html);
 }
 
 IFrameWindow.prototype.close = function() {
@@ -20,7 +21,8 @@ IFrameWindow.prototype.close = function() {
     let html = `
 <div id="${this.id}" />    
 `;
-    $(id).replaceWith(html);
+  let idSelector = `#${this.id}`;
+  $(idSelector).replaceWith(html);
 }
 
 IFrameWindow.prototype.cancel = function() {
