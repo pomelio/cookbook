@@ -57,7 +57,7 @@ $(document).on('my-account', (event, account) => {
     function retrive(account, id) {
         let data = {
         };
-        
+
         let headers = {
             'Content-Type': 'application/json;charset=UTF-8',
             'Authorization': 'Bearer ' + account.token,
@@ -70,7 +70,7 @@ $(document).on('my-account', (event, account) => {
             headers,
         }).then(result => {
             //addNewComment(creq);
-            $(document).trigger('edit-comment', [result]);
+            $(document).trigger('edit-comment', [result.data]);
         });
     }
 
