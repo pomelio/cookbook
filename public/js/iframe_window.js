@@ -8,7 +8,7 @@ function IFrameWindow(id, url, options = {}) {
 
 IFrameWindow.prototype.open = function() {
   let html = `
-<iframe src="${this.url}" style="${options.styles}" id="${this.id}">
+<iframe src="${this.url}" style="${this.options.styles}" id="${this.id}">
 
 </iframe>
 `;
@@ -72,7 +72,7 @@ IFrameWindow.prototype.poll = function() {
     });
 }
 
-function show_frame_window(id, url, options = {}) {
+function show_frame_window(id, url, options = { styles:"height: 1000; width: 600" }) {
     const frameWindow = new IFrameWindow(id, url, options);
 
     frameWindow.open();
