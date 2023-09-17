@@ -64,7 +64,10 @@ $(document).on('my-account', (event, account) => {
                 headers,
             }).then(result => {
                 //addNewComment(creq);
-                window.location.reload(true);
+                setTimeout(function(){
+                    window.location.reload(true);
+                }, 2000);
+                
             });
         }
     });
