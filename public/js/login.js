@@ -23,6 +23,8 @@ $(document).ready(
 
         $("#google-auth").click((e) => {
             e.preventDefault();
+
+            localStorage.setItem('rediect', redirect);
             authGoogle();
         });
 
@@ -79,8 +81,7 @@ $(document).ready(
         function authGoogle() {
             axios({
                 method: 'get',
-                url: '/auth/google',
-                params: {redirect: nredirect}
+                url: '/auth/google'
             }).then(result => {
                 window.location.href = result.data.url;
             });
