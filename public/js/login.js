@@ -80,6 +80,7 @@ $(document).ready(
             axios({
                 method: 'get',
                 url: '/auth/google',
+                params: {redirect: nredirect}
             }).then(result => {
                 window.location.href = result.data.url;
             });
