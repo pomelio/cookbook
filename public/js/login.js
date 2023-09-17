@@ -81,40 +81,8 @@ $(document).ready(
                 method: 'get',
                 url: '/auth/google',
             }).then(result => {
-                var popup = show_frame_window('login-window', result.data.url, { styles:"height: 1000; width: 600" });
-                popup.then(authResult => {
-                    let data = {
-                        code: authResult.code
-                    };
-                    axios({
-                        method: 'post',
-                        url: '/auth/google/callback',
-                        data
-                    }).then(resp => {
-                        let account = resp.data;
-                        $(document).trigger('my-account', [account]);
-                        let accountStr = JSON.stringify(account);
-                        localStorage.setItem('my-account', accountStr);
-                        window.location.href = redirect;
-                    });
-
-                });
-                popup.catch(err => {
-                    console.log(err);
-                })
+                window.location.href = result.data.url;
             });
-        }
-
-        function toParams(query) {
-            const q = query.replace(/^\??\//, '');
-          
-            return q.split('&').reduce((values, param) => {
-              const [key, value] = param.split('=');
-          
-              values[key] = decodeURIComponent(value);
-          
-              return values;
-            }, {});
         }
     }
 );

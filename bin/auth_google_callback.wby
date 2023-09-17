@@ -5,7 +5,7 @@ import std.array as arr;
 import ext.jwt as jwt;
 
 
-let {code, state} = web.request_body();
+let {code, state} = web.query();
 
 let auth_result = google.get_auth_result(code, {}, state);
 let tokens = google.get_access_tokens(auth_result);

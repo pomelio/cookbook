@@ -1,7 +1,6 @@
 import ext.web as web;
 import ext.mustache as mch;
 
-
 let header = mch.renderTemplate('/docs/header.mustache');
 let header = mch.renderTemplate('/docs/header.mustache');
 
