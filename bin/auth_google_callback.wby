@@ -43,7 +43,7 @@ let provider = user_info['provider'];
 let user_token = jwt.sign({id: user_id, provider});
 user_info['token'] = user_token;
 
-let user_info_json = json_stringify(user_id);
+let user_info_json = stringify_json(user_info);
 
 let html = mch.renderTemplate('/docs/login_callback.mustache');
 
