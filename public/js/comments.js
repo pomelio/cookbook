@@ -42,7 +42,7 @@ $(document).on('my-account', (event, account) => {
             'Content-Type': 'application/json;charset=UTF-8',
             'Authorization': 'Bearer ' + account.token,
         };
-        
+        loading(true);
         axios({
             method: 'post',
             url: '/comment/remove',
@@ -51,8 +51,12 @@ $(document).on('my-account', (event, account) => {
         }).then(result => {
             //addNewComment(creq);
             setTimeout(function(){
+                loading(false);
                 window.location.reload(true);
             }, 2000);
+            
+        }).catch(err => {
+            loading(false);
         });
     }
 

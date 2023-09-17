@@ -57,6 +57,7 @@ $(document).on('my-account', (event, account) => {
                 'Authorization': 'Bearer ' + account.token,
             };
             
+            loading(true);
             axios({
                 method: 'post',
                 url: '/comment/save',
@@ -65,9 +66,12 @@ $(document).on('my-account', (event, account) => {
             }).then(result => {
                 //addNewComment(creq);
                 setTimeout(function(){
+                    loading(false);
                     window.location.reload(true);
                 }, 2000);
                 
+            }).catch(err => {
+                loading(false);
             });
         }
     });
