@@ -9,6 +9,7 @@ let {code, state} = web.query();
 
 let auth_result = google.get_auth_result(code, {}, state);
 let tokens = google.get_access_tokens(auth_result);
+let state = google.get_auth_state(aut_result);
 let google_client = google.new_client(tokens, {});
 
 
@@ -34,4 +35,5 @@ let user_id = user_info['id'];
 let provider = user_info['provider'];
 let user_token = jwt.sign({id: user_id, provider});
 user_info['token'] = user_token;
+user_info['state'] = state;
 web.body(user_info);
