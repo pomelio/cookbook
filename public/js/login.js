@@ -24,7 +24,7 @@ $(document).ready(
         $("#google-auth").click((e) => {
             e.preventDefault();
 
-            localStorage.setItem('rediect', redirect);
+            localStorage.setItem('redirect', redirect);
             authGoogle();
         });
 
