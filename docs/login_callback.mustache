@@ -34,19 +34,7 @@
 
 	<script src="/public/js/dark-theme.js"></script>
 
-<script type="text/javascript">
-    localStorage.setItem('my-account', `{{{user_info_json}}}`);
-    let redirect = localStorage.getItem("redirect");
-    if (redirect) {
-         window.location.href = redirect;
-    }
 
-    $("#rediect-button").click(function() {
-        window.location.href = redirect;
-    });
-   
-
-</script>
    
     
 
@@ -78,6 +66,19 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/datepicker.min.js"></script>
+<script type="text/javascript">
+    localStorage.setItem('my-account', `{{{user_info_json}}}`);
+    let redirect = localStorage.getItem("redirect");
+    if (redirect) {
+         window.location.href = redirect;
+    }
+
+    $("#rediect-button").click(function() {
+        window.location.href = redirect;
+    });
+   
+
+</script>
 </body>
 
 </html>
