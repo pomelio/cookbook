@@ -6,17 +6,19 @@
 	
 {{#metas}}
 	{{#title}}
-	<title>{{title}}</title>
-	<meta name="og:title" content="{{title}}">
-	<meta name="twitter:title" content="{{title}}">
+	  <title>{{title}}</title>
+	  <meta name="og:title" content="{{title}}">
+	  <meta name="twitter:title" content="{{title}}">
 	{{/title}}
 
 	{{#description}}
-	<meta name="description" content="{{description}}">
-	<meta name="og:description" content="{{description}}">
-	<meta name="twitter:description" content="{{description}}">
+	  <meta name="description" content="{{description}}">
+	  <meta name="og:description" content="{{description}}">
+	  <meta name="twitter:description" content="{{description}}">
 	{{/description}}
+	
 	{{#PAGE_URL}}<meta name="og:url" content="{{PAGE_URL}}">{{/PAGE_URL}}
+	
 	{{#image}}
 	  <meta name="og:image" content="{{image.src}}">
 	  <meta name="twitter:image" content="{{image.src}}">
@@ -28,15 +30,17 @@
 
 
 	{{#__PROJECT__.name}}
-	<meta property="twitter:site" content="{{__PROJECT__.name}}" />
+	  <meta property="twitter:site" content="{{__PROJECT__.name}}" />
 	{{/__PROJECT__.name}}
 
 	{{#twitter_card}}
-	<meta name="twitter:card" content="{{twitter_card}}" />
+	  <meta name="twitter:card" content="{{twitter_card}}" />
 	{{/twitter_card}}
+	
 	{{^twitter_card}}
-	<meta property="og:type" content="article" />
+	  <meta property="og:type" content="article" />
 	{{/twitter_card}}
+	
 	{{#twitter_player}}
 	  <meta property="twitter.player" content="{{twitter_player}}" />
 	{{/twitter_player}}
@@ -46,7 +50,7 @@
 	{{#twitter_player_height}}
 	  <meta property="twitter.player.height" content="{{twitter_player_height}}" />
 	{{/twitter_player_height}}
-{{/metas}
+{{/metas}}
 
    
    
