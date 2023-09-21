@@ -21,23 +21,21 @@
 	
 	{{#image}}
 	  <meta name="og:image" content="https://{{{HOST_NAME}}}{{{image.src}}}">
-	  <meta name="twitter:image" content="https://{{{HOST_NAME}}}{{{image.src}}}">
-      {{#alt}}
-	  	<meta name="twitter:image.alt" content="https://{{{HOST_NAME}}}{{image.alt}}">
-	  {{/alt}}
 	{{/image}}
 
 	{{#video}}
 	  <meta name="twitter:card" content="player">
 	  {{#youtubeID}}
+	    <meta name="twitter:image" content="https://img.youtube.com/vi/{{{youtubeID}}}/0.jpg">
 	    <meta name="twitter:player" content="https://www.youtube.com/watch?v={{{youtubeID}}}">
       {{/youtubeID}}
-	  {{#vimeoID}}
-	    <meta name="twitter:player" content="https://vimeo.com/{{{vimeoID}}}">
-      {{/vimeoID}}
 	{{/video}}
 	{{^video}}
 		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:image" content="https://{{{HOST_NAME}}}{{{image.src}}}">
+      {{#alt}}
+	  	<meta name="twitter:image.alt" content="https://{{{HOST_NAME}}}{{image.alt}}">
+	  {{/alt}}
 	{{/video}}
 
 	
