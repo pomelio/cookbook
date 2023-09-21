@@ -4,7 +4,6 @@ id: what_the_platform_is
 # What the platform is
 > The platform is a `Pages` running serverless environment. These pages are suited for web development.
 
-@[youtube](https://www.youtube.com/watch?v=lKNB3ZeTYiI)
 
 Features:
 - The platform includes user developed pages. These pages are developed by the `Wallaby language` to handle the http requests.
