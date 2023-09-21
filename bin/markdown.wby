@@ -47,15 +47,6 @@ let PAGE_IDENTIFIER = ppath;
 
 let DOC_PATH = ppath;
 
-let md_result = md.render(ppath);
-let title = md.get_meta_value(md_result, 'title');
-let metas = md.get_metas(md_result);
-let content = md.get_html(md_result);
-if !title {
-  title = 'no title';
-}
-let description = md.get_meta_value(md_result, 'description');
-
 
 let comments = [];
 
@@ -88,6 +79,9 @@ for (let i = 0; i < len(comments); i++) {
 }
 
 comments_html = arr.join(comments_html, '');
+
+let md_result = md.render(ppath);
+let metas = md.get_metas(md_result);
 
 let html = mch.renderTemplate('/docs/layout.mustache');
 
