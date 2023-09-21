@@ -38,8 +38,16 @@
 	{{/twitter_card}}
 	
 	{{^twitter_card}}
-	  <meta property="og:type" content="article" />
+	  <meta name="twitter:card" content="summary" />
 	{{/twitter_card}}
+
+	{{#og_type}}
+	  <meta name="og:type" content="{{og_type}}" />
+	{{/og_type}}
+	
+	{{^og_type}}
+	  <meta name="og:type" content="article" />
+	{{/og_type}}
 	
 	{{#twitter_player}}
 	  <meta property="twitter.player" content="{{{twitter_player}}}" />
