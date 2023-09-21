@@ -8,6 +8,8 @@ The open source hello repository
 
 📄 [https://github.com/pomelio/hello](https://github.com/pomelio/hello) 
 
+@[youtube](https://www.youtube.com/watch?v=dWqNgzZwVJQ)
+
 ## Create a new Repository on Github. The file name is `/bin/index.wby`
 
 ```
