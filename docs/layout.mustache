@@ -17,11 +17,11 @@
 	  <meta name="twitter:description" content="{{description}}">
 	{{/description}}
 	
-	{{#PAGE_URL}}<meta name="og:url" content="{{PAGE_URL}}">{{/PAGE_URL}}
+	{{#PAGE_URL}}<meta name="og:url" content="{{{PAGE_URL}}}">{{/PAGE_URL}}
 	
 	{{#image}}
-	  <meta name="og:image" content="{{image.src}}">
-	  <meta name="twitter:image" content="{{image.src}}">
+	  <meta name="og:image" content="{{{image.src}}}">
+	  <meta name="twitter:image" content="{{{image.src}}}">
       {{#alt}}
 	  	<meta name="twitter:image.alt" content="{{image.alt}}">
 	  {{/alt}}
@@ -42,7 +42,7 @@
 	{{/twitter_card}}
 	
 	{{#twitter_player}}
-	  <meta property="twitter.player" content="{{twitter_player}}" />
+	  <meta property="twitter.player" content="{{{twitter_player}}}" />
 	{{/twitter_player}}
 	{{#twitter_player_width}}
 	  <meta property="twitter.player.width" content="{{twitter_player_width}}" />
