@@ -26,6 +26,20 @@
 	  	<meta name="twitter:image.alt" content="https://{{{HOST_NAME}}}{{image.alt}}">
 	  {{/alt}}
 	{{/image}}
+
+	{{#video}}
+	  <meta name="twitter:card" content="player">
+	  {{#youtubeID}}
+	    <meta name="twitter:player" content="https://www.youtube.com/watch?v={{{youtubeID}}}">
+      {{/youtubeID}}
+	  {{#vimeoID}}
+	    <meta name="twitter:player" content="https://vimeo.com/{{{vimeoID}}}">
+      {{/vimeoID}}
+	{{/video}}
+	{{^video}}
+		<meta name="twitter:card" content="summary" />
+	{{/video}}
+
 	
 
 
@@ -33,13 +47,6 @@
 	  <meta property="twitter:site" content="{{__PROJECT__.name}}" />
 	{{/__PROJECT__.name}}
 
-	{{#twitter_card}}
-	  <meta name="twitter:card" content="{{twitter_card}}" />
-	{{/twitter_card}}
-	
-	{{^twitter_card}}
-	  <meta name="twitter:card" content="summary" />
-	{{/twitter_card}}
 
 	{{#og_type}}
 	  <meta name="og:type" content="{{og_type}}" />
