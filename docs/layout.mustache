@@ -17,13 +17,13 @@
 	  <meta name="twitter:description" content="{{description}}">
 	{{/description}}
 	
-	{{#PAGE_URL}}<meta name="og:url" content="{{{PAGE_URL}}}">{{/PAGE_URL}}
+	<meta name="og:url" content="https://{{{HOST_NAME}}}{{{DOC_PATH}}}">
 	
 	{{#image}}
-	  <meta name="og:image" content="{{{image.src}}}">
-	  <meta name="twitter:image" content="{{{image.src}}}">
+	  <meta name="og:image" content="https://{{{HOST_NAME}}}{{{image.src}}}">
+	  <meta name="twitter:image" content="https://{{{HOST_NAME}}}{{{image.src}}}">
       {{#alt}}
-	  	<meta name="twitter:image.alt" content="{{image.alt}}">
+	  	<meta name="twitter:image.alt" content="https://{{{HOST_NAME}}}{{image.alt}}">
 	  {{/alt}}
 	{{/image}}
 	
