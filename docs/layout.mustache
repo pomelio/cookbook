@@ -17,11 +17,6 @@
 	  <meta name="twitter:description" content="{{description}}">
 	{{/description}}
 	
-	<meta name="og:url" content="https://{{{HOST_NAME}}}{{{DOC_PATH}}}">
-	
-	{{#image}}
-	  <meta name="og:image" content="https://{{{HOST_NAME}}}{{{image.src}}}">
-	{{/image}}
 
 	{{#video}}
 	  <meta name="twitter:card" content="player">
@@ -42,6 +37,12 @@
 
 	
 
+	{{#twitter_player_width}}
+	  <meta property="twitter.player.width" content="{{twitter_player_width}}" />
+	{{/twitter_player_width}}
+	{{#twitter_player_height}}
+	  <meta property="twitter.player.height" content="{{twitter_player_height}}" />
+	{{/twitter_player_height}}
 
 	{{#__PROJECT__.name}}
 	  <meta property="twitter:site" content="{{__PROJECT__.name}}" />
@@ -55,16 +56,15 @@
 	{{^og_type}}
 	  <meta name="og:type" content="article" />
 	{{/og_type}}
+
+	<meta name="og:url" content="https://{{{HOST_NAME}}}{{{DOC_PATH}}}">
 	
-	{{#twitter_player}}
-	  <meta property="twitter.player" content="{{{twitter_player}}}" />
-	{{/twitter_player}}
-	{{#twitter_player_width}}
-	  <meta property="twitter.player.width" content="{{twitter_player_width}}" />
-	{{/twitter_player_width}}
-	{{#twitter_player_height}}
-	  <meta property="twitter.player.height" content="{{twitter_player_height}}" />
-	{{/twitter_player_height}}
+	{{#image}}
+	  <meta name="og:image" content="https://{{{HOST_NAME}}}{{{image.src}}}">
+	{{/image}}
+
+	
+	
 {{/metas}}
 
    
