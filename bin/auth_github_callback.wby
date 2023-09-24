@@ -1,4 +1,3 @@
-import ext.google as google;
 import ext.web as web;
 import ext.github as github;
 import std.array as arr;
@@ -14,10 +13,10 @@ let footer = mch.renderTemplate('/docs/footer.mustache');
 
 let {code} = web.query();
 
-let auth_result = google.get_auth_result(code, {});
-let access_token = google.get_access_token(auth_result);
+let auth_result = github.get_auth_result(code, {});
+let access_token = github.get_access_token(auth_result);
 
-let user_info = google.get_user_info(access_token);
+let user_info = github.get_user_info(access_token);
 let u_login = user_info['login'];
 let u_id = user_info['id'];
 let u_node_id = user_info['node_id'];
