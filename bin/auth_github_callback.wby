@@ -6,7 +6,6 @@ import ext.jwt as jwt;
 import ext.mustache as mch;
 import std.date as date;
 
-
 let project_json = github.get_content('/docs/data/project.json');
 let project = parse_json(project_json);
 
@@ -16,12 +15,23 @@ let footer = mch.renderTemplate('/docs/footer.mustache');
 let {code} = web.query();
 
 let auth_result = google.get_auth_result(code, {});
-let tokens = google.get_access_tokens(auth_result);
-let google_client = google.new_client(tokens, {});
+let access_token = google.get_access_token(auth_result);
 
+let user_info = google.get_user_info(access_token);
+let u_login = user_info['login'];
+let u_id = user_info['id'];
+let u_node_id = user_info['node_id'];
+let u_avatar_url = user_info['avatar_url'];
+let u_gravatar_id= user_info['gravatar_id'];
 
-let user_info = google.get_user_info(google_client);
-user_info['provider'] = 'google';
+let u = {
+      provider: 'github',
+      login: u_login,
+      id: u_id,
+      node_id: u_node_id,
+      avatar_url: u_avatar_url,
+      gravatar_id: u_gravatar_id
+};
 
 let user_info_docs_path = '/docs/data/user_info.json';
 let user_info_docs = [];
@@ -34,18 +44,17 @@ if user_info_docs_json != undefined {
 let user_info_doc = arr.find(user_info_docs, |u| => u['id'] == user_info['id']);
 if !user_info_doc || user_info_doc != user_info {
       user_info_docs = arr.filter(user_info_docs, |u| => u['id'] != user_info['id']);
-      arr.push(user_info_docs, user_info);
+      arr.push(user_info_docs, u);
       github.save_text(user_info_docs_path, stringify_json(user_info_docs));
 }
 
-let user_id = user_info['id'];
-let provider = user_info['provider'];
-
+let user_id = u['id'];
+let provider = u['provider'];
 let timestamp = date.value_of(date.from_number());
 let user_token = jwt.sign({id: user_id, provider, timestamp});
-user_info['token'] = user_token;
+u['token'] = user_token;
 
-let user_info_json = stringify_json(user_info);
+let user_info_json = stringify_json(u);
 
 let html = mch.renderTemplate('/docs/login_callback.mustache');
 

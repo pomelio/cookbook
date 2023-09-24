@@ -23,11 +23,11 @@
                 </button>
 
                 <!-- website logo and title -->
-                <a href="https://cookbook.pagwe.net/" class="flex ml-2 md:mr-24">
-                    <img src="https://cookbook.pagwe.net/public/images/pagwe-logo.png" class="h-8 mr-3"
-                        alt="Pagwe Logo" />
+                <a href="{{project.website}}" class="flex ml-2 md:mr-24">
+                    <img src="{{project.image}}" class="h-8 mr-3"
+                        alt="{{project.title}} Logo" />
                     <span
-                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Pagwe</span>
+                        class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">{{project.title}}</span>
                 </a>
 
             </div>
@@ -36,7 +36,6 @@
             <div class="flex items-center">
                 <!-- Place this tag where you want the button to render. -->
             
-                <a class="github-button" href="https://github.com/pomelio/cookbook" data-color-scheme="no-preference: light; light: light; dark: light;" data-show-count="true" aria-label="Star pomelio/cookbook on GitHub">Star</a>
                 <!-- theme selection placeholder -->
                 <div id='theme-toggle'></div>
 

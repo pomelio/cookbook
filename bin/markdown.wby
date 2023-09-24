@@ -39,6 +39,9 @@ let sections_html = arr.join(section_html_list, '');
 
 let side_bar_html = mch.renderTemplate('/docs/sidebar.mustache');
 
+let project_json = github.get_content('/docs/data/project.json');
+let project = parse_json(project_json);
+
 let header = mch.renderTemplate('/docs/header.mustache');
 let footer = mch.renderTemplate('/docs/footer.mustache');
 
@@ -47,8 +50,6 @@ let PAGE_IDENTIFIER = ppath;
 
 let DOC_PATH = ppath;
 let HOST_NAME = web.hostname();
-
-
 
 let comments = [];
 

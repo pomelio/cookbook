@@ -1,0 +1,8 @@
+import ext.google as google;
+import ext.web as web;
+
+let scope = 'read:user';
+
+let url = google.authorize_url(scope, {});
+
+web.body({url});
