@@ -14,6 +14,10 @@ if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/login', {});
 } elsif str.starts_with(ppath, '/public') {
   web.send_file(ppath);
+} elsif ppath == '/auth/github' {
+  dispatch('/auth_github', {});
+} elsif ppath == '/auth/github/callback' {
+  dispatch('/auth_github_callback', {});
 } elsif ppath == '/auth/google' {
   dispatch('/auth_google', {});
 } elsif ppath == '/auth/google/callback' {
