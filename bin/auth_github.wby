@@ -1,8 +1,8 @@
-import ext.google as google;
+import ext.github as github;
 import ext.web as web;
 
 let scope = 'read:user';
 
-let url = google.authorize_url(scope, {});
+let url = github.authorize_url(scope, {});
 
 web.body({url});
