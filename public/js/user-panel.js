@@ -47,6 +47,10 @@ $(document).ready(
             myAccount = JSON.parse(myAccount);
             let picture = myAccount.picture;
             let name = myAccount.name;
+            if (myAccount.provider === 'github') {
+                picture = myAccount.avatar_url;
+                name = myAccount.login;
+            }
             
             let html = `
         <div id="user-panel" class="flex items-center ml-3">
