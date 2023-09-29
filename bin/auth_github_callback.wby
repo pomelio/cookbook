@@ -47,13 +47,13 @@ if !user_info_doc || user_info_doc != uuser {
       github.save_text(user_info_docs_path, stringify_json(user_info_docs));
 }
 
-let user_id = u['id'];
-let provider = u['provider'];
+let user_id = uuser['id'];
+let provider = uuser['provider'];
 let timestamp = date.value_of(date.from_number());
 let user_token = jwt.sign({id: user_id, provider, timestamp});
-u['token'] = user_token;
+uuser['token'] = user_token;
 
-let user_info_json = stringify_json(u);
+let user_info_json = stringify_json(uuser);
 
 let html = mch.renderTemplate('/docs/login_callback.mustache');
 
