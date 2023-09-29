@@ -23,7 +23,7 @@ let u_node_id = user_info['node_id'];
 let u_avatar_url = user_info['avatar_url'];
 let u_gravatar_id= user_info['gravatar_id'];
 
-let u = {
+let uuser = {
       provider: 'github',
       login: u_login,
       id: u_id,
@@ -40,10 +40,10 @@ if user_info_docs_json != undefined {
       user_info_docs = parse_json(user_info_docs_json);
 }
 
-let user_info_doc = arr.find(user_info_docs, |u| => u['id'] == user_info['id']);
-if !user_info_doc || user_info_doc != user_info {
-      user_info_docs = arr.filter(user_info_docs, |u| => u['id'] != user_info['id']);
-      arr.push(user_info_docs, u);
+let user_info_doc = arr.find(user_info_docs, |u| => u['id'] == uuser['id']);
+if !user_info_doc || user_info_doc != uuser {
+      user_info_docs = arr.filter(user_info_docs, |u| => u['id'] != uuser['id']);
+      arr.push(user_info_docs, uuser);
       github.save_text(user_info_docs_path, stringify_json(user_info_docs));
 }
 
