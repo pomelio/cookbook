@@ -22,10 +22,10 @@ if from == 'google' {
       let access_token = github.get_access_token(auth_result);
       user_info = github.get_user_info(access_token);
 } else {
-      throw {
+      throw({
             name: 'LOGIN_FROM_NOT_FOUND',
             message: 'login from is not found.'
-      };
+      });
 }
 
 
