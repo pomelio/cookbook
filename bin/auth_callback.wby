@@ -1,9 +1,34 @@
 import ext.web as web;
 import ext.github as github;
+import ext.google as google;
 import std.array as arr;
 import ext.jwt as jwt;
 import ext.mustache as mch;
 import std.date as date;
+
+
+
+let {code} = web.query();
+
+let user_info = undefined;
+
+if from == 'google' {
+      let auth_result = google.get_auth_result(code, {});
+      let token = google.get_access_token(auth_result);
+      let google_client = google.new_client(token, {});
+      user_info = google.get_user_info(google_client);
+} elsif from == 'github' {
+      let auth_result = github.get_auth_result(code, {});
+      let access_token = github.get_access_token(auth_result);
+      user_info = github.get_user_info(access_token);
+} else {
+      throw {
+            name: 'LOGIN_FROM_NOT_FOUND',
+            message: 'login from is not found.'
+      };
+}
+
+
 
 let project_json = github.get_content('/docs/data/project.json');
 let project = parse_json(project_json);
@@ -11,25 +36,11 @@ let project = parse_json(project_json);
 let header = mch.renderTemplate('/docs/header.mustache');
 let footer = mch.renderTemplate('/docs/footer.mustache');
 
-let {code} = web.query();
-
-let auth_result = github.get_auth_result(code, {});
-let access_token = github.get_access_token(auth_result);
-
-let user_info = github.get_user_info(access_token);
-let u_login = user_info['login'];
-let u_id = user_info['id'];
-let u_node_id = user_info['node_id'];
-let u_avatar_url = user_info['avatar_url'];
-let u_gravatar_id= user_info['gravatar_id'];
-
 let uuser = {
       provider: 'github',
-      login: u_login,
-      id: u_id,
-      node_id: u_node_id,
-      avatar_url: u_avatar_url,
-      gravatar_id: u_gravatar_id
+      name: user_info['login'],
+      picture: user_info['avatar_url']
+      id: user_info['id']
 };
 
 let user_info_docs_path = '/docs/data/user_info.json';

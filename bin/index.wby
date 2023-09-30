@@ -17,11 +17,11 @@ if ppath == '/' || str.ends_with(ppath, '.md') {
 } elsif ppath == '/auth/github' {
   dispatch('/auth_github', {});
 } elsif ppath == '/auth/github/callback' {
-  dispatch('/auth_github_callback', {});
+  dispatch('/auth_callback', {from: 'github'});
 } elsif ppath == '/auth/google' {
   dispatch('/auth_google', {});
 } elsif ppath == '/auth/google/callback' {
-  dispatch('/auth_google_callback', {});
+  dispatch('/auth_callback', {from:'google'});
 } elsif method == 'POST' && ppath == '/comment/save' {
   dispatch('/save_comment', {});
 } elsif method == 'POST' && ppath == '/comment/remove' {
