@@ -11,23 +11,23 @@ let match_result = web.match('/comment/:id');
 if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/markdown', {});
 } elsif ppath == '/login' {
-  dispatch('/login', {});
+  dispatch('/auth/login', {});
 } elsif str.starts_with(ppath, '/public') {
   web.send_file(ppath);
 } elsif ppath == '/auth/github' {
-  dispatch('/auth_github', {});
+  dispatch('/auth/github', {});
 } elsif ppath == '/auth/github/callback' {
-  dispatch('/auth_callback', {from: 'github'});
+  dispatch('/auth/callback', {from: 'github'});
 } elsif ppath == '/auth/google' {
-  dispatch('/auth_google', {});
+  dispatch('/auth/google', {});
 } elsif ppath == '/auth/google/callback' {
-  dispatch('/auth_callback', {from:'google'});
+  dispatch('/auth/callback', {from:'google'});
 } elsif method == 'POST' && ppath == '/comment/save' {
-  dispatch('/save_comment', {});
+  dispatch('/comment/save', {});
 } elsif method == 'POST' && ppath == '/comment/remove' {
-  dispatch('/remove_comment', {});
+  dispatch('/comment/remove', {});
 } elsif method == 'GET' &&  web.match('/comment/:id') {
-  dispatch('/get_comment', {});
+  dispatch('/comment/get', {});
 } else {
   web.set_status(404);
 }
