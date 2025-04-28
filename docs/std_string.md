@@ -528,7 +528,7 @@ import std.array as arr;
 
 var elements = ['Fire', 'Air', 'Water'];
 
-assert(arr.join(elements) == 'Fire,Air,Water');
+assert(arr.join(elements, ',') == 'Fire,Air,Water');
 
 assert(arr.join(elements,'') == 'FireAirWater');
 
