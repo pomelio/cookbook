@@ -66,23 +66,16 @@ try {
     
 } catch (e) {
     if (e['code'] == 1025) {
-        console('this is my error:' + e['message']);
+        log('this is my error:' + e['message']);
     }
 } finally {
-    console('this is finally.');
+    log('this is finally.');
 }
 ```
 
-## error(message)
-> log error messages
-- message: string
 
-## info(message)
-> log error messages
-- message: string
-
-## warn(message)
-> log error messages
+## log(message)
+> log error messages to web debugger
 - message: string
 
 
@@ -111,64 +104,13 @@ assert(result == ["exuberant", "destruction", "present"]);
 - value: map value
 - return: string value
 
-## is_equal(value1, value2, callback)
-> Determine if two values are the same
-- value1:
-- value2:
-- callback: closure of a comparator. Optional. |a, b| => boolean
 
-examples:
-```
-
-import std.string as str;
-import std.array as arr;
-
-var fcon = is_equal(['a','b'], ['A','b'], |a, b| => {
-    var ret = arr.every(a, |ele, idx| => {
-        var ar = str.to_lower_case(a[idx]);
-        var br = str.to_lower_case(b[idx]);
-        return ar == br;
-    });
-
-    return ret;
-
-});
-
-assert(fcon);
-```
 
 ## get\_defined\_variables()
 > return a map value includes all variables available.
 - return: map value
 
 
-
-
-## dispatch(path, variables)
-> dispatch the http requests to the specified page.
-- path: the page path
-- variables: the variables to be injected into the new page.
-- return value:
-  > no return
-
-```
-// index.wby
-
-import ext.web as web;
-import std.string as str;
-
-
-var ppath = web.path();
-
-if ppath == '/' || str.ends_with(ppath, '.md') {
-  dispatch('/markdown', {});
-} elsif str.starts_with(ppath, '/public') {
-  web.send_file(ppath);
-} else {
-  web.set_status(404);
-}
-
-```
 
 
 ## fetch(method, url, data, headers, responseType)
@@ -187,3 +129,22 @@ var data = fetch(method, url, {}, {}, 'json');
 
 assert(data['title'] == '🦘chatsarah.com');
 ```
+## notify(value)
+> send a push message to debugger to reminder.
+- value: string message
+
+## uuid()
+
+## encode_uri_component(value)
+> encodeURIComponent
+- value: string to encode (url)
+
+## encode_buffer(encoding)
+> encode userdata `buff` to an string by the specified encoding
+
+## base64_buffer(encoding);
+> covert the base64 encoded string to a userdata buffer
+- encoding: base64 string
+
+## delete(map, key)
+> delete map's entry by the specified `key`
