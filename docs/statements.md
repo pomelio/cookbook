@@ -1,7 +1,7 @@
 ---
 id: statments
 ---
-# statement
+# statements
 
 ## comment
 > comment can be anywhere of a script or modules
