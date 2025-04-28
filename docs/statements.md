@@ -25,17 +25,17 @@ examples:
 ```
 {
 
-   let a = 1;
+   var a = 1;
    a += 1;
 
-   let b = 'add';
+   var b = 'add';
 
 
    {
-     let a = 'ddd';
+     var a = 'ddd';
      assert( a == 'ddd');
 
-     let c = 1;
+     var c = 1;
 
    }
    // c is removed
@@ -53,24 +53,24 @@ examples:
 
 examples:
 ```
-let a = 3;
+var a = 3;
 
-if a == 3 {
+if (a == 3) {
     assert(a == 3);
 }
 
-if a == 3 {
+if (a == 3) {
     assert(a == 3);
 } else {
     assert(false);
 }
 
 
-if a == 3 {
+if (a == 3) {
     assert(a == 3);
-} elsif a == 4 {
+} else if (a == 4) {
    assert(false);
-} elsif a == 45 {
+} else if (a == 45) {
     assert(false);
 } else {
     assert(false);
@@ -85,7 +85,7 @@ if a == 3 {
 
 examples:
 ```
-switch a {
+switch (a) {
 
    case 1: {
      abc = 1;
@@ -95,7 +95,7 @@ switch a {
      ddd = 333;
    }
 
-   _: {
+   default: {
      cdd = 'ddd';
 
    }
@@ -110,17 +110,17 @@ switch a {
 - while `expression` {
 
 ```
-let b = 0;
-while b < 100 {
+var b = 0;
+while (b < 100) {
     b++;
 }
 
 assert(b == 100);
 
-let c = 0; 
-while c < 100 {
+var c = 0; 
+while (c < 100) {
     c++;
-    if c > 10 {
+    if (c > 10) {
         break;
     }
 }
@@ -132,15 +132,15 @@ assert(c == 11);
 ## for
 > for (`initialization`; `condition`; `afterthought`) {
 
-- initialization: optinal. An expression (including assignment expressions) or variable declaration evaluated once before the loop begins. Typically used to initialize a counter variable. This expression may optionally declare new variables with var or let keywords.
+- initialization: optinal. An expression (including assignment expressions) or variable declaration evaluated once before the loop begins. Typically used to initialize a counter variable. This expression may optionally declare new variables with var or var keywords.
 - An expression to be evaluated before each loop iteration. If this expression evaluates success, statement is executed. If the expression evaluates failed, execution exits the loop and goes to the first statement after the for construct.
 - afterthought: optional. An expression to be evaluated at the end of each loop iteration. This occurs before the next evaluation of condition. Generally used to update or increment the counter variable.
 
 examples:
 ```
-for (let i = 0; i < 10; i++) {
+for (var i = 0; i < 10; i++) {
   
-   if i < 4 {
+   if (i < 4) {
      continue;
    }
    info('i:' + i);
@@ -149,8 +149,8 @@ for (let i = 0; i < 10; i++) {
 ```
 
 ```
-let b = 0;
-for (let i = 0; i < 10; i+=2) {
+var b = 0;
+for (var i = 0; i < 10; i+=2) {
     b = i++;
 }
 assert(b == 9);
@@ -169,80 +169,59 @@ The value can come from:
 import std.string as str;
 
 
-let abc = 'abc';
+var abc = 'abc';
 
-let abcd = str.substring(abc, 1) + '/' + str.substring(abc, 2) ;
-
-
-let a = 1;
-let b = 2;
-let c = 'abc';
+var abcd = str.substring(abc, 1) + '/' + str.substring(abc, 2) ;
 
 
+var a = 1;
+var b = 2;
+var c = 'abc';
 
-let [i, j, k] = [1, 3, 5];
-
-info('i:' + i + ',j:' + j + ',k:' + k);
 
 
-let aa = [1, 3, 5];
+var [i, j, k] = [1, 3, 5];
 
-let ii = undefined;
-let jj = undefined;
-let kk = undefined;
+log('i:' + i + ',j:' + j + ',k:' + k);
+
+
+var aa = [1, 3, 5];
+
+var ii = undefined;
+var jj = undefined;
+var kk = undefined;
 
 [ii, jj, kk] = [1, 3, 5];
 
-info('ii:' + ii + ',jj:' + jj + ',kk:' + kk);
+log('ii:' + ii + ',jj:' + jj + ',kk:' + kk);
 
 {
     assert(ii == 1);
-    let ii = 100;
+    var ii = 100;
     assert(ii == 100);
 
-    let ii = 'abc';
+    var ii = 'abc';
     assert(ii == 'abc');
 }
 ```
 
 
 
-## defer
-> A defer statement defers the execution of a function until the surrounding block statement ends. The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding block ends. 
-
-``` wby
-
-import ex. mysql as mysql;
-
-
-
-fn get_user_orders(user, pwd, host, name){
-
-   let conn = mysql.open(user, pwd, host);
-
-   defer mysql.close(conn);
-
-   let rows = mysql.query(conn, 'select * from order where name=?', [name]);
-
-   return rows;
-  
-}
-
 
 ```
 
-## stop
+## pause
 
-> stop the program and exit with a value
+> pause the program
 
 ``` wby
 
-let i = 1;
+var i = 1;
 
 i++;
 
 if i > 10 {
-   stop {};
+   pause;
 }
 
 
@@ -251,21 +230,21 @@ if i > 10 {
 
 
 ## function
-> fn `function_name`(`argument1`, `argument2`)
+> function `function_name`(`argument1`, `argument2`)
 - the `function name` is an `identifier`.
 - the `argument` is `identifier`.
 
 > examples:
 ```
-fn plus1(value) {
+function plus1(value) {
    return value + 1;
 }
 
-fn binary_plus(val1, val2) {
+function binary_plus(val1, val2) {
    return val1 + val2;
 }
 
-fn binary_plus(...values) {
+function binary_plus(...values) {
    //body of function
 }
 ```
@@ -282,11 +261,9 @@ fn binary_plus(...values) {
 ``` wby
 import std.array as arr;
 
-let i = [1, 2, 3, 4];
+var i = [1, 2, 3, 4];
 
-let b = arr.filter(i, |a| => {
-   return a < 3;
-});
+var b = arr.filter(i, (a) => a < 3);
 
 assert(b == [1, 2]);
 
@@ -296,7 +273,7 @@ assert(b == [1, 2]);
 > A closure is a anonymous function inline declaration that references variables from parent blockes. The function may access and assign to the referenced variables; in this sense the function is "bound" to the variables.
 
 ```
-|arg1, arg2| => {
+(arg1, arg2) => {
    statement1;
    statement2;
   
@@ -307,8 +284,8 @@ assert(b == [1, 2]);
 ```
 import std.array as arr;
 
-let max_price = 100;
-let matched_orders = arr.filter(orders, |a| => {
+var max_price = 100;
+var matched_orders = arr.filter(orders, (a) => {
    return a.amount < max_prie;
 });
 ```
@@ -318,9 +295,9 @@ let matched_orders = arr.filter(orders, |a| => {
 import std.array as arr;
 
 
-let words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
-let result = arr. filter(words, |word| => len(word) > 6);
+var result = arr. filter(words, (word) => len(word) > 6);
 
 assert(result == ["exuberant", "destruction", "present"]);
 
@@ -330,9 +307,9 @@ assert(result == ["exuberant", "destruction", "present"]);
 import std.array as arr;
 
 
-let a = [{title: 'a', md:'1'}, {title:'b', md:'2'}];
-for (let i = 0; i < len(a); i++) {
-    let aaa =  arr.map(a, |ii| => {
+var a = [{title: 'a', md:'1'}, {title:'b', md:'2'}];
+for (var i = 0; i < len(a); i++) {
+    var aaa =  arr.map(a, (ii) => {
         return {
             ...ii,
             index: i
@@ -349,9 +326,9 @@ for (let i = 0; i < len(a); i++) {
 ```
 
 try {
-    let a = 1;
+    var a = 1;
     {
-        let b = a;
+        var b = a;
         throw({message:'abc', code: 1025});
     }
     
