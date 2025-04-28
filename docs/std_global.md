@@ -36,11 +36,11 @@ assert(type_of({a: 1}) == 'map');
 
 examples:
 ```
-let elements = ['Fire', 'Air', 'Water'];
+var elements = ['Fire', 'Air', 'Water'];
 
 assert(keys(elements) == [0, 1, 2]);
 
-let obj = {
+var obj = {
     a: 1,
     b: 2,
     c: 3
@@ -58,9 +58,9 @@ assert(keys(obj) == ['a', 'b', 'c']);
 examples:
 ```
 try {
-    let a = 1;
+    var a = 1;
     {
-        let b = a;
+        var b = a;
         throw({message:'abc', code: 1025});
     }
     
@@ -92,11 +92,11 @@ try {
 
 examples:
 ```
-let words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
 assert(len(words) == 6);
 
-let result = arr.filter(words, |word| => len(word) > 6);
+var result = arr.filter(words, |word| => len(word) > 6);
 
 assert(result == ["exuberant", "destruction", "present"]);
 ```
@@ -123,10 +123,10 @@ examples:
 import std.string as str;
 import std.array as arr;
 
-let fcon = is_equal(['a','b'], ['A','b'], |a, b| => {
-    let ret = arr.every(a, |ele, idx| => {
-        let ar = str.to_lower_case(a[idx]);
-        let br = str.to_lower_case(b[idx]);
+var fcon = is_equal(['a','b'], ['A','b'], |a, b| => {
+    var ret = arr.every(a, |ele, idx| => {
+        var ar = str.to_lower_case(a[idx]);
+        var br = str.to_lower_case(b[idx]);
         return ar == br;
     });
 
@@ -158,7 +158,7 @@ import ext.web as web;
 import std.string as str;
 
 
-let ppath = web.path();
+var ppath = web.path();
 
 if ppath == '/' || str.ends_with(ppath, '.md') {
   dispatch('/markdown', {});
@@ -173,17 +173,17 @@ if ppath == '/' || str.ends_with(ppath, '.md') {
 
 ## fetch(method, url, data, headers, responseType)
 > send a http request and get the response.
-- method: http method. string type, value can be `delete, get, head, post, put, patch, common`
+- method: http method. string type, value can be `devare, get, head, post, put, patch, common`
 - url: the http url
 - data: the json object. When the method value is `get`, the value is the params. When the method is `post`, the value is the post data object.
 - headers: the http request headers.
 - responseType: the respone type expected. The value can be `json, text, stream`
 
 ```
-let url = 'https://cookbook.chatsarah.com/docs/side_bar.json';
-let method = 'get';
+var url = 'https://cookbook.chatsarah.com/docs/side_bar.json';
+var method = 'get';
 
-let data = fetch(method, url, {}, {}, 'json');
+var data = fetch(method, url, {}, {}, 'json');
 
 assert(data['title'] == '🦘chatsarah.com');
 ```
