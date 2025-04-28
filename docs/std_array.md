@@ -17,7 +17,7 @@ examples:
 ```
 import std.array as arr;
 
-let a = [1, 2];
+var a = [1, 2];
 assert(arr.at(a, 1) == 2);
 ```
 
@@ -32,8 +32,8 @@ examples:
 import std.array as arr;
 
 
-let a = [1, 2];
-let e = arr.concat(a, [3, '444'], [5]);
+var a = [1, 2];
+var e = arr.concat(a, [3, '444'], [5]);
 
 assert(e == [1, 2, 3, '444', 5]);
 ```
@@ -49,7 +49,7 @@ assert(e == [1, 2, 3, '444', 5]);
 ```
 import std.array as arr;
 
-let array1 = ['a', 'b', 'c', 'd', 'e'];
+var array1 = ['a', 'b', 'c', 'd', 'e'];
 
 // Copy to index 0 the element at index 3
 arr.copy_within(array1, 0, 3, 4);
@@ -72,8 +72,8 @@ assert(array1 == ["d",  "d", "e", "d", "e"]);
 ```
 import std.array as arr;
 
-let a = [1, 2];
-let b = arr.every(a, |a| => {
+var a = [1, 2];
+var b = arr.every(a, |a| => {
     return a > 0;
 });
 assert(b);
@@ -92,7 +92,7 @@ assert(b);
 ```
 import std.array as arr;
 
-let array1 = [1, 2, 3, 4];
+var array1 = [1, 2, 3, 4];
 
 // Fill with 0 from position 2 until position 4
 arr.fill(array1, 0, 2, 4);
@@ -118,9 +118,9 @@ assert(array1 == [1, 5, 5, 5]);
 ```
 import std.array as arr;
 
-let words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
-let result = arr.filter(words, |word| => len(word) > 6);
+var result = arr.filter(words, |word| => len(word) > 6);
 
 assert(result == ["exuberant", "destruction", "present"]);
 ```
@@ -139,9 +139,9 @@ assert(result == ["exuberant", "destruction", "present"]);
 ```
 import std.array as arr;
 
-let array1 = [5, 12, 8, 130, 44];
+var array1 = [5, 12, 8, 130, 44];
 
-let found = arr.find(array1, |element| => element > 10);
+var found = arr.find(array1, |element| => element > 10);
 assert(found == 12);
 ```
 
@@ -158,9 +158,9 @@ assert(found == 12);
 ```
 import std.array as arr;
 
-let array1 = [5, 12, 8, 130, 44];
+var array1 = [5, 12, 8, 130, 44];
 
-let found = arr.find_index(array1, |element| => element > 13);
+var found = arr.find_index(array1, |element| => element > 13);
 assert(found == 3);
 ```
 ## find_last(values, callback)
@@ -175,9 +175,9 @@ assert(found == 3);
 ```
 import std.array as arr;
 
-let array1 = [5, 12, 8, 130, 46, 44];
+var array1 = [5, 12, 8, 130, 46, 44];
 
-let found = arr.find_last(array1, |element| => element > 45);
+var found = arr.find_last(array1, |element| => element > 45);
 assert(found == 46);
 
 ```
@@ -193,9 +193,9 @@ assert(found == 46);
 ```
 import std.array as arr;
 
-let array1 = [5, 12, 50, 130, 44];
+var array1 = [5, 12, 50, 130, 44];
 
-let found = arr.find_last_index(array1, |element| => element > 45);
+var found = arr.find_last_index(array1, |element| => element > 45);
 assert(found == 3);
 ```
 ## flat(values, depth)
@@ -206,12 +206,12 @@ assert(found == 3);
 ```
 import std.array as arr;
 
-let arra1 = [0, 1, 2, [3, 4]];
+var arra1 = [0, 1, 2, [3, 4]];
 
 
 assert(arr.flat(arra1) == [0, 1, 2, 3, 4]);
 
-let arra2 = [0, 1, 2, [[[3, 4]]]];
+var arra2 = [0, 1, 2, [[[3, 4]]]];
 
 assert(arr.flat(arra2, 3) == [0, 1, 2, 3, 4]);
 
@@ -231,7 +231,7 @@ assert(arr.flat(arra2, 3) == [0, 1, 2, 3, 4]);
 ```
 import std.array as arr;
 
-let  arr1 = [1, 2, 1];
+var  arr1 = [1, 2, 1];
 
 assert(arr.flat_map(arr1, |num| => num == 2 ? [2, 2] : 1) == [1, 2, 2, 1]);
 
@@ -250,8 +250,8 @@ assert(arr.flat_map(arr1, |num| => num == 2 ? [2, 2] : 1) == [1, 2, 2, 1]);
 ```
 import std.array as arr;
 
-let a = [1, 2];
-let c = [];
+var a = [1, 2];
+var c = [];
 
 arr.for_each(a, |a| => {    
     arr.push(c, a);
@@ -270,11 +270,11 @@ assert(c == a);
 ```
 import std.array as arr;
 
-let array1 = [1, 2, 3];
+var array1 = [1, 2, 3];
 
 assert(arr.includes(array1, 2));
 
-let pets = ['cat', 'dog', 'bat'];
+var pets = ['cat', 'dog', 'bat'];
 
 assert(arr.includes(pets, 'cat'));
 ```
@@ -287,7 +287,7 @@ assert(arr.includes(pets, 'cat'));
 ```
 import std.array as arr;
 
-let beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+var beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 
 assert(arr.index_of(beasts, 'bison') == 1);
 ```
@@ -296,23 +296,7 @@ assert(arr.index_of(beasts, 'bison') == 1);
 - values: the array values
 - return value: true if value is an Array; otherwise, false. false is always returned if value is a TypedArray instance.
 
-## join(values, separator)
-> The `join` method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
-- values: the array values
-- separator: optional. Specifies a string to separate each pair of adjacent elements of the array. The separator is converted to a string if necessary. If omitted, the array elements are separated with a comma (","). If separator is an empty string, all elements are joined without any characters in between them.
-- return value: A string with all array elements joined. If arr.length is 0, the empty string is returned.
-```
-import std.array as arr;
 
-
-let elements = ['Fire', 'Air', 'Water'];
-
-assert(arr.join(elements) == 'Fire,Air,Water');
-
-assert(arr.join(elements,'') == 'FireAirWater');
-
-assert(arr.join(elements,'-') == 'Fire-Air-Water');
-```
 
 ## last_index_of(values, search, from)
 > The `last_index_of` method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.
@@ -323,7 +307,7 @@ assert(arr.join(elements,'-') == 'Fire-Air-Water');
 ```
 import std.array as arr;
 
-let animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
+var animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
 
 assert(arr.last_index_of(animals, 'Dodo') == 3);
 
@@ -346,13 +330,13 @@ assert(arr.last_index_of(animals, 'Tiger') == 1);
 
 import std.array as arr;
 
-let array1 = [1, 4, 9, 16];
+var array1 = [1, 4, 9, 16];
 
 assert(arr.map(array1, |x| => x * 2) == [2, 8, 18, 32]);
 
-let ppath = '/bb.md';
+var ppath = '/bb.md';
 
-let topics = [
+var topics = [
     {
         title: 'aa',
         md: '/aa.md'
@@ -383,7 +367,7 @@ import std.array as arr;
 
 info('array.pop -> start');
 
-let plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+var plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
 
 assert(arr.pop(plants) == "tomato");
 ```
@@ -396,9 +380,9 @@ assert(arr.pop(plants) == "tomato");
 ```
 import std.array as arr;
 
-let animals = ['pigs', 'goats', 'sheep'];
+var animals = ['pigs', 'goats', 'sheep'];
 
-let count = arr.push(animals, 'cows');
+var count = arr.push(animals, 'cows');
 
 assert(count == 4);
 assert(animals == ["pigs", "goats", "sheep", "cows"]);
@@ -422,17 +406,17 @@ assert(animals == ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
 
 - init: A value to which accumulator is initialized the first time the callback is called. If initialValue is specified, callbackFn starts executing with the first value in the array as currentValue. If initialValue is not specified, accumulator is initialized to the first value in the array, and callbackFn starts executing with the second value in the array as currentValue. In this case, if the array is empty (so that there's no first value to return as accumulator), an error is thrown.
 
-- return value: The value that results from running the "reducer" callback function to completion over the entire array.
+- return value: The value that results from running the "reducer" callback function to compvarion over the entire array.
 
 ```
 import std.array as arr;
 
-let array1 = [1, 2, 3, 4];
+var array1 = [1, 2, 3, 4];
 
 // 0 + 1 + 2 + 3 + 4
-let initialValue = 0;
+var initialValue = 0;
 
-let sumWithInitial = arr.reduce(array1, 
+var sumWithInitial = arr.reduce(array1, 
     |accumulator, currentValue| => accumulator + currentValue,
     initialValue
 );
@@ -451,9 +435,9 @@ assert(sumWithInitial == 10);
 ```
 import std.array as arr;
 
-let array1 = ['one', 'two', 'three'];
+var array1 = ['one', 'two', 'three'];
 
-let reversed = arr.reverse(array1);
+var reversed = arr.reverse(array1);
 
 assert(reversed == ["three", "two", "one"]);
 assert(array1 == ["three", "two", "one"]);
@@ -465,9 +449,9 @@ assert(array1 == ["three", "two", "one"]);
 ```
 import std.array as arr;
 
-let array1 = [1, 2, 3];
+var array1 = [1, 2, 3];
 
-let firstElement = arr.shift(array1);
+var firstElement = arr.shift(array1);
 
 assert(array1 == [2, 3]);
 assert(firstElement == 1);
@@ -482,7 +466,7 @@ assert(firstElement == 1);
 ```
 import std.array as arr;
 
-let animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
 
 
 assert(arr.slice(animals, 2) == ["camel", "duck", "elephant"]);
@@ -505,7 +489,7 @@ assert(arr.slice(animals) == ["ant", "bison", "camel", "duck", "elephant"]);
 ```
 import std.array as arr;
 
-let array = [1, 2, 3, 4, 5];
+var array = [1, 2, 3, 4, 5];
 
 assert(arr.some(array, |element| => element % 2 == 0));
 ```
@@ -526,40 +510,40 @@ assert(arr.some(array, |element| => element % 2 == 0));
 ```
 import std.array as arr;
 
-let months = ['March', 'Jan', 'Feb', 'Dec'];
+var months = ['March', 'Jan', 'Feb', 'Dec'];
 
 assert(arr.sort(months) == ["Dec", "Feb", "Jan", "March"]);
 
-let array1 = [1, 30, 4, 21, 100000];
+var array1 = [1, 30, 4, 21, 100000];
 
 assert(arr.sort(array1) == [1, 100000, 21, 30, 4]);
 ```
 
-## splice(values, start, deleteCount, ...items)
+## splice(values, start, devareCount, ...items)
 > The `splice` method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
 
 > To create a new array with a segment removed and/or replaced without mutating the original array, use toSpliced(). To access part of an array without modifying it, see slice().
 
 - values: the array values
 - start: Zero-based index at which to start changing the array, converted to an integer.
-- deleteCount: optional. An integer indicating the number of elements in the array to remove from start.
+- devareCount: optional. An integer indicating the number of elements in the array to remove from start.
 
-  - If deleteCount is omitted, or if its value is greater than or equal to the number of elements after the position specified by start, then all the elements from start to the end of the array will be deleted. However, if you wish to pass any itemN parameter, you should pass Infinity as deleteCount to delete all elements after start, because an explicit undefined gets converted to 0.
+  - If devareCount is omitted, or if its value is greater than or equal to the number of elements after the position specified by start, then all the elements from start to the end of the array will be devared. However, if you wish to pass any itemN parameter, you should pass Infinity as devareCount to devare all elements after start, because an explicit undefined gets converted to 0.
 
-  - If deleteCount is 0 or negative, no elements are removed. In this case, you should specify at least one new element (see below).
+  - If devareCount is 0 or negative, no elements are removed. In this case, you should specify at least one new element (see below).
 
 - items: The elements to add to the array, beginning from start.
   - If you do not specify any elements, splice() will only remove elements from the array.
 
 - return value:
-    - An array containing the deleted elements.
+    - An array containing the devared elements.
     - If only one element is removed, an array of one element is returned.
     - If no elements are removed, an empty array is returned.
 
 ```
 import std.array as arr;
 
-let months = ['Jan', 'March', 'April', 'June'];
+var months = ['Jan', 'March', 'April', 'June'];
 arr.splice(months, 1, 0, 'Feb');
 assert(months == ["Jan", "Feb", "March", "April", "June"]);
 arr.splice(months, 4, 1, 'May');
@@ -575,7 +559,7 @@ assert(months == ["Jan", "Feb", "March", "April", "May"]);
 ```
 import std.array as arr;
 
-let array1 = [1, 2, 'a', '1a'];
+var array1 = [1, 2, 'a', '1a'];
 
 assert(arr.to_string(array1) == "1,2,a,1a");
 ```
@@ -592,7 +576,11 @@ params:
 ```
 import std.array as arr;
 
-let array1 = [1, 2, 3];
+var array1 = [1, 2, 3];
 assert(arr.unshift(array1, 4, 5) == 5);
 assert(array1 == [4, 5, 1, 2, 3]);
 ```
+
+## with(values, index, value)
+
+## unique(values, callback)
