@@ -9,6 +9,7 @@ id: statments
 // this is an example of comment
 ```
 
+
 ## import
 > import `module_path` as `alias`;
 - `module_path`: It is `identifiers` separated by `.`
