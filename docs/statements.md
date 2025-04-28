@@ -3,6 +3,12 @@ id: statments
 ---
 # statement
 
+## comment
+> comment can be anywhere of a script or modules
+```
+// this is an example of comment
+``
+
 ## import
 > import `module_path` as `alias`;
 - `module_path`: It is `identifiers` separated by `.`
