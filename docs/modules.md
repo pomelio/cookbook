@@ -2,7 +2,7 @@
 id: modules
 ---
 # script
-- a program only can have one script which is the entrance.
+- a program can only have one script which is the entrance.
 - a script layout is as below
   
 ```
@@ -66,7 +66,7 @@ function hello(name) {
 The following is a script saved under `/bin/index.wby`
 
 ```
-// hello.wby
+// index.wby
 
 import local.abc as a;
 
