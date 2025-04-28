@@ -4,6 +4,8 @@ id: modules
 # script
 - a program only can have one script which is the entrance.
 - a script layout is as below
+  
+```
   -----------------------------
   imports area
   -----------------------------
@@ -11,6 +13,8 @@ id: modules
   -----------------------------
   statments area
   -----------------------------
+
+```
 - a program starts from first line of statments area
 
 
@@ -20,12 +24,15 @@ id: modules
 > module are for the re-usable program. 
 - module is a collection of functions.
 - a module's layout as below
+  
+```
   -----------------------------
   imports area
   -----------------------------
   functions declaration area
   -----------------------------
 
+```
 
 There are 2 kinds of modules:
 - built-in module,  which is developed by the platform. The built-in module path starts with `std` or `ext`
