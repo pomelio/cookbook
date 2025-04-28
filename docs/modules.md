@@ -52,11 +52,11 @@ the following is an example module saved under `/bin/local/abc.wby`
 
 
 
-fn plus1(val) {
+function plus1(val) {
    return value + 1;
 }
 
-fn hello(name) {
+function hello(name) {
    return `hello ${name}`;
 }
 
@@ -70,6 +70,6 @@ The following is a script saved under `/bin/index.wby`
 
 import local.abc as a;
 
-let b = a.plus1(2);
+var b = a.plus1(2);
 assert(b == 3);
 ```
