@@ -82,8 +82,8 @@ params:
 ```
 import std.array as arr;
 
-let a = [1, 2];
-let e = arr.concat(a, [3, '444'], [5]);
+var a = [1, 2];
+var e = arr.concat(a, [3, '444'], [5]);
 
 assert(e == [1, 2, 3, '444', 5]);
 ```
@@ -225,8 +225,8 @@ assert(str.last_index_of('The quick brown fox jumps over the lazy dog. If the do
 
 
 - return value: An Array whose contents depend on the presence or absence of the global (g) flag, or null if no matches are found.
-  - If the g flag is used, all results matching the complete regular expression will be returned, but capturing groups are not included.
-  - If the g flag is not used, only the first complete match and its related capturing groups are returned. In this case, match() will return the same result as RegExp.prototype.exec() (an array with some extra properties).
+  - If the g flag is used, all results matching the compvare regular expression will be returned, but capturing groups are not included.
+  - If the g flag is not used, only the first compvare match and its related capturing groups are returned. In this case, match() will return the same result as RegExp.prototype.exec() (an array with some extra properties).
 
 ```
 import std.string as str;
@@ -251,7 +251,7 @@ params:
 ```
 import std.string as str;
 
-let array = str.match_all('test1test2', 't(e)(st(\\d?))', 'g');
+var array = str.match_all('test1test2', 't(e)(st(\\d?))', 'g');
 
 assert(array[0] == ["test1", "e", "st1", "1"]);
 assert(array[1] == ["test2", "e", "st2", "2"]);
@@ -406,7 +406,7 @@ params:
 ```
 import std.string as str;
 
-let items = str.split('The quick brown fox jumps over the lazy dog.', ' ');
+var items = str.split('The quick brown fox jumps over the lazy dog.', ' ');
 assert(items[3] == 'fox');
 
 ```
@@ -514,4 +514,22 @@ import std.string as str;
 
 
 assert(str.trim_start('   Hello world!   ') == 'Hello world!   ');
+
+## join(values, separator)
+> The `join` method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
+- values: the array values
+- separator: optional. Specifies a string to separate each pair of adjacent elements of the array. The separator is converted to a string if necessary. If omitted, the array elements are separated with a comma (","). If separator is an empty string, all elements are joined without any characters in between them.
+- return value: A string with all array elements joined. If arr.length is 0, the empty string is returned.
+```
+import std.array as arr;
+
+
+var elements = ['Fire', 'Air', 'Water'];
+
+assert(arr.join(elements) == 'Fire,Air,Water');
+
+assert(arr.join(elements,'') == 'FireAirWater');
+
+assert(arr.join(elements,'-') == 'Fire-Air-Water');
+```
 ```
