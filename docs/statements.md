@@ -7,7 +7,7 @@ id: statments
 > comment can be anywhere of a script or modules
 ```
 // this is an example of comment
-``
+```
 
 ## import
 > import `module_path` as `alias`;
